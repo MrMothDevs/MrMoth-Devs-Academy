@@ -9,19 +9,36 @@
     <meta name="keywords" content="Academy, Professional, Coding, Programming">
     <meta name="author" content="MrMothDevs">
     <!-- Links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>MDA - MrMoth Devs Academy</title>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
+            <ul class="main-nav">
+                <li class="nav-list"><img src="images/mda.png" alt="MDA logo" class="logo"></li>
+                <li class="nav-list "><a class="nav-links" href="index.html">Home</a></li>
+                <li class="nav-list"><a class="nav-links" href="courses.html">Courses</a></li>
+                <li class="nav-list"><a class="nav-links" href="contact.html">Contact Us</a></li>
+                <li class="nav-list"><a class="nav-links" href="signup.html">Sign Up</a></li>
+                <section class="menu_icon" onclick="navFunction(this)">
+                    <section class="nav1"></section>
+                    <section class="nav2"></section>
+                    <section class="nav3"></section>
+                </section>
             </ul>
         </nav>
     </header>
-    <footer>&copy; MrMothDevs 2021</footer>
+    <section class="slogan_bkg">
+        <img class="bkg-image" src="images/bkg.jpg" alt="background two boys">
+        <h1 class="slogan">Sticking Together With A Source Of Quality</h1>
+    </section> 
+    <!-- <footer>&copy; MrMothDevs 2021</footer> -->
+    <script src="navscript.js"></script>
 </body>
 </html>
+
+
+<!-- Working on menu-icon to make it responsive -->
