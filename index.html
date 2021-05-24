@@ -16,31 +16,65 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="fixed">
             <ul class="main-nav">
-                <li class="nav-list"><img src="images/mda.png" alt="MDA logo" class="logo"></li>
-                <li class="nav-list "><a class="nav-links" href="index.html">Home</a></li>
+                <li class="nav-list"><img class="logo" src="images/mda.png" alt="MDA logo"></li>
+                <li class="nav-list"><a class="nav-links" href="index.html">Home</a></li>
                 <li class="nav-list"><a class="nav-links" href="courses.html">Courses</a></li>
                 <li class="nav-list"><a class="nav-links" href="contact.html">Contact Us</a></li>
                 <li class="nav-list"><a class="nav-links" href="signup.html">Sign Up</a></li>
-                <section class="menu-icon" onclick="navFunction(this)">
-                    <section class="nav1"></section>
-                    <section class="nav2"></section>
-                    <section class="nav3"></section>
-                </section>
             </ul>
+           <div class="menu-icon" onclick="navFunction(this)">
+                    <div class="nav1"></div>
+                    <div class="nav2"></div>
+                    <div class="nav3"></div>
+            </div>
+            <script>
+                function navFunction(x) {
+                   x.classList.toggle("change");
+                    }
+            </script>
         </nav>
     </header>
-    <section class="slogan-bkg">
-        <img class="bkg-image" src="images/bkg.jpg" alt="background two boys">
+    <div id="particles-js">
         <h1 class="slogan">Sticking Together With A Source Of Quality</h1>
-    </section> 
-    <!-- <footer>&copy; MrMothDevs 2021</footer> -->
-    <script src="navscript.js"></script>
-    <hr>
+    </div> 
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
     <h1 class="first-heading">MrMothDevs Academy</h1>
+    <hr class="first-hr">
+    <p class="p-about">MrMoth Devs Academy a.k.a MDA is a new academy founded in 2020 by Ergin Dapaj & Kristjan Seraj. 
+        It started as an idea to help others make their first steps in the long road of programming and tech. 
+        We're here to help you advance your career, and get hired easily. 
+        We'll also get you through the steps of creating your own portfolio as soon as you're done with the course.
+    </p>
+    <h1 class="second-heading">Our Activity</h1>
+    <hr class="second-hr">
+    <p class="p-activity">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Suspendisse tristique velit id neque scelerisque efficitur. 
+        Nullam pellentesque, sem ac tempus viverra, eros turpis volutpat sem, et tincidunt sem metus nec nisl. 
+        Phasellus ut risus sit amet libero tempus fringilla. Vestibulum ornare eu eros in tristique. 
+        Proin sollicitudin euismod nunc eu faucibus. Donec fermentum aliquam libero, sit amet porta nunc aliquet in. 
+        Sed volutpat pretium tellus id euismod. Phasellus sed ligula efficitur, imperdiet lectus sit amet, scelerisque lorem. 
+    </p>
+    <h1 class="third-heading">Our Staff</h1>
+    <hr class="third-hr">
+    <section class="testimonals">
+        <div class="container-staff">
+        <img src="images/Epfp.jpg" alt="Founder Image" class="founder_image">
+        <h1 class="founder">Ergin Dapaj(Founder, CTO)</h1>
+        <p class="cto">
+            Hello, I am Ergin Dapaj the founder and CTO of MDA. 
+            I have been a full-stack developer for over 4 years, with more than 40 projects done. 
+            Backend development mainly with Node js, Express, and EJS. Also a discord bot dev. (Node js).
+        </p>
+    </div>
+    </section>
+    <!-- <footer class="footer">
+        <section class="topnav"></section>
+        <section class="social-media">
+        </section>
+        <p>&copy; MrMothDevs Academy 2021</p>
+    </footer> -->
 </body>
 </html>
-
-
-<!-- Working on menu-icon to make it responsive -->
