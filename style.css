@@ -27,7 +27,7 @@
 
   .main-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin: 0;
     font-size: 1.75em;
@@ -47,7 +47,6 @@
   
   .nav-list {
     list-style: none;
-    margin-left: 5rem;
   }
 
   /* Logo image */
@@ -226,12 +225,13 @@
     }
 
    .logo {
+     width: 70%;
      padding-top: 10px;
    }
 
    .position {
      position: relative;
-     top: -39px;
+     top: -50px;
      left: 350px;
    }
 
@@ -244,7 +244,7 @@
     cursor: pointer;
    }
   
-    .hamburger-menu .bar {
+   .hamburger-menu .bar {
     height: 5px;
     background: var(--navcolor);
     border-radius: 5px;
@@ -252,9 +252,10 @@
     transform-origin: right;
     transition: all 0.5s;
     }
-    .hamburger-menu:hover .top {
-      transform: rotate(-45deg);
-    }
+
+  .hamburger-menu:hover .top {
+    transform: rotate(-45deg);
+   }
     
     .hamburger-menu:hover .middle {
       opacity: 0;
