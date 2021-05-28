@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,11 @@
   body {
     font-family: 'Ubuntu', sans-serif;
   }
-  
+
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
   .nav-bar {
     position: absolute;
     border: 1px solid transparent;
@@ -404,34 +408,34 @@
 /* Carousel (End) */
 
 /* slogan */
-.typewriter h1 {
-font-weight: 700;
-color: var(--navcolor);
-text-shadow: 0 4px 4px rgba(0,0,0,.25);
-position: relative;
-top: 350px;
-font-family: monospace;
-text-align: center;
-overflow: hidden; /* Ensures the content is not revealed until the animation */
-border-right: .15em solid var(--navcolor); /* The typwriter cursor */
-white-space: nowrap; 
-margin: 0 auto; 
-letter-spacing: .15em; 
-animation: 
-  typing 3.5s steps(30, end),
-  blink-caret .5s step-end infinite;
+.line-1{
+  font-weight: 700;
+  color: var(--navcolor);
+  text-shadow: 0 4px 4px rgba(0,0,0,.25);
+  position: relative;
+  top: 50%;  
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
 }
 
-/* The typing effect */
-@keyframes typing {
-from { width: 0 }
-to { width: 100% }
+/* Animation */
+.anim-typewriter{
+animation: typewriter 4s steps(44) 1s 1 normal both,
+           blinkTextCursor 500ms steps(49) infinite normal;
 }
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-from, to { border-color: transparent }
-50% { border-color: var(--navcolor) }
+@keyframes typewriter{
+from{width: 0;}
+to{width: 25.5em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: rgba(255,255,255,.75);}
+to{border-right-color: transparent;}
 }
 
   @media only screen and (max-width: 768px) {
