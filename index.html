@@ -18,7 +18,7 @@
 <body>
     <!-- Navbar (Start)-->
     <header>
-        <nav class="navbar fixed">
+        <nav class="nav-bar fixed">
             <ul class="main-nav">
                 <li class="nav-list">
                     <img class="logo" src="images/mda.png" alt="MDA logo">
@@ -44,12 +44,16 @@
         </nav>
     </header>
     <!-- Navbar (End)-->
+
+    <!-- Background with Particles JS (Start)-->
     <section class="home-bkg h-100vh" id="home">
         <div class="typewriter">
     <h1>Sticking Together With A Source Of Quality</h1>
     </div>
     <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%; position: absolute; top: 0px;"></canvas>
 </section>
+   <!-- Background with Particles JS (End)-->
+
     <!--- About Us (Start)-->
     <h1 class="first-heading">MrMothDevs Academy</h1>
     <hr class="first-hr">
@@ -78,27 +82,54 @@
     <!-- Our Staff (Start)-->
     <h1 class="third-heading">Our Staff</h1>
     <hr class="third-hr">
+  
+  <!-- Carousel with staff container (Start)-->
     <section class="testimonals hidden">
-        <div class="container-staff">
-            <!-- Founder-->
-            <img src="images/Epfp.jpg" alt="Founder Image" class="founder-image">
-            <h1 class="founder">Ergin Dapaj</h1>
-            <h5 class="job">Founder & CTO</h5>
-            <p class="cto">
-                <q>Hello, I am Ergin Dapaj the founder and CTO of MDA. 
-                    I have been a full-stack developer for over 4 years, with more than 40 projects done. 
-                    Backend development mainly with Node js, Express, and EJS. Also a discord bot dev. (Node js).</q>
-            </p>
-            <!-- Co-Founder -->
-            <img src="images/kpfp.jpg" alt="CO-Founder Image" class="co-founder-image">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators for carousel (vizat qe levizin kur behet slide)-->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+              <div class="container-staff">
+                  <!-- Founder -->
+                <img src="images/Epfp.jpg" alt="Founder Image" class="founder-image">
+                <h1 class="founder">Ergin Dapaj</h1>
+                <h5 class="job">Founder & CTO</h5>
+                <p class="cto">
+                    <q>Hello, I am Ergin Dapaj the founder and CTO of MDA. 
+                        I have been a full-stack developer for over 4 years, with more than 40 projects done. 
+                        Backend development mainly with Node js, Express, and EJS. Also a discord bot dev. (Node js).</q>
+                </p> 
+              </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container-staff">
+                <!-- Co-Founder -->
+                <img src="images/kpfp.jpg" alt="CO-Founder Image" class="co-founder-image">
                 <h1 class="co-founder">Kristjan Seraj</h1>
                 <h5 class="job">CO-Founder & CEO</h5>
                     <p class="ceo">
-                        Hello, I am Kristjan Seraj the co-founder and CEO of MDA. I have been a FrontEnd Developer for 2 years now. 
-                        I have worked on different projects. And now I am focusing on MDA to make it a better place for everyone.
+                        <q>Hello, I am Kristjan Seraj the co-founder and CEO of MDA. I have been a FrontEnd Developer for 2 years now. 
+                        I have worked on different projects. And now I am focusing on MDA to make it a better place for everyone.</q>
                     </p>
-        </div>
-    </section>
+            </div>
+          </div>
+          <!-- Button Carousel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</section>
+<!-- Carousel with staff container (End)-->
+    
             <!-- Our Staff (End)-->
         
             <!-- <footer class="footer">
@@ -110,5 +141,7 @@
             <!-- <script src="js/navbar.js"></script> -->
             <script src="js/particles.js"></script>
             <script src="js/particles.app.js"></script>
+            <!-- Carousel JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
