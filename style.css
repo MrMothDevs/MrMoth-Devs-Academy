@@ -15,7 +15,7 @@
     font-family: 'Ubuntu', sans-serif;
   }
   
-  nav {
+  .navbar {
     position: absolute;
     border: 1px solid transparent;
     z-index: 1;
@@ -27,7 +27,7 @@
 
   .main-nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
     font-size: 1.75em;
@@ -47,6 +47,7 @@
   
   .nav-list {
     list-style: none;
+    margin-left: 5rem;
   }
 
   /* Logo image */
@@ -56,42 +57,19 @@
     height: auto;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
-
-  /* Menu icon for responsive design(hamburger menu) */
-
-  .menu-icon {
-  display: none;
-  }
-
-  .nav1, .nav2, .nav3 {
-    width: 35px;
-    height: 5px;
-    background-color: var(--navcolor);
-    margin: 6px 0;
-    transition: .4s;
-  }
   
-  .change .nav1 {
-    -webkit-transform: rotate(-45deg) translate(-9px,6px);
-    transform: rotate(-45deg) translate(-8px,6px);
-  }
-  
-  .change .nav2 {
-    opacity: 0;
-  }
-  
-  .change .nav3 {
-    -webkit-transform: rotate(45deg) translate(-8px,-8px);
-    transform: rotate(45deg) translate(-8px,-8px);
-  }
-
   /* Background with js  */
 
-  #particles-js {
-    width: 100%;
-    height: auto;
+  .home-bkg {
     background-color: var(--background);
-    filter: brightness(70%);
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .h-100vh {
+    width: 100%;
+    height: 100vh;
   }
 
   .slogan {
@@ -99,12 +77,8 @@
     color: var(--navcolor);
     text-shadow: 0 4px 4px rgba(0,0,0,.25);
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    font-size: 4vw;
-    padding-top: 23%;
-    text-align: center;
+    top: 350px;
+    
   }
 
   /* MrMothDevsAcademy, Our Activity, Our Staff */
@@ -182,9 +156,11 @@
     padding-right: 70px;
   }
  
-  section {
+  .hidden {
     overflow: hidden;
   }
+
+  /* A fixed background with the staff content */
 
   .testimonals {
     padding: 80px 0;
@@ -206,45 +182,87 @@
     z-index: auto;
   }
 
-  .container-staff {
+  /* Staff part */
+  
+ .container-staff {
+    position: relative;
     width: 100%;
-    position: absolute;
-    left: 50%;
-    top: 100px;
     z-index: 1;
   }
 
-  .founder_image {
+  .founder-image, .co-founder-image {
+    display: block;
+    margin: auto;
     width: 181px;
     height: 180.24px;
     border-radius: 105.824px;
+    border: 6px solid rgba(255, 255, 255, 0.13);
   }
 
-  .founder, .cto {
-    color: #fff;
+  .founder, .cto, .job, .co-founder, .ceo {
+    color: var(--navcolor);
     text-align: center;
   }
 
-  @media screen and (max-width:600px) {
+  .founder {
+    padding-top: 35px;
+  }
+
+  .cto {
+    font-size: 18px;
+    line-height: 30px;
+    padding: 15px 200px 10px 200px;
+  }
+
+  .job {
+    font-weight: normal;
+    padding-top: 5px;
+    font-style: italic;
+  }
+
+  @media only screen and (max-width: 768px) {
     nav a {
       display: none;
     }
 
-   .logo, .menu-icon {
+   .logo {
      padding-top: 10px;
    }
 
-    .logo {
-      width: 50%;
-    }
+   .position {
+     position: relative;
+     top: -39px;
+     left: 350px;
+   }
 
-    .menu-icon {
-      display: block;
-      position: absolute;
-      top: 3px;
-      right: 39px;
+   .hamburger-menu {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    height: 2.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+   }
+  
+    .hamburger-menu .bar {
+    height: 5px;
+    background: var(--navcolor);
+    border-radius: 5px;
+    margin: 3px 0px;
+    transform-origin: right;
+    transition: all 0.5s;
     }
-
+    .hamburger-menu:hover .top {
+      transform: rotate(-45deg);
+    }
+    
+    .hamburger-menu:hover .middle {
+      opacity: 0;
+    }
+    
+    .hamburger-menu:hover .bottom {
+      transform: rotate(45deg);
+    }
     .first-heading {
       font-size: 28px;
     }
@@ -255,5 +273,3 @@
       background-attachment: fixed;
     }
   }
-
-  /* Working with the staff section  */
