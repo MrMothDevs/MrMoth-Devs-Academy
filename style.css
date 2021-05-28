@@ -14,8 +14,40 @@
   body {
     font-family: 'Ubuntu', sans-serif;
   }
-
-  .dark-mode {
+/* Dark Mode Switch */
+  .dark-mode{
+    background-color: black;
+    color: white;
+  }
+  .dark-mode .first-heading{
+    background-color: black;
+    color: white;
+  }
+  .dark-mode .p-about {
+    color: white;
+  }
+  .dark-mode .first-hr {
+    width: 20%;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .dark-mode .second-hr {
+    border: 2px solid #ffffff;
+  }
+  .dark-mode .third-hr {
+    border: 2px solid #ffffff;
+  }
+  .dark-mode .second-heading{
+    background-color: black;
+    color: white;
+  }
+  .dark-mode .p-activity{
+    background-color: black;
+    color: white;
+  }
+  .dark-mode .third-heading{
     background-color: black;
     color: white;
   }
@@ -410,6 +442,7 @@
 /* slogan */
 .line-1{
   font-weight: 700;
+  font-family: monospace;
   color: var(--navcolor);
   text-shadow: 0 4px 4px rgba(0,0,0,.25);
   position: relative;
