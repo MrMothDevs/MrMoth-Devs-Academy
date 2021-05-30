@@ -112,7 +112,7 @@
 
   .first-heading, .second-heading, .third-heading {
     font-weight: 700;
-    font-size: 64px;
+    font-size: 4vw;
     line-height: 74px;
     color: var(--headingcolor);
     text-shadow: 0 4px 4px rgba(0,0,0,.25);
@@ -162,7 +162,7 @@
   /* Paragraphs of (homepage) */
 
   .p-about, .p-activity {
-    font-size: 1.75em;
+    font-size: 1.7vw;
     line-height: 36px;
     font-weight: normal;
     text-align: center;
@@ -236,7 +236,7 @@
   }
 
   .cto, .ceo { /* paragraphs that describes the staff */
-    font-size: 18px;
+    font-size: 1.2vw;
     line-height: 30px;
     padding: 15px 200px 40px 200px;
   }
@@ -516,8 +516,59 @@ to{border-right-color: transparent;}
     .hamburger-menu:hover .bottom {
       transform: rotate(45deg);
     }
-    .first-heading {
-      font-size: 28px;
+
+    .first-hr {
+      position: relative;
+      top: 40px;
+    }
+
+    .p-about {
+      line-height: 18px;
+      position: relative;
+      top: 35px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    .second-heading {
+      position: relative;
+      top: 35px;
+    }
+
+    .second-hr {
+      position: relative;
+      top: 5px;
+    }
+
+    .p-activity {
+      line-height: 18px;
+      position: relative;
+      top: 25px;
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+
+    .third-heading {
+      position: relative;
+      top: 35px;
+    }
+
+    .third-hr {
+      position: relative;
+      top: 5px;
+    }
+
+    .testimonals {
+      position: relative;
+      top: 35px;
+    }
+  
+    .cto, .ceo { 
+      font-size: 15px;
+      line-height: normal;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-bottom: 45px;
     }
   }
   
