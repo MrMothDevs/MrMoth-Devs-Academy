@@ -471,6 +471,12 @@ from{border-right-color: rgba(255,255,255,.75);}
 to{border-right-color: transparent;}
 }
 
+.footer {
+  background-color: var(--background);
+  position: relative;
+  top: 500px;
+}
+
   @media only screen and (max-width: 768px) {
     nav a {
       display: none;
