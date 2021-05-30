@@ -570,6 +570,19 @@ to{border-right-color: transparent;}
       padding-left: 20px;
       padding-bottom: 45px;
     }
+
+    .line-1 h1{
+      font-size: 24px;
+    }
+
+    .line-1 {
+      width: 20em;
+    }
+    
+    @keyframes typewriter{
+    from{width: 0;}
+    to{width: 17em;}
+    }
   }
   
   @media (min-width: 1024px) {
