@@ -9,6 +9,7 @@
     --navcolor: #f0f0f0;
     --background: #0F1C70;
     --headingcolor: #1D2C87;
+    --backgroundark: #000731;
   }
 
   body {
@@ -50,6 +51,12 @@
   .dark-mode .third-heading{
     background-color: black;
     color: white;
+  }
+  .dark-mode .home-bkg {
+    background-color: var(--backgroundark);
+  }
+  .dark-mode .testimonals::before {
+    background: rgba(0, 1, 68, 0.8);
   }
   .nav-bar {
     position: absolute;
