@@ -478,10 +478,53 @@ from{border-right-color: rgba(255,255,255,.75);}
 to{border-right-color: transparent;}
 }
 
+/* footer section */
+
 .footer {
   background-color: var(--background);
+  max-width: 100%;
   position: relative;
   top: 500px;
+  color: #fff;
+}
+.footer img {
+  display: block;
+  padding-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.topnav {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.topnav a {
+  display: inline-block;
+  text-decoration: none;
+}
+.topnav a:not(:last-child):after {
+  white-space: pre;
+  content: "     |     ";
+}
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+.fab {
+  padding: 25px 40px 15px 40px;
+  font-size: 30px;
+}
+.footer p {
+  text-align: center;
+  color: rgba(255,255,255,.75);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.footer hr {
+  color: #36449B;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
   @media only screen and (max-width: 768px) {
@@ -489,27 +532,27 @@ to{border-right-color: transparent;}
       display: none;
     }
 
-   .logo {
+    .logo {
      width: 70%;
      padding-top: 10px;
-   }
+    }
 
-   .position {
+    .position {
      position: relative;
      top: -50px;
      left: 350px;
-   }
+    }
 
-   .hamburger-menu {
+    .hamburger-menu {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
     height: 2.5rem;
     width: 2.5rem;
     cursor: pointer;
-   }
+    }
   
-   .hamburger-menu .bar {
+    .hamburger-menu .bar {
      height: 5px;
     background: var(--navcolor);
     border-radius: 5px;
@@ -518,9 +561,9 @@ to{border-right-color: transparent;}
     transition: all 0.5s;
     }
 
-  .hamburger-menu:hover .top {
+   .hamburger-menu:hover .top {
     transform: rotate(-45deg);
-   }
+    }
     
     .hamburger-menu:hover .middle {
       opacity: 0;
@@ -592,7 +635,7 @@ to{border-right-color: transparent;}
       width: 20em;
     }
     
-    @keyframes typewriter{
+    @keyframes typewriter {
     from{width: 0;}
     to{width: 17em;}
     }
@@ -600,6 +643,22 @@ to{border-right-color: transparent;}
     .footer {
       position: relative;
       top: 35px;
+    }
+    .topnav {
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+    .topnav a:not(:last-child):after {
+      white-space: pre;
+      content: "     |     ";
+    }
+    .footer p {
+      padding-top: 10px;
+      font-size: 12px;
+    }
+    .fab {
+      padding: 20px 20px 10px 15px;
+      font-size: 15px;
     }
   }
   
