@@ -596,6 +596,11 @@ to{border-right-color: transparent;}
     from{width: 0;}
     to{width: 17em;}
     }
+
+    .footer {
+      position: relative;
+      top: 35px;
+    }
   }
   
   @media (min-width: 1024px) {
