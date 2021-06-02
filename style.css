@@ -13,6 +13,7 @@
   }
 
   html {
+    user-select: none;
     scroll-behavior: smooth;
   }
   body {
@@ -532,6 +533,9 @@ to{border-right-color: transparent;}
   color: rgba(255,255,255,.75);
   padding-top: 15px;
   padding-bottom: 15px;
+}
+.footer p a {
+  text-decoration: none;
 }
 .footer hr {
   color: #36449B;
