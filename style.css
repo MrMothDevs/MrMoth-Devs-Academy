@@ -12,6 +12,9 @@
     --backgroundark: #000731;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     font-family: 'Ubuntu', sans-serif;
   }
@@ -57,6 +60,16 @@
   }
   .dark-mode .testimonals::before {
     background: rgba(0, 1, 68, 0.8);
+  }
+  .dark-mode .footer {
+    background-color: var(--backgroundark);
+  }
+  .dark-mode .scrollBtn {
+    background-color: #fff;
+    color: #000;
+  }
+  .dark-mode .scrollBtn:hover {
+    background-color: #fff;
   }
   .nav-bar {
     position: absolute;
@@ -527,6 +540,26 @@ to{border-right-color: transparent;}
   margin-right: auto;
 }
 
+/* scroll to top button */
+.scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 16px;
+  border: none;
+  line-height: 48px;
+  background-color: #1D2C87;
+  color: white;
+  cursor: pointer;
+  width: 48px;
+  border-radius: 50%;
+}
+
+.scrollBtn:hover {
+  background-color: var(--backgroundark);
+}
   @media only screen and (max-width: 768px) {
     nav a {
       display: none;
@@ -628,16 +661,16 @@ to{border-right-color: transparent;}
     }
 
     .line-1 h1{
-      font-size: 24px;
+      font-size: 14px;
     }
 
     .line-1 {
-      width: 20em;
+      width: 18em;
     }
     
     @keyframes typewriter {
     from{width: 0;}
-    to{width: 17em;}
+    to{width: 10em;}
     }
 
     .footer {

@@ -11,9 +11,9 @@
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <!-- Switch Used For The DarkMode -->
     <script>
     function lol() {
@@ -23,7 +23,29 @@
     <title>MDA - MrMoth Devs Academy</title>
 </head>
 <body>
-    <!-- Navbar (Start)-->
+    <!-- Scroll to top rounded button (start)-->
+    <button onclick="topFunction()" id="scrollBtn" title="Go to top" class="scrollBtn">^</button>
+    <script>
+        var scrollBtn = document.getElementById("scrollBtn");
+
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollBtn.style.display = "block";
+          } else {
+            scrollBtn.style.display = "none";
+          }
+        }
+        
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>    
+    <!-- Scroll to top rounded button (start)-->
+    
+        <!-- Navbar (Start)-->
     <header>
         <nav class="nav-bar fixed">
             <ul class="main-nav">
@@ -140,7 +162,6 @@
 <!-- Carousel with staff container (End)-->
     
             <!-- Our Staff (End)-->
-        
             <footer class="footer">
                 <img src="images/mda.png" alt="logo" class="footer-logo">
                 <section class="topnav">
