@@ -1,0 +1,27 @@
+{
+  "name": "mrmoth-devs-acamdey",
+  "version": "1.0.0",
+  "description": "MDA is a small project developed with love.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrMothDevs/MrMoth-Devs-Acamdey.git"
+  },
+  "author": "Grainger#5445 & Coku#9444",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrMothDevs/MrMoth-Devs-Acamdey/issues"
+  },
+  "homepage": "https://github.com/MrMothDevs/MrMoth-Devs-Acamdey#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "http-errors": "^1.8.0",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  }
+}
