@@ -4,17 +4,36 @@
     <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" content="MDA - MrMoth Devs Academy">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A Professional Academy that will be with you in your code journey">
     <meta name="keywords" content="Academy, Professional, Coding, Programming">
     <meta name="author" content="MrMothDevs">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="MDA - MrMoth Devs Academy">
+    <meta property="og:description" content="A Professional Academy that will be with you in your code journey">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="MDA - MrMoth Devs Academy">
+    <meta property="twitter:description" content="A Professional Academy that will be with you in your code journey">
+    <meta property="twitter:image" content="">
+    
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <!-- Switch Used For The DarkMode -->
+
+
+
+    <!-- Butoni i dark mode -->
     <script>
     function lol() {
         let element = document.body;
@@ -23,7 +42,7 @@
     <title>MDA - MrMoth Devs Academy</title>
 </head>
 <body>
-    <!-- Scroll to top rounded button (start)-->
+    <!-- Buton qe te con ne fillim te faqes (start)-->
     <button onclick="topFunction()" id="scrollBtn" title="Go to top" class="scrollBtn">^</button>
     <script>
         var scrollBtn = document.getElementById("scrollBtn");
@@ -43,9 +62,9 @@
           document.documentElement.scrollTop = 0;
         }
         </script>    
-    <!-- Scroll to top rounded button (start)-->
+    <!-- Buton qe te con ne fillim te faqes (end)-->
     
-        <!-- Navbar (Start)-->
+        <!-- Navigimi (Start)-->
     <header>
         <nav class="nav-bar fixed">
             <ul class="main-nav">
@@ -73,16 +92,16 @@
             <button onclick="lol()">Click me</button>
         </nav>
     </header>
-    <!-- Navbar (End)-->
+    <!-- Navigimi (End)-->
 
-    <!-- Background with Particles JS (Start)-->
+    <!-- Background me Particles JS (Start)-->
     <section class="home-bkg h-100vh" id="home">
         <div class="line-1 anim-typewriter">
     <h1>Sticking Together With A Source Of Quality</h1>
     </div>
     <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%; position: absolute; top: 0px;"></canvas>
-</section>
-   <!-- Background with Particles JS (End)-->
+    </section>
+   <!-- Background me Particles JS (End)-->
 
     <!--- About Us (Start)-->
     <h1 class="first-heading">MrMothDevs Academy</h1>
@@ -114,10 +133,10 @@
     <h1 class="third-heading">Our Staff</h1>
     <hr class="third-hr">
   
-  <!-- Carousel with staff container (Start)-->
+  <!-- Carousel me pjesen e stafit (Start)-->
     <section class="testimonals hidden">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <!-- Indicators for carousel (vizat qe levizin kur behet slide)-->
+        <!-- Vizat qe levizin kur behet slide -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -148,7 +167,7 @@
                     </p>
             </div>
           </div>
-          <!-- Button Carousel -->
+          <!-- Butonat Carousel -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -159,28 +178,33 @@
         </button>
       </div>
 </section>
-<!-- Carousel with staff container (End)-->
+<!-- Carousel me pjesen e stafit (End)-->
     
             <!-- Our Staff (End)-->
+
+            <!-- Footer (start) -->
             <footer class="footer">
-                <img src="images/mda.png" alt="logo" class="footer-logo">
-                <section class="topnav">
-                            <a href="#">Home</a>
-                            <a href="#">About</a>
-                            <a href="#">Contact Us</a>
-                            <a href="#">Sign Up</a>
-                </section>
-                <section class="social-media">
+              <img src="images/mda.png" alt="logo" class="footer-logo">
+              <section class="topnav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Sign Up</a>
+              </section>
+              <section class="social-media">
                         <a href="https://github.com/MrMothDevs" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.youtube.com/channel/UCnPiMm-Jp4P5B2dy7SstDjA" target="_blank"><i class="fab fa-youtube"></i></a>
                         <i class="fab fa-twitter"></i>
                         <a href="https://discord.io/remixor" target="_blank"><i class="fab fa-discord"></i></a>
-                </section>
-                <hr>
-                <p>&copy; Copyright by <strong><a href="#home">MDA</a></strong> 2021. All Rights Reversed</p>
+                      </section>
+                      <hr>
+                      <p>&copy; Copyright by <strong><a href="#home">MDA</a></strong> 2021. All Rights Reversed</p>
             </footer>
+            <!-- Footer (start) -->
+
             <script src="js/particles.js"></script>
             <script src="js/particles.app.js"></script>
+
             <!-- Carousel JS -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
