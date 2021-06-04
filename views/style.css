@@ -16,10 +16,12 @@
     user-select: none;
     scroll-behavior: smooth;
   }
+
   body {
     font-family: 'Ubuntu', sans-serif;
   }
-/* Dark Mode Switch */
+
+/* Butoni Dark Mode */
   .dark-mode{
     background-color: black;
     color: white;
@@ -72,6 +74,8 @@
   .dark-mode .scrollBtn:hover {
     background-color: #fff;
   }
+
+  /* Navigimi */
   .nav-bar {
     position: absolute;
     border: 1px solid transparent;
@@ -80,7 +84,7 @@
     height: auto;
   }
 
-  /* Not the hamburger menu */
+
 
   .main-nav {
     display: flex;
@@ -96,7 +100,7 @@
     width: 100%;
   }
 
-  /* links and list */
+  /* links dhe lista */
   .nav-links {
     text-decoration: none;
     color: var(--navcolor);
@@ -106,7 +110,7 @@
     list-style: none;
   }
 
-  /* Logo image */
+  /* Imazhi i logos */
 
   .logo {
     width: 100%;
@@ -114,7 +118,7 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   
-  /* Background with js  */
+  /* Background me Javascript  */
 
   .home-bkg {
     background-color: var(--background);
@@ -155,7 +159,7 @@
     top: 450px;
   }
 
-  /* Three HR of headings(homepage) */
+  /* Tre headings(homepage) */
 
   .first-hr, .second-hr, .third-hr {
     width: 20%;
@@ -180,7 +184,7 @@
     top: 470px;
   }
 
-  /* Paragraphs of (homepage) */
+  /* Paragraf (homepage) */
 
   .p-about, .p-activity {
     font-size: 1.7vw;
@@ -208,7 +212,7 @@
     overflow: hidden;
   }
 
-  /* A fixed background with the staff content */
+  /* Nje background i fiksuar ne te cilin gjendet pjesa e stafit */
 
   .testimonals {
     padding: 80px 0;
@@ -256,13 +260,13 @@
     padding-top: 25px;
   }
 
-  .cto, .ceo { /* paragraphs that describes the staff */
+  .cto, .ceo { /* paragraf qe pershkruan stafin */
     font-size: 1.2vw;
     line-height: 30px;
     padding: 15px 200px 40px 200px;
   }
 
-  .job { /* job position */
+  .job { /* pozicioni i punes */
     font-weight: normal;
     font-style: italic;
   }
@@ -297,6 +301,7 @@
     backface-visibility: hidden;
     transition: transform 0.6s ease-in-out;
   }
+
   @media (prefers-reduced-motion: reduce) {
     .carousel-item {
       transition: none;
@@ -446,7 +451,7 @@
   
 
   .visually-hidden,
-.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  .visually-hidden-focusable:not(:focus):not(:focus-within) {
   position: absolute !important;
   width: 1px !important;
   height: 1px !important;
@@ -460,7 +465,7 @@
 
 /* Carousel (End) */
 
-/* slogan */
+/* slogani */
 .line-1{
   font-weight: 700;
   font-family: monospace;
@@ -478,7 +483,7 @@
   transform: translateY(-50%);    
 }
 
-/* Animation */
+/* Animacioni i sloganit me efektin typewriter */
 .anim-typewriter{
 animation: typewriter 4s steps(44) 1s 1 normal both,
            blinkTextCursor 500ms steps(49) infinite normal;
@@ -492,7 +497,7 @@ from{border-right-color: rgba(255,255,255,.75);}
 to{border-right-color: transparent;}
 }
 
-/* footer section */
+/* pjesa e footerit */
 
 .footer {
   background-color: var(--background);
@@ -501,12 +506,16 @@ to{border-right-color: transparent;}
   top: 500px;
   color: #fff;
 }
+
+/* imazhi i logos ne footer */
 .footer img {
   display: block;
   padding-top: 15px;
   margin-left: auto;
   margin-right: auto;
 }
+
+/* navigimi ne footer */
 .topnav {
   padding-top: 30px;
   padding-bottom: 20px;
@@ -520,14 +529,20 @@ to{border-right-color: transparent;}
   white-space: pre;
   content: "     |     ";
 }
+
+/* rrjetet sociale */
 .social-media {
   display: flex;
   justify-content: center;
 }
+
+/* imazhi i rrjeteve sociale */
 .fab {
   padding: 25px 40px 15px 40px;
   font-size: 30px;
 }
+
+/* copyright */
 .footer p {
   text-align: center;
   color: rgba(255,255,255,.75);
@@ -544,7 +559,7 @@ to{border-right-color: transparent;}
   margin-right: auto;
 }
 
-/* scroll to top button */
+/* buton qe te con ne fillim te faqes */
 .scrollBtn {
   display: none;
   position: fixed;
