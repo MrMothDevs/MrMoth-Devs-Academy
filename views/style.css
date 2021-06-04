@@ -21,7 +21,7 @@
     font-family: 'Ubuntu', sans-serif;
   }
 
-/* Butoni Dark Mode */
+  /* Ketu mund te vendosim te gjithe selektoret qe duam t'u ndryshojme ngjyren nen dark mode */
   .dark-mode{
     background-color: black;
     color: white;
@@ -75,51 +75,78 @@
     background-color: #fff;
   }
 
+  
   /* Navigimi */
-  .nav-bar {
+  .header {
     position: absolute;
     border: 1px solid transparent;
-    z-index: 1;
     max-width: 100%;
     height: auto;
+    z-index: 3;
   }
-
-
-
-  .main-nav {
+  
+  .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin: 0;
-    font-size: 1.75em;
+    padding: 1rem 1.5rem;
+    z-index: 3;
   }
   
   .fixed {
     position: fixed;
     top: 0;
-    width: 100%;
   }
-
-  /* links dhe lista */
-  .nav-links {
+  
+  .hamburger {
+    display: none;
+  }
+  
+  /* Pjeset e hambugerit (menu) */
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--navcolor);
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Listat e navigimit */
+  .nav-item {
+    list-style-type: none;
+    margin-left: 12rem;
+  }
+  
+  /* Links te navigimit */
+  .nav-link{
     text-decoration: none;
+    font-size: 1.75em;
+    font-weight: 400;
     color: var(--navcolor);
   }
   
-  .nav-list {
-    list-style: none;
+  /* Butoni i dark mode */
+  .switcher {
+    background-color: var(--navcolor);
+    height: 40px;
+    width: 48px;
   }
 
   /* Imazhi i logos */
-
   .logo {
-    width: 100%;
+    max-width: 50%;
     height: auto;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   
   /* Background me Javascript  */
-
   .home-bkg {
     background-color: var(--background);
     position: relative;
@@ -132,9 +159,7 @@
     height: 100vh;
   }
 
-
   /* MrMothDevsAcademy, Our Activity, Our Staff */
-
   .first-heading, .second-heading, .third-heading {
     font-weight: 700;
     font-size: 4vw;
@@ -160,7 +185,6 @@
   }
 
   /* Tre headings(homepage) */
-
   .first-hr, .second-hr, .third-hr {
     width: 20%;
     border: 2px solid var(--headingcolor);
@@ -185,7 +209,6 @@
   }
 
   /* Paragraf (homepage) */
-
   .p-about, .p-activity {
     font-size: 1.7vw;
     line-height: 36px;
@@ -213,7 +236,6 @@
   }
 
   /* Nje background i fiksuar ne te cilin gjendet pjesa e stafit */
-
   .testimonals {
     padding: 80px 0;
     background: url('images/bkg.jpg') no-repeat;
@@ -235,7 +257,6 @@
   }
 
   /* Staff part */
-  
  .container-staff {
     position: relative;
     width: 100%;
@@ -462,167 +483,176 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
-
 /* Carousel (End) */
+
 
 /* slogani */
 .line-1{
-  font-weight: 700;
-  font-family: monospace;
-  color: var(--navcolor);
-  text-shadow: 0 4px 4px rgba(0,0,0,.25);
-  position: relative;
-  top: 50%;  
-  width: 24em;
-  margin: 0 auto;
-  border-right: 2px solid rgba(255,255,255,.75);
-  font-size: 180%;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);    
-}
+    font-weight: 700;
+    font-family: monospace;
+    color: var(--navcolor);
+    text-shadow: 0 4px 4px rgba(0,0,0,.25);
+    position: relative;
+    top: 50%;  
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+  }
 
 /* Animacioni i sloganit me efektin typewriter */
-.anim-typewriter{
-animation: typewriter 4s steps(44) 1s 1 normal both,
-           blinkTextCursor 500ms steps(49) infinite normal;
-}
-@keyframes typewriter{
-from{width: 0;}
-to{width: 25.5em;}
-}
-@keyframes blinkTextCursor{
-from{border-right-color: rgba(255,255,255,.75);}
-to{border-right-color: transparent;}
-}
+  .anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+            blinkTextCursor 500ms steps(49) infinite normal;
+  }
+  @keyframes typewriter{
+  from{width: 0;}
+  to{width: 25.5em;}
+  }
+  @keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+  }
 
-/* pjesa e footerit */
 
-.footer {
-  background-color: var(--background);
-  max-width: 100%;
-  position: relative;
-  top: 500px;
-  color: #fff;
-}
+/* Pjesa e footerit */
+  .footer {
+    background-color: var(--background);
+    max-width: 100%;
+    position: relative;
+    top: 500px;
+    color: #fff;
+  }
 
-/* imazhi i logos ne footer */
-.footer img {
-  display: block;
-  padding-top: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  /* Imazhi i logos ne footer */
+  .footer img {
+    display: block;
+    padding-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-/* navigimi ne footer */
-.topnav {
-  padding-top: 30px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-.topnav a {
-  display: inline-block;
-  text-decoration: none;
-}
-.topnav a:not(:last-child):after {
-  white-space: pre;
-  content: "     |     ";
-}
+  /* Navigimi ne footer */
+  .topnav {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .topnav a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  .topnav a:not(:last-child):after {
+    white-space: pre;
+    content: "     |     ";
+  }
 
-/* rrjetet sociale */
-.social-media {
-  display: flex;
-  justify-content: center;
-}
+  /* Rrjetet sociale */
+  .social-media {
+    display: flex;
+    justify-content: center;
+  }
 
-/* imazhi i rrjeteve sociale */
-.fab {
-  padding: 25px 40px 15px 40px;
-  font-size: 30px;
-}
+  /* Imazhi i rrjeteve sociale */
+  .fab {
+    padding: 25px 40px 15px 40px;
+    font-size: 30px;
+  }
 
-/* copyright */
-.footer p {
-  text-align: center;
-  color: rgba(255,255,255,.75);
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.footer p a {
-  text-decoration: none;
-}
-.footer hr {
-  color: #36449B;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
+  /* copyright */
+  .footer p {
+    text-align: center;
+    color: rgba(255,255,255,.75);
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .footer p a {
+    text-decoration: none;
+  }
+  .footer hr {
+    color: #36449B;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-/* buton qe te con ne fillim te faqes */
-.scrollBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  font-size: 16px;
-  border: none;
-  line-height: 48px;
-  background-color: #1D2C87;
-  color: white;
-  cursor: pointer;
-  width: 48px;
-  border-radius: 50%;
-}
+  /* Buton qe te con ne fillim te faqes */
+  .scrollBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 16px;
+    border: none;
+    line-height: 48px;
+    background-color: #1D2C87;
+    color: white;
+    cursor: pointer;
+    width: 48px;
+    border-radius: 50%;
+  }
 
 .scrollBtn:hover {
   background-color: var(--backgroundark);
 }
-  @media only screen and (max-width: 768px) {
-    nav a {
-      display: none;
-    }
 
+/* Responsive part */
+  @media only screen and (max-width: 768px) {
     .logo {
      width: 70%;
      padding-top: 10px;
     }
 
-    .position {
-     position: relative;
-     top: -50px;
-     left: 350px;
+    .menu {
+      position: fixed;
+      left: -100%;
+      top: 6rem;
+      flex-direction: column;
+      background: rgba( 255, 255, 255, 0.25 );
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 4px );
+      -webkit-backdrop-filter: blur( 4px );
+      border-radius: 10px;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      z-index: 3;
     }
 
-    .hamburger-menu {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    height: 2.5rem;
-    width: 2.5rem;
-    cursor: pointer;
-    }
-  
-    .hamburger-menu .bar {
-     height: 5px;
-    background: var(--navcolor);
-    border-radius: 5px;
-    margin: 3px 0px;
-    transform-origin: right;
-    transition: all 0.5s;
+    .menu.active {
+        left: 0;
     }
 
-   .hamburger-menu:hover .top {
-    transform: rotate(-45deg);
+    .nav-item {
+        margin: 2.5rem 0;
     }
-    
-    .hamburger-menu:hover .middle {
-      opacity: 0;
+
+    .nav-link:hover {
+      color: black;
     }
-    
-    .hamburger-menu:hover .bottom {
-      transform: rotate(45deg);
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
     }
 
     .first-hr {
