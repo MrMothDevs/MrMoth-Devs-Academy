@@ -73,29 +73,41 @@
   }
   .dark-mode .scrollBtn:hover {
     background-color: #fff;
+    box-shadow: 0px 0px 7px 4px rgba(189,189,189,1);
   }
 
   
   /* Navigimi */
-  .header {
-    position: absolute;
-    border: 1px solid transparent;
-    max-width: 100%;
-    height: auto;
-    z-index: 3;
-  }
-  
   .navbar {
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: transparent;
+    border: none;
     padding: 1rem 1.5rem;
     z-index: 3;
+    width: 100%;
+    height: auto;
+    transition: all .5s;
   }
-  
-  .fixed {
+
+  /* ngjyre e re e navbarit ne scroll */
+  .navbar.active {
     position: fixed;
     top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 1rem 1.5rem;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    background: var(--headingcolor);
+    transition: all .5s;
   }
   
   .hamburger {
@@ -587,13 +599,14 @@
     bottom: 20px;
     right: 20px;
     z-index: 99;
-    font-size: 16px;
-    border: none;
-    line-height: 48px;
     background-color: #1D2C87;
     color: white;
+    font-size: 2.5rem;
+    border: none;
+    padding: 5px;
     cursor: pointer;
-    width: 48px;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
   }
 
