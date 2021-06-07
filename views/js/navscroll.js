@@ -1,11 +1,4 @@
-const myNav = document.querySelector('.navbar')
-
-window.onscroll = function(){
-    var top = window.scrollY;
-    console.log(top);
-    if (top >= 50) {
-        myNav.classList.add('active')
-    } else {
-        myNav.classList.add('active');
-    }
-}
+window.onscroll = () => {
+    const nav = document.querySelector('#navbar');
+    if(this.scrollY <= 10) nav.className = ''; else nav.className = 'scroll';
+  };

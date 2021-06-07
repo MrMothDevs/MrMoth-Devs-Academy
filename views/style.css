@@ -94,20 +94,8 @@
   }
 
   /* ngjyre e re e navbarit ne scroll */
-  .navbar.active {
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: transparent;
-    border: none;
-    padding: 1rem 1.5rem;
-    z-index: 3;
-    width: 100%;
-    height: auto;
+  .navbar.scroll {
     background: var(--headingcolor);
-    transition: all .5s;
   }
   
   .hamburger {
