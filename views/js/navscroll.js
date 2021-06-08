@@ -1,4 +1,12 @@
-window.onscroll = () => {
-    const nav = document.querySelector('#navbar');
-    if(this.scrollY <= 10) nav.className = ''; else nav.className = 'scroll';
-  };
+$(document).ready(function(){
+  $(window).scroll(function(){
+  	var scroll = $(window).scrollTop();
+	  if (scroll > 300) {
+	    $(".navbar").css("background" , "#0F1C70");
+	  }
+
+	  else{
+		  $(".navbar").css("background" , "transparent");  	
+	  }
+  })
+})

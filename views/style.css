@@ -23,11 +23,11 @@
 
   /* Ketu mund te vendosim te gjithe selektoret qe duam t'u ndryshojme ngjyren nen dark mode */
   .dark-mode{
-    background-color: black;
+    background-color: var(--backgroundark);
     color: white;
   }
   .dark-mode .first-heading{
-    background-color: black;
+    background-color: var(--backgroundark);
     color: white;
   }
   .dark-mode .p-about {
@@ -47,15 +47,15 @@
     border: 2px solid #ffffff;
   }
   .dark-mode .second-heading{
-    background-color: black;
+    background-color: var(--backgroundark);
     color: white;
   }
   .dark-mode .p-activity{
-    background-color: black;
+    background-color: var(--backgroundark);
     color: white;
   }
   .dark-mode .third-heading{
-    background-color: black;
+    background-color: var(--backgroundark);
     color: white;
   }
   .dark-mode .home-bkg {
@@ -69,7 +69,7 @@
   }
   .dark-mode .scrollBtn {
     background-color: #fff;
-    color: #000;
+    color: var(--backgroundark);
   }
   .dark-mode .scrollBtn:hover {
     background-color: #fff;
@@ -93,11 +93,6 @@
     transition: all .5s;
   }
 
-  /* ngjyre e re e navbarit ne scroll */
-  .navbar.scroll {
-    background: var(--headingcolor);
-  }
-  
   .hamburger {
     display: none;
   }
