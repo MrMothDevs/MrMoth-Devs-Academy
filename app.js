@@ -18,6 +18,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'views')));
 
 app.use('/', indexRouter);
+app.use('*', indexRouter);
+app.use('/signup', indexRouter);
+app.use('/profile', indexRouter);
+app.use('/courses', indexRouter);
+app.use('/contact', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
