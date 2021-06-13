@@ -1,3 +1,5 @@
+// Hamburger menu(navbar responsive) me ane te komandave ne javascript tre vizat e menuse hapen dhe mbyllen
+
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".menu");
 const navLink = document.querySelectorAll(".nav-link");

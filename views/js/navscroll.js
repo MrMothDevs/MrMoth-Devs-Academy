@@ -1,3 +1,5 @@
+// JQuery per te ndryshuar ngjyren e navbarit ne scroll
+
 $(document).ready(function(){
   $(window).scroll(function(){
   	var scroll = $(window).scrollTop();

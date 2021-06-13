@@ -1,3 +1,4 @@
+// Funksioni per butonin qe te con ne fillim te faqes 
 var scrollBtn = document.getElementById("scrollBtn");
 
 window.onscroll = function() {
