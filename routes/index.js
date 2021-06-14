@@ -25,6 +25,11 @@ router.get('/contact', function(req, res, next) {
   res.render('contactus');
 });
 
+//Get the login page
+router.get('/login', function(req, res, next){
+  res.render('login')
+})
+
   //Get the 404 page
   router.get('*', function(req, res, next) {
     res.render('404');
