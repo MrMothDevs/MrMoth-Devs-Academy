@@ -70,11 +70,14 @@
             <input type="text" name="username" placeholder="Full Name" autocomplete="username" required>
             <label for="email"></label>
             <input type="email" name="email" placeholder="Email address" required>
-            <label for="birthday">Birthday:</label>
-            <input type="date" class="birthday" name="birthday" placeholder="birthday" required>
-            <input type="radio" class="gender" name="male" value="male">Male<br>
-            <input type="radio" class="gender" name="female" value="female">Female<br>
-            <input type="radio" class="gender" name="other" value="other">Other
+            <label for="birthday"></label>
+            <input type="text" class="birthday" name="birthday" placeholder="Birthday" required onfocus="(this.type='date')" onblur="(this.type='text')">
+            <select name="gender" class="gender" required>
+              <option value="" selected disabled hidden>Gender</option>
+              <option value="male" class="gender-option">Male</option>
+              <option value="female" class="gender-option">Female</option>
+              <option value="other" class="gender-option">Other</option>
+            </select>
             <label for="passw"></label>
             <input type="password" name="passw" placeholder="Password" minlength="8" id="passw" required>
             <i id="passeye" class="far fa-eye" onclick="viewPassword()"></i>
