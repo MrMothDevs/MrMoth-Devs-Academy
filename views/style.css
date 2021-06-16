@@ -20,6 +20,72 @@
     font-family: 'Ubuntu', sans-serif;
   }
 
+  /* Containeri per backgroundin e spinerit */
+  .loader-container {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity .5s;
+    background: var(--navcolor);
+    z-index: 999;
+  }
+
+  /* Pozicionimi i mesazhit dhe spinerit */
+  .loader-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /* Spineri */
+  .loader {
+    width: 80px;
+    height: 80px;
+  }
+
+  .loader::after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid #000;
+    border-color: #000 transparent #000 transparent;
+    animation: loader 1.2s infinite;
+  }
+
+  /* Mesazhi Loading */
+  .loader-message {
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+  }
+
+  /* Animacioni i spinerit */
+  @keyframes loader {
+     0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+     }
+     50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+     100% {
+      transform: rotate(1800deg);
+    }
+  }
+
   h1 {
   font-size: 36px;
   }
@@ -146,7 +212,6 @@
   }
 
   /*sign up navbar */
-
   .colored {
     position: relative;
     top: 0;
@@ -305,10 +370,10 @@
 
   .founder-image, .co-founder-image {
     display: block;
-    margin: auto;
+    margin: auto;    
     width: 181px;
     height: 180.24px;
-    border-radius: 105.824px;
+    border-radius: 50%;
     border: 6px solid rgba(255, 255, 255, 0.13);
   }
 
@@ -328,6 +393,7 @@
   }
 
   .job { /* pozicioni i punes */
+    font-size: 1em;
     font-weight: normal;
     font-style: italic;
   }
@@ -529,7 +595,6 @@
 /* slogani */
 .line-1{
     font-family: 'Segoe UI', sans-serif;
-    font-weight: 700;
     color: var(--navcolor);
     text-shadow: 0 4px 4px rgba(0,0,0,.25);
     position: relative;
@@ -631,10 +696,12 @@
     padding-top: 15px;
     padding-bottom: 15px;
   }
+
   .footer p a {
     text-decoration: none;
     color: var(--navcolor);
   }
+
   .footer hr {
     color: #36449B;
     width: 50%;
@@ -725,6 +792,7 @@
       -webkit-transition-timing-function: ease-out;
       transition-timing-function: ease-out;
     }
+
     .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
       left: 0;
       right: 0;
@@ -1027,7 +1095,11 @@
   
   /* Dark Mode Switch End */
 
+
+
+
   /* sign up (start) */
+
   /* i gjithe backgroundi i formit */
   .form-section {
     padding: 40px;
@@ -1084,6 +1156,7 @@
     text-align: center;
   }
 
+  /* emri mbiemri passwordi ditelindja dhe gjinia */
   input[type="text"], input[type="email"],  input[type="password"], input[type="date"], .gender {
     width: 100%;
     height: 50px;
@@ -1093,12 +1166,11 @@
     padding: 10px 16px 10px 14px;
     margin-top: 15px;
   }
+
+  /* datelindja */
   input[type="date"] {
     text-transform: uppercase;
     color: #1D2C87;
-  }
-  .gender-option:hover {
-    background-color: rgba(0, 0, 0, 0.1);
   }
 
   /* kutiza e check-ut */
@@ -1136,8 +1208,14 @@
     background: #081358;
     text-decoration: none;
   }
+
+  /* teksti i harrimit te paswordit */
   .forgot-pass {
     margin-top: 5px;
   }
-
+  option:hover {
+    background-color: green;
+  }
   /* sign up (end) */
+
+

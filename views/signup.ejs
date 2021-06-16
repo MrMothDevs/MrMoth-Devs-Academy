@@ -72,7 +72,8 @@
             <input type="email" name="email" placeholder="Email address" required>
             <label for="birthday"></label>
             <input type="text" class="birthday" name="birthday" placeholder="Birthday" required onfocus="(this.type='date')" onblur="(this.type='text')">
-            <select name="gender" class="gender" required>
+            <select name="gender" class="gender" required onfocus='this.size=20;' onblur='this.size=0;' 
+            onchange='this.size=1; this.blur();'>
               <option value="" selected disabled hidden>Gender</option>
               <option value="male" class="gender-option">Male</option>
               <option value="female" class="gender-option">Female</option>
