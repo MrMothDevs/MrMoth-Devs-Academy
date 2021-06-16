@@ -1192,7 +1192,7 @@
   }
 
   /* butoni i sign up ne form */
-  input[type="button"] {
+  input[type="submit"] {
     border-radius: 9px;
     border: none;
     outline: none;
@@ -1204,7 +1204,7 @@
     margin: 20px auto 20px;
   }
   
-  input[type="button"]:hover {
+  input[type="submit"]:hover {
     background: #081358;
     text-decoration: none;
   }
