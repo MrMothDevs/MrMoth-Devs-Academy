@@ -27,10 +27,15 @@
     <!-- Links -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- CDN per ikonat e rrjeteve sociale -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
+    <!-- Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
 
 
     <!-- Butoni i dark mode -->
@@ -42,8 +47,22 @@
     </script>
 
     <title>MDA - MrMoth Devs Academy</title>
-</head>
-<body>
+    <!-- Kodi per navbarin ne scroll -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/navscroll.js"></script>
+  </head>
+  <body>
+
+    <!-- Preloader per faqen -->
+    <div class="loader-container">
+      <div class="loader-content">
+          <div class="loader"></div>
+          <div class="loader-message">
+              <span>Loading...</span>
+          </div>
+      </div>
+  </div>
+    
     <!-- Buton qe te con ne fillim te faqes (start)-->
     <button onclick="topFunction()" id="scrollBtn" title="Go to top" class="scrollBtn">
       <svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -51,26 +70,29 @@
       </svg>
     </button>  
     
+    
         <!-- Navigimi (Start)-->
         <header>
           <nav id="navbar" class="navbar">
               <img src="images/mda.png" alt="MDA logo" class="logo">
               <ul class="menu">
                   <li class="nav-item">
-                      <a href="/" class="nav-link hvr-underline-from-center">Home</a>
+                      <a href="/" class="nav-link hvr-underline-from-center" rel="noopener">Home</a>
                   </li>
                   <li class="nav-item">
-                      <a href="courses" class="nav-link hvr-underline-from-center">Courses</a>
+                      <a href="courses" class="nav-link hvr-underline-from-center" rel="noopener">Courses</a>
                   </li>
                   <li class="nav-item">
-                      <a href="contact" class="nav-link hvr-underline-from-center">Contact Us</a>
+                      <a href="contact" class="nav-link hvr-underline-from-center" rel="noopener">Contact Us</a>
                   </li>
                   <li class="nav-item">
-                      <a href="signup" class="nav-link hvr-underline-from-center">Sign Up</a>
+                    <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
                   </li>
               </ul>
               <!-- Butoni i dark mode-->
-              <button onclick="lol()" class="switcher"></button>
+              <label for="switch">
+              <input onclick="lol()" type="checkbox" name="checkbox" class="switch">
+              </label>
 
               <!-- Butoni i animacionit te navigimit responsive-->
               <div class="hamburger">
@@ -91,33 +113,53 @@
 </section>
 <!-- Background me Particles JS (End)-->
 
+          <!-- Form (start) -->
+          <div class="form-section">
+            <div class="form">
+              <form>
+                 <h1>Get in touch</h1>
+                 <label for="fname"></label>
+                 <input type="text" name="fname" placeholder="First Name" required>
+                 <label for="lname"></label>
+                 <input type="text" name="lname" placeholder="Last Name" required>
+                 <label for="email"></label>
+                 <input type="email" name="email" placeholder="Email" required>
+                 <textarea name="message" placeholder="Write a message..."></textarea>
+                 <input type="submit" value="Submit">
+             </form>
+           </div>
+         </div>
+         <!-- Form (end) -->
             
             <!-- Footer (start) -->
-            <footer class="footer">
+            <footer class="footer footer-contact">
               <img src="images/mda.png" alt="logo" class="footer-logo">
-              <section class="topnav">
-                <a href="#">Home</a>
-                <a href="#">Courses</a>
-                <a href="#">Contact Us</a>
-                <a href="#">Sign Up</a>
+              <section class="bottom-nav">
+                <a href="/" rel="noopener">Home</a>
+                <a href="courses" rel="noopener">Courses</a>
+                <a href="contact" rel="noopener">Contact Us</a>
+                <a href="signup" rel="noopener">Sign Up</a>
               </section>
-              <section class="social-media">
-                <a href="https://github.com/MrMothDevs" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.youtube.com/channel/UCnPiMm-Jp4P5B2dy7SstDjA" target="_blank"><i class="fab fa-youtube"></i></a>
+              <!-- Rrjetet sociale -->
+              <section class="social">
+                <a href="https://github.com/MrMothDevs" target="_blank" title="Github/MrMothDevs" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.youtube.com/channel/UCnPiMm-Jp4P5B2dy7SstDjA" target="_blank" title="Youtube/MrMoth" rel="noopener"><i class="fab fa-youtube"></i></a>
                 <i class="fab fa-twitter"></i>
-                <a href="https://discord.io/remixor" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://discord.io/remixor" target="_blank" rel="noopener"><i class="fab fa-discord" title="Discord Server/Remixor"></i></a>
               </section>
               <hr>
-              <p>&copy; Copyright by <strong><a href="#home" title="Go to Top">MDA</a></strong> 2021. All Rights Reversed</p>
+              <p>&copy; Copyright by <strong><a href="#home" title="Go to Top" rel="noopener">MDA</a></strong> 2021. All Rights Reversed</p>
             </footer>
             <!-- Footer (start) -->
             
+
+            <!-- JavaScript -->
+
+            <!-- JS per funksionin e preloaderit -->
+            <script src="js/loader.js"></script>
             
             <script src="js/particles.js"></script>
             <script src="js/particles.app.js"></script>
-
-            <!-- Js per funskionin e navbarit me ngjyre tjeter ne scroll -->
-            <script src="js/navscroll.js"></script>
             
             <!-- JS per funksionin e butonit qe te con ne fillim te faqes -->
             <script src="js/scroll.js"></script>
@@ -125,10 +167,7 @@
             <!-- Js per funksionin e shfaqjes se navigimit ne mobile -->
             <script src="js/navbar.js"></script>
 
-            
-
             <!-- Carousel JS -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
           </body>
           </html>
-          

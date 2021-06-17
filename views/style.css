@@ -1213,8 +1213,23 @@
   .forgot-pass {
     margin-top: 5px;
   }
-  option:hover {
-    background-color: green;
+
+  /* ketu mund te vendosim mesazhin qe do nisim ne contact form */
+  textarea {
+    width: 100%;
+    height: 120px;
+    font-size: 15px;
+    font-family: 'Ubuntu';
+    border-radius: 5px;
+    border: 1px solid #96a0a9;
+    padding: 10px 16px 10px 14px;
+    margin-top: 15px;
+  }
+
+  /* per te rregulluar pozicionin e footerit ne contact form */
+  .footer-contact {
+    position: relative;
+    top: 30px;
   }
   /* sign up (end) */
 

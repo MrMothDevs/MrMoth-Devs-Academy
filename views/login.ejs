@@ -47,6 +47,15 @@
         <title>MDA - MrMoth Devs Academy</title>
 </head>
 <body>
+      <!-- Preloader per faqen -->
+      <div class="loader-container">
+        <div class="loader-content">
+            <div class="loader"></div>
+            <div class="loader-message">
+                <span>Loading...</span>
+            </div>
+        </div>
+    </div>
         
             <!-- Navigimi (Start)-->
             <header>
@@ -76,7 +85,7 @@
             Remember me
             </label>
             <p>By clicking Login, you agree to our <a href="#"> Terms & Policy</a>.</p>
-            <input type="button" value="Login">
+            <input type="submit" value="Login">
             <p>Don't have an account? <a href="signup">Sign Up</a> NOW!</p>
             <p class="forgot-pass">Forgot <a href="#">password?</a></p>
         </form>
@@ -86,6 +95,9 @@
 
     <!-- Javascript per funksionin e visibility ne password -->
     <script src="js/password.js"></script>
+
+    <!-- JS per funksionin e preloaderit -->
+    <script src="js/loader.js"></script>
 </body>
 </html>
           
