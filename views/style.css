@@ -30,7 +30,7 @@
     height: 100%;
     opacity: 1;
     transition: opacity .5s;
-    background: var(--navcolor);
+    background: #A4A4A4;
     z-index: 999;
   }
 
@@ -371,8 +371,8 @@
   .founder-image, .co-founder-image {
     display: block;
     margin: auto;    
-    width: 181px;
-    height: 180.24px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 6px solid rgba(255, 255, 255, 0.13);
   }
