@@ -1,116 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Meta tags -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="title" content="MDA - MrMoth Devs Academy">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A Professional Academy that will be with you in your code journey">
-    <meta name="keywords" content="Academy, Professional, Coding, Programming">
-    <meta name="author" content="MrMothDevs">
+   <head>
+      <!-- Meta tags -->
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="title" content="MDA - MrMoth Devs Academy">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="A Professional Academy that will be with you in your code journey">
+      <meta name="keywords" content="Academy, Professional, Coding, Programming">
+      <meta name="author" content="MrMothDevs">
+     
+      <!-- Open Graph / Facebook -->
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="">
+      <meta property="og:title" content="MDA - MrMoth Devs Academy">
+      <meta property="og:description" content="A Professional Academy that will be with you in your code journey">
+      <meta property="og:image" content="">
+      
+      <!-- Twitter -->
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="">
+      <meta property="twitter:title" content="MDA - MrMoth Devs Academy">
+      <meta property="twitter:description" content="A Professional Academy that will be with you in your code journey">
+      <meta property="twitter:image" content="">
+      
+      <!-- Links -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     
+      <!-- Icon -->
+      <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+      <link rel="manifest" href="images/favicon/site.webmanifest">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:title" content="MDA - MrMoth Devs Academy">
-    <meta property="og:description" content="A Professional Academy that will be with you in your code journey">
-    <meta property="og:image" content="">
+      <!-- Butoni i dark mode -->
+      <script>
+         function lol() {
+             let element = document.body;
+             element.classList.toggle("dark-mode");
+           }
+      </script>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="">
-    <meta property="twitter:title" content="MDA - MrMoth Devs Academy">
-    <meta property="twitter:description" content="A Professional Academy that will be with you in your code journey">
-    <meta property="twitter:image" content="">
-    
-    <!-- Links -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <title>MDA - MrMoth Devs Academy</title>
+   </head>
+   <body>
 
-    <!-- Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="images/favicon/site.webmanifest">
-
-     <!-- Butoni i dark mode -->
-     <script>
-        function lol() {
-            let element = document.body;
-            element.classList.toggle("dark-mode");
-          }
-        </script>
-    
-        <title>MDA - MrMoth Devs Academy</title>
-</head>
-<body>
       <!-- Preloader per faqen -->
       <div class="loader-container">
-        <div class="loader-content">
+         <div class="loader-content">
             <div class="loader"></div>
             <div class="loader-message">
-                <span>Loading...</span>
+               <span>Loading...</span>
             </div>
-        </div>
-    </div>
-        
-            <!-- Navigimi (Start)-->
-            <header>
-              <nav class="navbar colored">
-                  <a href="/">
-                  <img src="images/mda.png" alt="MDA logo" class="logo">
-                 </a>
-                  <!-- Butoni i dark mode-->
-                  <input onclick="lol()" type="checkbox" name="checkbox" class="switch">
-              </nav>
-            </header>
-            <!-- Navigimi (End)-->
-
-          <!-- Form (start) -->
-    <div class="form-section">
-       <div class="form">
-         <form method="POST" action="/signup">
-            <h1>Create your accoount today</h1>
-            <p>To stick together with a source of quality</p>
-            <label for="name"></label>
-            <input type="text" name="username" placeholder="Full Name" autocomplete="username" required>
-            <label for="email"></label>
-            <input type="email" name="email" placeholder="Email address" required>
-            <label for="birthday"></label>
-            <input type="text" class="birthday" name="birthday" placeholder="Birthday" required onfocus="(this.type='date')" onblur="(this.type='text')">
-            <select name="gender" class="gender" required>
-              <option value="" selected disabled hidden>Gender</option>
-              <option value="male" class="gender-option">Male</option>
-              <option value="female" class="gender-option">Female</option>
-              <option value="other" class="gender-option">Other</option>
-            </select>
-            <label for="password"></label>
-            <input type="password" name="password" placeholder="Password" minlength="8" id="passw" required>
-            <i id="passeye" class="far fa-eye" onclick="viewPassword()"></i>
-            <label for="repeat"></label>
-            <input type="password" name="passw-repeat" placeholder="Repeat password" min-length="8" id="repeat-passw" required> 
-            <i id="repeat-eye" class="far fa-eye" onclick="repeatPass()"></i>
-            <label for="check" class="remember">
-            <input type="checkbox" name="remember" class="remember-check" checked>
-            Remember me
-            </label>
-            <p>By creating this account, you agree to our <a href="#"> Terms & Policy</a>.</p>
-            <input type="submit" value="Sign Up">
-            <p>Already have an account? <a href="login">Login</a> NOW!</p>
-        </form>
+         </div>
       </div>
-    </div>
-    <!-- Form (end) -->
 
-    <!-- Javascript per funksionin e visibility ne password -->
-    <script src="js/password.js"></script>
+      <!-- Navigimi (Start)-->
+      <header>
+         <nav class="navbar colored">
+            <a href="/">
+            <img src="images/mda.png" alt="MDA logo" class="logo">
+            </a>
+            <!-- Butoni i dark mode-->
+            <input onclick="lol()" type="checkbox" name="checkbox" class="switch">
+         </nav>
+      </header>
+      <!-- Navigimi (End)-->
 
+      <!-- Form (start) -->
+      <div class="form-section">
+         <div class="form">
+            <form method="POST" action="/signup">
+               <h1>Create your accoount today</h1>
+               <p>To stick together with a source of quality</p>
+               <label for="name"></label>
+               <input type="text" name="username" placeholder="Full Name" autocomplete="username" required>
+               <label for="email"></label>
+               <input type="email" name="email" placeholder="Email address" required>
+               <label for="birthday"></label>
+               <input type="text" class="birthday" name="birthday" placeholder="Birthday" required onfocus="(this.type='date')" onblur="(this.type='text')">
+               <select name="gender" class="gender" required>
+                  <option value="" selected disabled hidden>Gender</option>
+                  <option value="male" class="gender-option">Male</option>
+                  <option value="female" class="gender-option">Female</option>
+                  <option value="other" class="gender-option">Other</option>
+               </select>
+               <label for="password"></label>
+               <input type="password" name="password" placeholder="Password" minlength="8" id="passw" required>
+               <i id="passeye" class="far fa-eye" onclick="viewPassword()"></i>
+               <label for="repeat"></label>
+               <input type="password" name="passw-repeat" placeholder="Repeat password" min-length="8" id="repeat-passw" required> 
+               <i id="repeat-eye" class="far fa-eye" onclick="repeatPass()"></i>
+               <label for="check" class="remember">
+               <input type="checkbox" name="remember" class="remember-check" checked>
+               Remember me
+               </label>
+               <p>By creating this account, you agree to our <a href="#"> Terms & Policy</a>.</p>
+               <input type="submit" value="Sign Up">
+               <p>Already have an account? <a href="login">Login</a> NOW!</p>
+            </form>
+         </div>
+      </div>
+      <!-- Form (end) -->
 
-    <!-- JS per funksionin e preloaderit -->
-    <script src="js/loader.js"></script>
-</body>
+      <!-- Javascript per funksionin e visibility ne password -->
+      <script src="js/password.js"></script>
+
+      <!-- JS per funksionin e preloaderit -->
+      <script src="js/loader.js"></script>
+   </body>
 </html>
-          
