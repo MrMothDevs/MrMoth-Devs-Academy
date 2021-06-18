@@ -72,13 +72,13 @@
           <!-- Form (start) -->
     <div class="form-section login">
        <div class="form">
-         <form>
+         <form method="POST" action="/login">
             <h1>Login to your account</h1>
             <p>To stick together with a source of quality</p>
             <label for="name"></label>
             <input type="text" name="username" placeholder="Username" autocomplete="username" required>
-            <label for="passw"></label>
-            <input type="password" name="passw" placeholder="Password" minlength="8" id="passw" required>
+            <label for="password"></label>
+            <input type="password" name="password" placeholder="Password" minlength="8" id="passw" required>
             <i id="passeye" class="far fa-eye" onclick="viewPassword()"></i>
             <label for="check" class="remember">
             <input type="checkbox" name="remember" class="remember-check" checked>

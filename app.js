@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var app = express();
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -33,22 +34,25 @@ mongoose.connect("mongodb+srv://mda:mdaforlife@mda.su5xl.mongodb.net/mda?retryWr
   .catch((err) => {
     console.log(err);
   });
-
+  const session = require('express-session');
+  app.use(session({
+    secret: 'verysecretlmfaoo3294i2034u92hr43u92',
+    resave: false,
+    saveUninitialized: false,
+    expires: 300000,
+  }));
+  
 app.use('/', indexRouter);
-app.use('*', indexRouter);
-app.use('/signup', indexRouter);
-app.use('/profile', indexRouter);
-app.use('/courses', indexRouter);
-app.use('/contact', indexRouter);
-app.use('/login', indexRouter);
 app.use('/users', usersRouter);
+
+
 
 // Post Requests //
 app.post('/signup', async(req, res) => {
-  const { email, password } = req.body;
+  const { email, password, username, birthday, gender } = req.body;
 
     // check for missing fields
-    if (!email || !password) {
+    if (!email || !password || !username || !birthday || !gender) {
       res.send("Please enter all the fields");
       return;
     }
@@ -62,7 +66,7 @@ app.post('/signup', async(req, res) => {
 
     // lets hash the password
     const hashedPassword = await bcrypt.hash(password, 12);
-    const latestUser = new User({ email, password: hashedPassword });
+    const latestUser = new User({ email, password: hashedPassword, username, birthday, gender });
 
     latestUser
       .save()
@@ -73,11 +77,41 @@ app.post('/signup', async(req, res) => {
       .catch((err) => console.log(err));
 })  
 
-app.post('/login', (req, res) => {
+app.post('/login', async(req, res) => {
+  if (req.session.user){
+    return res.redirect("/"); 
+  }
+    const { username, password } = req.body;
 
+    // check for missing fields
+    if (!username || !password) {
+      res.send("Please enter all the fields");
+      return;
+    }
+
+    const doesUserExits = await User.findOne({ username });
+
+    if (!doesUserExits) {
+      res.send("invalid username or password");
+      return;
+    }
+
+    const doesPasswordMatch = await bcrypt.compare(
+      password,
+      doesUserExits.password
+    );
+
+    if (!doesPasswordMatch) {
+      res.send("invalid useranme or password");
+      return;
+    }
+
+    // else logged in
+    req.session.user = {
+      username,
+    };
+    res.redirect("/");
 })  
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

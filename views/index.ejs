@@ -87,7 +87,11 @@
                   <a href="contact" class="nav-link hvr-underline-from-center" rel="noopener">Contact Us</a>
                </li>
                <li class="nav-item">
-                  <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
+                  <% if (!username){ %>
+                     <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
+                  <% } else { %>
+                        <a href="logout" role="button" class="signup-btn" rel="noopener">Log Out</a>
+                   <% } %> 
                </li>
             </ul>
             <!-- Butoni i dark mode-->

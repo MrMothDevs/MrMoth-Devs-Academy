@@ -19,8 +19,11 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "cookie-sessions": "0.0.2",
     "express": "^4.17.1",
     "express-generator": "^4.16.1",
+    "express-session": "^1.17.2",
     "http-errors": "^1.8.0",
     "mongoose": "^5.12.14",
     "morgan": "^1.10.0",
