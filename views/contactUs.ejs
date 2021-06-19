@@ -71,6 +71,18 @@
             <path d="M12 10.545L7.176 15.37a1.86 1.86 0 11-2.631-2.631l6.077-6.077a1.949 1.949 0 012.756 0l6.077 6.077a1.86 1.86 0 11-2.631 2.63L12 10.546z" fill="currentcolor" fill-rule="evenodd"></path>
          </svg>
       </button>
+      <!-- Buton qe te con ne fillim te faqes (end)-->
+
+      <!-- Butoni i Dark Mode (start) -->
+      <div id="color-switcher">
+         <div>      
+            <input onclick="lol()" type="checkbox" name="checkbox" class="switch">
+         </div>
+         <div class="bottom">
+             <a href="#" class="color-link"><i class="fa fa-chevron-right"></i></a>
+         </div>
+     </div>
+     <!-- Butoni i Dark Mode (end) -->
 
       <!-- Navigimi (Start)-->
       <header>
@@ -90,10 +102,7 @@
                   <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
                </li>
             </ul>
-            <!-- Butoni i dark mode-->
-            <label for="switch">
-            <input onclick="lol()" type="checkbox" name="checkbox" class="switch">
-            </label>
+
             <!-- Butoni i animacionit te navigimit responsive-->
             <div class="hamburger">
                <span class="bar"></span>
@@ -153,11 +162,16 @@
       </footer>
       <!-- Footer (start) -->
 
+      
       <!-- JavaScript -->
 
       <!-- JS per funksionin e preloaderit -->
       <script src="js/loader.js"></script>
 
+      <!-- JS per funksionin e shfaqjes se butonit dark mode -->
+      <script src="js/switcher.js"></script>
+
+      <!-- JS per backgroundin -->
       <script src="js/particles.js"></script>
       <script src="js/particles.app.js"></script>
 

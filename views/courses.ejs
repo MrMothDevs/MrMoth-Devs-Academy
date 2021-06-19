@@ -9,35 +9,35 @@
       <meta name="description" content="A Professional Academy that will be with you in your code journey">
       <meta name="keywords" content="Academy, Professional, Coding, Programming">
       <meta name="author" content="MrMothDevs">
-
+    
       <!-- Open Graph / Facebook -->
       <meta property="og:type" content="website">
       <meta property="og:url" content="">
       <meta property="og:title" content="MDA - MrMoth Devs Academy">
       <meta property="og:description" content="A Professional Academy that will be with you in your code journey">
       <meta property="og:image" content="">
-
+     
       <!-- Twitter -->
       <meta property="twitter:card" content="summary_large_image">
       <meta property="twitter:url" content="">
       <meta property="twitter:title" content="MDA - MrMoth Devs Academy">
       <meta property="twitter:description" content="A Professional Academy that will be with you in your code journey">
       <meta property="twitter:image" content="">
-
+     
       <!-- Links -->
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-      
+     
       <!-- CDN per ikonat e rrjeteve sociale -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
       <link rel="stylesheet" href="style.css">
-      
+     
       <!-- Icon -->
       <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
       <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
       <link rel="manifest" href="images/favicon/site.webmanifest">
-      
+     
       <!-- Butoni i dark mode -->
       <script>
          function lol() {
@@ -45,13 +45,11 @@
              element.classList.toggle("dark-mode");
            }
       </script>
-      
       <title>MDA - MrMoth Devs Academy</title>
-      
+
       <!-- Kodi per navbarin ne scroll -->
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
       <script src="js/navscroll.js"></script>
-  
    </head>
    <body>
 
@@ -71,6 +69,18 @@
             <path d="M12 10.545L7.176 15.37a1.86 1.86 0 11-2.631-2.631l6.077-6.077a1.949 1.949 0 012.756 0l6.077 6.077a1.86 1.86 0 11-2.631 2.63L12 10.546z" fill="currentcolor" fill-rule="evenodd"></path>
          </svg>
       </button>
+      <!-- Buton qe te con ne fillim te faqes (end)-->
+
+      <!-- Butoni i Dark Mode (start) -->
+      <div id="color-switcher">
+         <div>      
+            <input onclick="lol()" type="checkbox" name="checkbox" class="switch">
+         </div>
+         <div class="bottom">
+            <a href="#" class="color-link"><i class="fa fa-chevron-right"></i></a>
+         </div>
+      </div>
+      <!-- Butoni i Dark Mode (end) -->
 
       <!-- Navigimi (Start)-->
       <header>
@@ -90,10 +100,6 @@
                   <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
                </li>
             </ul>
-            <!-- Butoni i dark mode-->
-            <label for="switch">
-            <input onclick="lol()" type="checkbox" name="checkbox" class="switch">
-            </label>
             <!-- Butoni i animacionit te navigimit responsive-->
             <div class="hamburger">
                <span class="bar"></span>
@@ -114,36 +120,146 @@
       <!-- Background me Particles JS (End)-->
 
       <!-- Courses (start)-->
-
       <section class="course">
-        <h1 class="heading-course">Our Courses</h1>
-        <div class="box-container">
-          <div class="box">
-            <img src="" alt="">
-            <h3 class="price">$50</h3>
-            <div class="content">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star half"></i>
+         <h1 class="heading-course">Our Courses</h1>
+         <hr class="courses-hr">
+         <div class="box-container">
+            <div class="box">
+               <img src="images/bkg.jpg" alt="" width="700px" height="525px">
+               <h3 class="price">$50</h3>
+               <div class="content">
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half"></i>
+                  </div>
+                  <a href="#" class="title">Learn FrontEnd</a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quam tortor. Integer egestas, diam ut volutpat convallis, ex erat.</p>
+                  <div class="info">
+                     <h3> <i class="far fa-clock"></i> 2 hours </h3>
+                     <h3> <i class="far fa-calendar-alt"></i> 6 months </h3>
+                     <h3> <i class="fas fa-book"></i> 12 modules </h3>
+                  </div>
+               </div>
             </div>
-            <a href="" class="title">Learn FrontEnd</a>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur illum qui explicabo architecto illo, 
-              deserunt eum earum assumenda eos atque ratione quos nisi quas, cupiditate temporibus, iste libero esse! Reiciendis.</p>
-              <div class="info">
-                <h3> <i class="far fa-clock"></i> 2 hours </h3>
-                <h3> <i class="far fa-calendar-alt"></i> 6 months </h3>
-                <h3> <i class="fas fa-book"></i> 12 modules </h3>
-              </div>
-          </div>
-        </div>
+            <!-- kursi 2-->
+            <div class="box">
+               <img src="images/bkg.jpg" alt="" width="700px" height="525px">
+               <h3 class="price">$50</h3>
+               <div class="content">
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half"></i>
+                  </div>
+                  <a href="#" class="title">Learn FrontEnd</a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quam tortor. Integer egestas, diam ut volutpat convallis, ex erat.</p>
+                  <div class="info">
+                     <h3> <i class="far fa-clock"></i> 2 hours </h3>
+                     <h3> <i class="far fa-calendar-alt"></i> 6 months </h3>
+                     <h3> <i class="fas fa-book"></i> 12 modules </h3>
+                  </div>
+               </div>
+            </div>
+
+            <!-- kursi 3-->
+            <div class="box">
+               <img src="images/bkg.jpg" alt="" width="700px" height="525px">
+               <h3 class="price">$50</h3>
+               <div class="content">
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half"></i>
+                  </div>
+                  <a href="#" class="title">Learn FrontEnd</a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quam tortor. Integer egestas, diam ut volutpat convallis, ex erat.</p>
+                  <div class="info">
+                     <h3> <i class="far fa-clock"></i> 2 hours </h3>
+                     <h3> <i class="far fa-calendar-alt"></i> 6 months </h3>
+                     <h3> <i class="fas fa-book"></i> 12 modules </h3>
+                  </div>
+               </div>
+            </div>
+
+            <!-- kursi 4 -->
+            <div class="box">
+               <img src="images/bkg.jpg" alt="" width="700px" height="525px">
+               <h3 class="price">$50</h3>
+               <div class="content">
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half"></i>
+                  </div>
+                  <a href="#" class="title">Learn FrontEnd</a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quam tortor. Integer egestas, diam ut volutpat convallis, ex erat.</p>
+                  <div class="info">
+                     <h3> <i class="far fa-clock"></i> 2 hours </h3>
+                     <h3> <i class="far fa-calendar-alt"></i> 6 months </h3>
+                     <h3> <i class="fas fa-book"></i> 12 modules </h3>
+                  </div>
+               </div>
+            </div>
+
+            <!-- kursi 5 -->
+            <div class="box">
+               <img src="images/bkg.jpg" alt="" width="700px" height="525px">
+               <h3 class="price">$50</h3>
+               <div class="content">
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half"></i>
+                  </div>
+                  <a href="#" class="title">Learn FrontEnd</a>
+                  <p>LLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quam tortor. Integer egestas, diam ut volutpat convallis, ex erat.</p>
+                  <div class="info">
+                     <h3> <i class="far fa-clock"></i> 2 hours </h3>
+                     <h3> <i class="far fa-calendar-alt"></i> 6 months </h3>
+                     <h3> <i class="fas fa-book"></i> 12 modules </h3>
+                  </div>
+               </div>
+            </div>
+
+            <!-- kursi 6 -->
+            <div class="box">
+               <img src="images/bkg.jpg" alt="" width="700px" height="525px">
+               <h3 class="price">$50</h3>
+               <div class="content">
+                  <div class="stars">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star-half"></i>
+                  </div>
+                  <a href="#" class="title">Learn FrontEnd</a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur quam tortor. Integer egestas, diam ut volutpat convallis, ex erat.</p>
+                  <div class="info">
+                     <h3> <i class="far fa-clock"></i> 2 hours </h3>
+                     <h3> <i class="far fa-calendar-alt"></i> 6 months </h3>
+                     <h3> <i class="fas fa-book"></i> 12 modules </h3>
+                  </div>
+               </div>
+            </div>
+
+         </div>
       </section>
       <!-- Courses (end)-->
-      
 
       <!-- Footer (start) -->
-      <footer class="footer">
+      <footer class="footer footer-course">
          <img src="images/mda.png" alt="logo" class="footer-logo">
          <section class="bottom-nav">
             <a href="/" rel="noopener">Home</a>
@@ -169,6 +285,10 @@
       <!-- JS per funksionin e preloaderit -->
       <script src="js/loader.js"></script>
 
+      <!-- JS per funksionin e shfaqjes se butonit dark mode -->
+      <script src="js/switcher.js"></script>
+
+      <!-- JS per backgroundin -->
       <script src="js/particles.js"></script>
       <script src="js/particles.app.js"></script>
 
@@ -177,7 +297,7 @@
 
       <!-- Js per funksionin e shfaqjes se navigimit ne mobile -->
       <script src="js/navbar.js"></script>
-      
+
       <!-- Carousel JS -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
    </body>
