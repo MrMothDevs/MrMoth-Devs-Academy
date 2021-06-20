@@ -155,8 +155,37 @@
   }
   .dark-mode #color-switcher {
     background-color: var(--background);
+    border: 1px solid var(--navcolor);
   }
-  
+  .dark-mode .heading-course {
+    color: var(--navcolor);
+  }
+  .dark-mode .courses-hr {
+    border: 2px solid var(--navcolor);
+  }
+  .dark-mode .course .box-container .box {
+    border: .1rem solid var(--navcolor);
+  } 
+  .dark-mode .course .box-container .box .content .stars i {
+    color: #959494;
+  }
+  .dark-mode .course .box-container .box .content .title {
+    color: var(--navcolor);
+  }
+  .dark-mode .course .box-container .box .content p {
+    color: var(--navcolor);
+  }
+  .dark-mode .course .box-container .box .content .info {
+    border-top: .1rem solid var(--navcolor);
+  }
+  .dark-mode .course .box-container  .box .content .info h3 {
+    color: var(--navcolor);
+  }
+  .dark-mode .course .box-container .box .content .info h3 i {
+    color: #959494;
+  }
+
+
   /* Navigimi */
   .navbar {
     position: fixed;
@@ -778,7 +807,7 @@
   background: none repeat scroll 0 0 var(--headingcolor);
   box-shadow: 2px 2px 0 0 rgba(0, 0, 0, .08);
   display: block;
-  height: 41px;
+  height: 40px;
   position: absolute;
   right: -40px;
   top: 0;
@@ -799,6 +828,35 @@
   color: var(--navcolor);
   font-size: 24px;
   position: absolute;
+}
+
+[aria-label] {
+  position: relative;
+}
+
+[aria-label]::after {
+  content: attr(aria-label);
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 50px;
+  z-index: 999;
+  pointer-events: none;
+  padding: 8px 10px;
+  line-height: 15px;
+  white-space: nowrap;
+  text-decoration: none;
+  text-indent: 0;
+  overflow: visible;
+  font-size: .9em;
+  color: var(--headingcolor);
+  text-shadow: 1px 0 1px #888;
+  background-color: var(--navcolor);
+  border-radius: 10px;
+}
+
+[aria-label]:hover::after {
+  display: block;
 }
 
 .wrapper{
@@ -985,6 +1043,7 @@
     flex-wrap: wrap;
     margin-top: 15px;
   }
+
   .heading-course {
     padding: 1rem;
   }
