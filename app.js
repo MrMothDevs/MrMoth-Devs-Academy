@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+require('dotenv').config()
 const User = require("./models/User");
 let port = ('5500')
 var indexRouter = require('./routes/index');
@@ -22,7 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'views')));
 
-mongoose.connect("mongodb+srv://mda:mdaforlife@mda.su5xl.mongodb.net/mda?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
