@@ -1381,6 +1381,18 @@ textarea:focus {
 	outline: none;
 }
 
+/* per te rregulluar pozicionin e footerit ne signup form */
+.footer-signup {
+	position: relative;
+	top: 10px;
+}
+
+/* per te rregulluar pozicionin e footerit ne login form */
+.footer-login {
+	position: relative;
+	top: 10px;
+}
+
 /* per te rregulluar pozicionin e footerit ne contact form */
 .footer-contact {
 	position: relative;
