@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
 //Get the signup page
 router.get('/signup', function(req, res, next) {
-    res.render('signup');
+    res.render('signup', {username: req.session.user});
   });
   
 router.get("/logout", authenticateUser, (req, res) => {
@@ -37,8 +37,8 @@ router.get('/contact', function(req, res, next) {
 
 //Get the login page
 router.get('/login', function(req, res, next){
-  res.render('login')
-})
+  res.render('login', {username: req.session.user});
+});
 
   //Get the 404 page
   router.get('*', function(req, res, next) {
