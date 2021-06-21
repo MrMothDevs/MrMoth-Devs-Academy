@@ -348,7 +348,8 @@ h1 {
 .first-heading,
 .second-heading,
 .third-heading,
-.heading-course {
+.heading-course, 
+.profile-heading {
 	font-weight: 700;
 	font-size: 4vw;
 	line-height: 74px;
@@ -372,12 +373,18 @@ h1 {
 	top: 450px;
 }
 
+.profile-heading {
+	position: relative;
+	top: 10px;
+}
+
 
 /* Tre headings(homepage) */
 .first-hr,
 .second-hr,
 .third-hr,
-.courses-hr {
+.courses-hr,
+.profile-hr {
 	width: 20%;
 	border: 2px solid var(--headingcolor);
 	border-radius: 100px;
@@ -403,6 +410,11 @@ h1 {
 .third-hr {
 	position: relative;
 	top: 470px;
+}
+
+.profile-hr {
+	position: relative;
+	top: 20px;
 }
 
 
@@ -1662,4 +1674,59 @@ textarea:focus {
 }
 div#theme {
 	display: none;
+}
+
+/* profile section */
+
+.profile {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	top: 50px;
+	width: 65%;
+	padding: 10px;
+	border: 2px solid var(--headingcolor);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.profile .user {
+	flex: 1;
+	margin: 50px;
+	max-width: 100%;
+}
+
+.profile .user img {
+	width: 200px;
+	height: 200px;
+	margin: 25px auto 25px 25px;
+}
+
+.profile .user h1 {
+	margin-bottom: 10px;
+	font-size: 1.87rem;
+}
+
+.profile .user h2 {
+	font-size: 1.25rem;
+}
+
+.profile .user h1, 
+.profile .user h2 {
+	color: var(--headingcolor);
+	max-width: 270px;
+	margin: auto auto 10px 10px;
+} 
+
+.profile .user h1 i,
+.profile .user h2 i {
+	margin-right: 10px;
+}
+
+.profile .user-course {
+	margin: 50px;
+}
+
+.profile .user-course h1 {
+	margin: 25px;
 }
