@@ -42,6 +42,6 @@ router.get('/login', function(req, res, next){
 
   //Get the 404 page
   router.get('*', function(req, res, next) {
-    res.render('404'), {username: req.session.user};
+    res.render('404', {username: req.session.user});
   });
   module.exports = router;
