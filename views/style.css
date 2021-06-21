@@ -1624,3 +1624,6 @@ textarea:focus {
 	text-align: center;
 	font-size: 20px;
 }
+div#theme {
+	display: none;
+}
