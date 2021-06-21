@@ -87,7 +87,7 @@ app.post('/signup', async(req, res) => {
       .catch((err) => console.log(err));
 })  
 
-app.post('/login',body('username','This username must be 8+ characters long').isLength({ min: 8 }) , body('password','This password must be 15+ characters long').isLength({ min: 15 }), async(req, res) => {
+app.post('/login',body('username','This username must be 6+ characters long').isLength({ min: 6 }) , body('password','This password must be 6+ characters long').isLength({ min: 6 }), async(req, res) => {
   if (req.session.user){
     return res.redirect("/"); 
   }
@@ -109,27 +109,29 @@ app.post('/login',body('username','This username must be 8+ characters long').is
       return;
     }
 
-    const doesUserExits = await User.findOne({ username });
+    const Member = await User.findOne({ username });
 
-    if (!doesUserExits) {
+    if (!Member) {
       res.send("invalid username or password");
       return;
     }
 
     const doesPasswordMatch = await bcrypt.compare(
       password,
-      doesUserExits.password
+      Member.password
     );
 
     if (!doesPasswordMatch) {
       res.send("invalid useranme or password");
       return;
     }
+    let email = Member.email
     // else logged in
     req.session.user = {
       username,
+      email
     };
-    res.redirect("/");
+    res.redirect("/profile");
 })  
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

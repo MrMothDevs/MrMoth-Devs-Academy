@@ -4,10 +4,6 @@ const authenticateUser = require("../middlewares/authenticateUser.js");
 //Get the main page
 router.get('/', function(req, res, next) {
   res.render('index',{username: req.session.user})
-  .catch((e) => {
-    console.log(e);
-    res.render('error', { message: e.message });
-  });
   })
    
 
@@ -22,7 +18,13 @@ router.get("/logout", authenticateUser, (req, res) => {
 });
   //Get the profile page
 router.get('/profile', function(req, res, next) {
-  res.render('profile', {username: req.session.user});
+  if (!req.session.user){
+    return res.redirect('/404');
+  }
+  console.log(req.session.user)
+  let username = req.session.user.username
+  let email = req.session.user.email
+  res.render('profile', {username: username, email: email});
 });
 
 //Get the courses page
@@ -37,7 +39,10 @@ router.get('/contact', function(req, res, next) {
 
 //Get the login page
 router.get('/login', function(req, res, next){
-  res.render('login', {username: req.session.user});
+  if (req.session.user){
+    return res.redirect('/')
+  }
+  res.render('login');
 });
 
   //Get the 404 page
