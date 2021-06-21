@@ -18,7 +18,7 @@ router.get('/signup', function(req, res, next) {
   
 router.get("/logout", authenticateUser, (req, res) => {
   req.session.user = null;
-  res.redirect("/login");
+  res.redirect("/login", {username: req.session.user});
 });
   //Get the profile page
 router.get('/profile', function(req, res, next) {

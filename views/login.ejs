@@ -1,7 +1,160 @@
-<%- include partials/header.ejs %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <!-- Meta tags -->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="title" content="MDA - MrMoth Devs Academy">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="A Professional Academy that will be with you in your code journey">
+   <meta name="keywords" content="Academy, Professional, Coding, Programming">
+   <meta name="author" content="MrMothDevs">
+
+   <!-- Open Graph / Facebook -->
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="">
+   <meta property="og:title" content="MDA - MrMoth Devs Academy">
+   <meta property="og:description" content="A Professional Academy that will be with you in your code journey">
+   <meta property="og:image" content="">
+
+   <!-- Twitter -->
+   <meta property="twitter:card" content="summary_large_image">
+   <meta property="twitter:url" content="">
+   <meta property="twitter:title" content="MDA - MrMoth Devs Academy">
+   <meta property="twitter:description" content="A Professional Academy that will be with you in your code journey">
+   <meta property="twitter:image" content="">
+
+   <!-- Links -->
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet">
+
+   <!-- CDN per ikonat e rrjeteve sociale -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <link rel="stylesheet" href="style.css">
+
+   <!-- Icon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+   <link rel="manifest" href="images/favicon/site.webmanifest">
+
+   <!-- Butoni i dark mode -->
+   <script>
+      function pageLoaded() {
+         let onpageLoad = localStorage.getItem("theme") || "";
+         let element = document.body;
+         element.classList.add(onpageLoad);
+         document.getElementById("theme").textContent = localStorage.getItem("theme") || "light";
+      }
+      function mode() {
+         let element = document.body;
+         element.classList.toggle("dark-mode");
+         
+         let theme = localStorage.getItem("theme");
+         if (theme && theme === "dark-mode") {
+            localStorage.setItem("theme", "");
+         } else {
+            localStorage.setItem("theme", "dark-mode");
+         }
+
+         document.getElementById("theme").textContent = localStorage.getItem("theme");
+      }
+   </script>
+
+   <title>MDA - MrMoth Devs Academy</title>
+
+   <!-- Kodi per navbarin ne scroll -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="js/navscroll.js"></script>
+
+</head>
+
+<body onLoad="pageLoaded()">
+
+   <!-- Preloader per faqen -->
+   <div class="loader-container">
+      <div class="loader-content">
+         <div class="loader"></div>
+         <div class="loader-message">
+            <span>Loading...</span>
+         </div>
+      </div>
+   </div>
+
+   <!-- Buton qe te con ne fillim te faqes (start)-->
+   <button onclick="topFunction()" id="scrollBtn" title="Go to top" class="scrollBtn">
+      <svg width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+         <path
+            d="M12 10.545L7.176 15.37a1.86 1.86 0 11-2.631-2.631l6.077-6.077a1.949 1.949 0 012.756 0l6.077 6.077a1.86 1.86 0 11-2.631 2.63L12 10.546z"
+            fill="currentcolor" fill-rule="evenodd"></path>
+      </svg>
+   </button>
+   <!-- Buton qe te con ne fillim te faqes (end)-->
+
+   <!-- Butoni i Dark Mode (start) -->
+   <div id="color-switcher">
+      <div>
+         <input onclick="mode()" type="checkbox" name="checkbox" class="switch">
+      </div>
+      <div class="bottom">
+         <a href="#" class="color-link" aria-label="Open DarkMode Switch" title="Open DarkMode Switch"><i
+               class="fa fa-chevron-right"></i></a>
+      </div>
+   </div>
+   <div id="theme"></div>
+   <!-- Butoni i Dark Mode (end) -->
+
+   <!-- Navigimi (Start)-->
+   <header>
+      <nav id="navbar" class="navbar">
+         <img src="images/mda.png" alt="MDA logo" class="logo">
+         <ul class="menu">
+            <li class="nav-item">
+               <a href="/" class="nav-link hvr-underline-from-center" rel="noopener">Home</a>
+            </li>
+            <li class="nav-item">
+               <a href="courses" class="nav-link hvr-underline-from-center" rel="noopener">Courses</a>
+            </li>
+            <li class="nav-item">
+               <a href="contact" class="nav-link hvr-underline-from-center" rel="noopener">Contact Us</a>
+            </li>
+            <li class="nav-item">
+             <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
+            </li>
+         </ul>
+         <!-- Butoni i animacionit te navigimit responsive-->
+         <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+         </div>
+      </nav>
+   </header>
+   <!-- Navigimi (End)-->
+
+   <!-- Background me Particles JS (Start)-->
+   <section class="home-bkg h-100vh" id="home">
+      <div class="line-1 anim-typewriter">
+         <h1>Sticking Together With A Source Of Quality</h1>
+      </div>
+      <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%; position: absolute; top: 0px;"></canvas>
+   </section>
+   <!-- Background me Particles JS (End)-->
 <!-- Form (start) -->
 <div class="form-section login">
    <div class="form">
+      <% if(typeof alert != 'undefined') { %>
+         <% alert.forEach(function(error) { %>
+      <div class="alert">
+         <span class="alertclose" onclick="this.parentElement.style.display='none';">&times;</span>
+         <p><strong>Warning!</strong>  <%= error.msg %></p>
+      </div>
+      <% }) %>
+      <% } %>
       <form method="POST" action="/login">
          <h1>Login to your account</h1>
          <p>To stick together with a source of quality</p>
@@ -19,10 +172,7 @@
          <p>Don't have an account? <a href="signup">Sign Up</a> NOW!</p>
          <p class="forgot-pass">Forgot <a href="#">password?</a></p>
       </form>
-      <div class="alert">
-         <span class="alertclose" onclick="this.parentElement.style.display='none';">&times;</span>
-         <p><strong>Warning!</strong> Invalid username or password</p>
-      </div>
+      
    </div>
 </div>
 <!-- Form (end) -->

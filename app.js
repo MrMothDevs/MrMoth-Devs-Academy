@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const {body, validationResult } = require('express-validator')
+const bodyParser = require('body-parser')
 require('dotenv').config()
 const User = require("./models/User");
 let port = ('5500')
@@ -17,7 +19,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -57,7 +59,14 @@ app.post('/signup', async(req, res) => {
       res.send("Please enter all the fields");
       return;
     }
-
+    const errors = validationResult(req)
+    if(!errors.isEmpty()) {
+        // return res.status(422).jsonp(errors.array())
+        const alert = errors.array()
+        res.render('signup', {
+            alert
+        })
+    }
     const doesUserExitsAlreay = await User.findOne({ email });
 
     if (doesUserExitsAlreay) {
@@ -78,10 +87,20 @@ app.post('/signup', async(req, res) => {
       .catch((err) => console.log(err));
 })  
 
-app.post('/login', async(req, res) => {
+app.post('/login',body('username','This username must be 8+ characters long').isLength({ min: 8 }) , body('password','This password must be 15+ characters long').isLength({ min: 15 }), async(req, res) => {
   if (req.session.user){
     return res.redirect("/"); 
   }
+  const errors = validationResult(req)
+  
+  if(!errors.isEmpty()) {
+    // return res.status(422).jsonp(errors.array())
+    const alert = errors.array()
+    res.render('login', {
+        alert
+    })
+    return;
+}
     const { username, password } = req.body;
 
     // check for missing fields
@@ -106,7 +125,6 @@ app.post('/login', async(req, res) => {
       res.send("invalid useranme or password");
       return;
     }
-
     // else logged in
     req.session.user = {
       username,
