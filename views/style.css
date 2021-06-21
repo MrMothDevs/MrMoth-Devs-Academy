@@ -724,12 +724,13 @@ h1 {
 	transform: translateY(-50%);
 }
 
-
 /* Animacioni i sloganit me efektin typewriter */
 .anim-typewriter {
 	animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(49) infinite normal;
 }
-
+.anim-typewriter2 {
+	animation: typewriter2 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(49) infinite normal;
+}
 @keyframes typewriter {
 	from {
 		width: 0;
@@ -738,7 +739,14 @@ h1 {
 		width: 25.5em;
 	}
 }
-
+@keyframes typewriter2 {
+	from {
+		width: 0;
+	}
+	to {
+		width: 12.5em;
+	}
+}
 @keyframes blinkTextCursor {
 	from {
 		border-right-color: rgba(255, 255, 255, .75);
@@ -1605,4 +1613,14 @@ textarea:focus {
 	.footer-logo {
 		width: 50%;
 	}
+}
+
+.homepage a {
+	color: white;
+}
+.homepage {
+	position: relative;
+	top: 53%;
+	text-align: center;
+	font-size: 20px;
 }
