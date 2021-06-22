@@ -1697,10 +1697,14 @@ div#theme {
 }
 
 .profile .user img {
+	display: block;
 	width: 200px;
-	height: 200px;
-	margin: 25px auto 25px 25px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	margin-left: auto;
+	margin-right: auto;
 }
+
 
 .profile .user h1 {
 	margin-bottom: 10px;
@@ -1713,6 +1717,7 @@ div#theme {
 
 .profile .user h1, 
 .profile .user h2 {
+	text-align: center;
 	color: var(--headingcolor);
 	max-width: 270px;
 	margin: auto auto 10px 10px;
