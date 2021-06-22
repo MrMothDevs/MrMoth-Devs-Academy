@@ -1705,7 +1705,9 @@ div#theme {
 	margin-right: auto;
 }
 
-
+input[type="file"] {
+	color: transparent;
+}
 .profile .user h1 {
 	margin-bottom: 10px;
 	font-size: 1.87rem;
@@ -1736,3 +1738,5 @@ div#theme {
 	margin: 25px;
 	color: var(--headingcolor);
 }
+
+
