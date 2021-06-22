@@ -1729,4 +1729,5 @@ div#theme {
 
 .profile .user-course h1 {
 	margin: 25px;
+	color: var(--headingcolor);
 }
