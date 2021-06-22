@@ -1157,6 +1157,7 @@ h1 {
 /* Kutite e kurseve */
 .course .box-container .box {
 	width: 35rem;
+	border-radius: 5px;
 	border: .1rem solid rgba(0, 0, 0, 0.3);
 	position: relative;
 	margin: 1.5rem
@@ -1190,10 +1191,6 @@ h1 {
 	color: #444;
 	font-size: 2.1rem;
 	text-decoration: none;
-}
-
-.course .box-container .box .content .title:hover {
-  text-decoration: underline;
 }
 
 
@@ -1683,7 +1680,8 @@ div#theme {
 	flex-wrap: wrap;
 	position: relative;
 	top: 50px;
-	width: 65%;
+	width: 70%;
+	height: 100%;
 	padding: 10px;
 	border: 2px solid var(--headingcolor);
 	margin-left: auto;
@@ -1705,9 +1703,17 @@ div#theme {
 	margin-right: auto;
 }
 
-input[type="file"] {
-	color: transparent;
+input[type="file"]::-webkit-file-upload-button {
+	background-color: #36449B;
+	color: var(--navcolor);
+	font-size: 18px;
+	padding: 5px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+
 }
+
 .profile .user h1 {
 	margin-bottom: 10px;
 	font-size: 1.87rem;
@@ -1719,10 +1725,11 @@ input[type="file"] {
 
 .profile .user h1, 
 .profile .user h2 {
-	text-align: center;
 	color: var(--headingcolor);
 	max-width: 270px;
-	margin: auto auto 10px 10px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	text-align: center;
 } 
 
 .profile .user h1 i,
