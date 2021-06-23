@@ -53,7 +53,7 @@ app.use('/users', usersRouter);
 // Post Requests //
 app.post('/signup',body('username','This username must be 6+ characters long').isLength({ min: 6 }) , body('password','This password must be 6+ characters long').isLength({ min: 6 }), async(req, res) => {
   const { email, password, username, birthday, gender } = req.body;
-  let pfp = 'images/pfpDefault'
+  let pfp = 'images/avatar.png'
     // check for missing fields
     if (!email || !password || !username || !birthday || !gender) {
       res.send("Please enter all the fields");
