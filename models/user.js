@@ -21,6 +21,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  pfp: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = new mongoose.model("User", UserSchema);

@@ -51,9 +51,9 @@ app.use('/users', usersRouter);
 
 
 // Post Requests //
-app.post('/signup', async(req, res) => {
+app.post('/signup',body('username','This username must be 6+ characters long').isLength({ min: 6 }) , body('password','This password must be 6+ characters long').isLength({ min: 6 }), async(req, res) => {
   const { email, password, username, birthday, gender } = req.body;
-
+  let pfp = 'images/pfpDefault'
     // check for missing fields
     if (!email || !password || !username || !birthday || !gender) {
       res.send("Please enter all the fields");
@@ -70,18 +70,24 @@ app.post('/signup', async(req, res) => {
     const doesUserExitsAlreay = await User.findOne({ email });
 
     if (doesUserExitsAlreay) {
-      res.send("A user with that email already exits please try another one!");
+      let alert2 = {msg: 'The email you entered is already used by another account!', location: 'body'}
+      res.render('signup', {
+          alert2
+      })
       return;
     }
 
     // lets hash the password
     const hashedPassword = await bcrypt.hash(password, 12);
-    const latestUser = new User({ email, password: hashedPassword, username, birthday, gender });
+    const latestUser = new User({ email, password: hashedPassword, username, birthday, gender, pfp });
 
     latestUser
       .save()
       .then(() => {
-        res.send("registered account!");
+        let alert2 = {msg: 'Registered account', location: 'body'}
+        res.render('signup', {
+            alert2
+        })
         return;
       })
       .catch((err) => console.log(err));
@@ -96,6 +102,7 @@ app.post('/login',body('username','This username must be 6+ characters long').is
   if(!errors.isEmpty()) {
     // return res.status(422).jsonp(errors.array())
     const alert = errors.array()
+    console.log(alert)
     res.render('login', {
         alert
     })
@@ -112,7 +119,11 @@ app.post('/login',body('username','This username must be 6+ characters long').is
     const Member = await User.findOne({ username });
 
     if (!Member) {
-      res.send("invalid username or password");
+      
+      let alert2 = {msg: 'This user does not exist!', location: 'body'}
+      res.render('login', {
+          alert2
+      })
       return;
     }
 
@@ -122,14 +133,20 @@ app.post('/login',body('username','This username must be 6+ characters long').is
     );
 
     if (!doesPasswordMatch) {
-      res.send("invalid useranme or password");
+      let alert2 = {msg: 'Invalid username or password', location: 'body'}
+      res.render('login', {
+          alert2
+      })
       return;
     }
     let email = Member.email
+    let pfp = Member.pfp
+    console.log(pfp)
     // else logged in
     req.session.user = {
       username,
-      email
+      email,
+      pfp
     };
     res.redirect("/profile");
 })  

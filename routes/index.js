@@ -14,7 +14,7 @@ router.get('/signup', function(req, res, next) {
   
 router.get("/logout", authenticateUser, (req, res) => {
   req.session.user = null;
-  res.redirect("/login", {username: req.session.user});
+  res.redirect("/login");
 });
   //Get the profile page
 router.get('/profile', function(req, res, next) {
@@ -24,7 +24,8 @@ router.get('/profile', function(req, res, next) {
   console.log(req.session.user)
   let username = req.session.user.username
   let email = req.session.user.email
-  res.render('profile', {username: username, email: email});
+  let pfp = req.session.user.pfp
+  res.render('profile', {username: username, email: email, pfp: pfp});
 });
 
 //Get the courses page

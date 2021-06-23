@@ -155,6 +155,12 @@
       </div>
       <% }) %>
       <% } %>
+      <% if(typeof alert2 != 'undefined') { %>
+      <div class="alert">
+         <span class="alertclose" onclick="this.parentElement.style.display='none';">&times;</span>
+         <p><strong>Warning!</strong>  <%= alert2.msg %></p>
+      </div>
+      <% } %>
       <form method="POST" action="/login">
          <h1>Login to your account</h1>
          <p>To stick together with a source of quality</p>
