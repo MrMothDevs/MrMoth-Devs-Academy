@@ -1710,33 +1710,39 @@ div#theme {
 	margin-right: auto;
 }
 
+input[type="file"] {
+	background-color: #999;
+	border-radius: 5px;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 input[type="file"]::-webkit-file-upload-button {
 	background-color: #36449B;
 	color: var(--navcolor);
-	font-size: 18px;
-	padding: 5px;
+	font-size: 16px;
+	padding: 10px;
 	outline: none;
 	border: none;
 	border-radius: 5px;
+	cursor: pointer;
 
 }
 
 .profile .user h1 {
-	margin-bottom: 10px;
 	font-size: 1.87rem;
 }
 
-.profile .user h2 {
+.profile .user h2  {
 	font-size: 1.25rem;
 }
 
 .profile .user h1, 
 .profile .user h2 {
 	color: var(--headingcolor);
-	max-width: 270px;
-	margin-left: 20px;
-	margin-bottom: 10px;
 	text-align: center;
+	margin: 20px 40px;
 } 
 
 .profile .user h1 i,
@@ -1752,6 +1758,17 @@ input[type="file"]::-webkit-file-upload-button {
 	margin: 25px;
 	color: var(--headingcolor);
 }
+
+.profile .user-course h2 {
+	margin: 25px 45px;
+	
+}
+
+.profile .user-course h2 a {
+	text-decoration: none;
+	color: var(--headingcolor);
+}
+
 
 
 .course-modal {
