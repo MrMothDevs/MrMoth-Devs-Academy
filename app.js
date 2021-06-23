@@ -12,6 +12,7 @@ const User = require("./models/User");
 let port = ('5500')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const sendMail = require('./middlewares/mail');
 var app = express();
 
 
@@ -149,6 +150,26 @@ app.post('/login',body('username','This username must be 6+ characters long').is
       pfp
     };
     res.redirect("/profile");
+})  
+app.post('/email', async(req, res) => {
+    const { fname, lname, email, message } = req.body;
+
+    // check for missing fields
+    if (!fname || !lname || !email || !message) {
+      res.send("Please enter all the fields");
+      return;
+    }
+    const data = {fname, lname, email, message}
+    console.log('Data:', data);
+    //res.json({message: 'Message received!'})
+    sendMail(fname, lname, email, message, function(err, data) {
+      if (err) {
+          res.status(500).json({ message: 'Internal Error' });
+      } else {
+          res.status({ message: 'Email sent!!!' });
+      }
+  })
+    res.redirect("/contact");
 })  
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
