@@ -224,9 +224,51 @@ h1 {
 .dark-mode .fa-eye-slash {
 	color: #000;
 }
-
-
-/* Navigimi */
+.dark-mode .modal-content {
+	background-color: var(--headingcolor);
+}
+.dark-mode .modal-body .stars {
+	color: #959494;
+}
+.dark-mode .modal-body p {
+	color: var(--navcolor);
+}
+.dark-mode .modal-header {
+	color: var(--navcolor);
+}
+.dark-mode .close-modal {
+	color: var(--navcolor);
+}
+.dark-mode .close-modal:focus, 
+.dark-mode .close-modal:hover {
+	color: #959494;
+}
+.dark-mode .modal-footer h3 {
+	color: var(--navcolor);
+}
+.dark-mode .modal-footer h3 i {
+	color: #959494;
+}
+.dark-mode .profile-heading {
+	color: var(--navcolor);
+}
+.dark-mode .profile-hr {
+	border-color: var(--navcolor);
+}
+.dark-mode .profile {
+	border: 2px solid var(--navcolor);
+}
+.dark-mode .profile .user h1, 
+.dark-mode .profile .user h2 {
+	color: var(--navcolor);
+}
+.dark-mode .profile .user-course h1 {
+	color: var(--navcolor);
+}
+.dark-mode .profile .user-course h2 a {
+	color: var(--navcolor);
+}
+ /* Navigimi */
 .navbar {
 	position: fixed;
 	top: 0;
@@ -1690,6 +1732,7 @@ div#theme {
 	width: 70%;
 	height: 100%;
 	padding: 10px;
+	border-radius: 10px;
 	border: 2px solid var(--headingcolor);
 	margin-left: auto;
 	margin-right: auto;
@@ -1869,4 +1912,8 @@ input[type="file"]::-webkit-file-upload-button {
 	text-decoration: none;
 	cursor: pointer;
 	float: right;
+}
+
+.modal-footer .get-btn:hover {
+	background-color: var(--backgroundark);
 }
