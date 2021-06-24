@@ -11,7 +11,7 @@ const sendMail = (fname, lname, email, message,cb) => {
     const mailOptions = {
         sender: fname, lname,
         from: email,
-        to: 'remixors@gmail.com',
+        to: `${process.env.emailReceiver}`,
         subject: "New email from MDA",
         text: message
     };
