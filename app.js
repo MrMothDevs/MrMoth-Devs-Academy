@@ -86,9 +86,6 @@ app.post('/signup', body('username', 'This username must be 6+ characters long')
   const token = jwt.sign({ email: email }, process.env.token_secret);
   const hashedPassword = await bcrypt.hash(password, 12);
   const latestUser = new User({ email, password: hashedPassword, username, birthday, gender, pfp, confirmationCode: token,});
-  for (let i = 0; i < 25; i++) {
-    token += characters[Math.floor(Math.random() * characters.length)];
-  }
   latestUser
     .save()
     .then(() => {
@@ -96,10 +93,10 @@ app.post('/signup', body('username', 'This username must be 6+ characters long')
         message:
           "User was registered successfully! Please check your email",
       });
-      nodemailer.sendConfirmationEmail(
-        user.username,
-        user.email,
-        user.confirmationCode
+      sendMail.sendConfirmationEmail(
+        latestUser.username,
+        latestUser.email,
+        latestUser.confirmationCode
       );
       let alert2 = { msg: 'Registered account', location: 'body' }
       res.render('signup', {
@@ -156,7 +153,7 @@ app.post('/login', body('username', 'This username must be 6+ characters long').
     })
     return;
   }
-  if (user.status != "Active") {
+  if (Member.status != "Active") {
     return res.status(401).send({
       message: "Pending Account. Please Verify Your Email!",
     });
@@ -193,25 +190,6 @@ app.post('/email', async (req, res) => {
   res.redirect("/contact");
 })
 
-app.post(verifyUser = (req, res, next) => {
-  User.findOne({
-    confirmationCode: req.params.confirmationCode,
-  })
-    .then((user) => {
-      console.log(user);
-      if (!user) {
-        return res.status(404).send({ message: "User Not found." });
-      }
-      user.status = "Active";
-      user.save((err) => {
-        if (err) {
-          res.status(500).send({ message: err });
-          return;
-        }
-      });
-    })
-    .catch((e) => console.log("error", e));
-})
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -229,3 +207,4 @@ app.use(function (err, req, res, next) {
 });
 app.listen(port, () => console.info(`Listening on port ${port}`));
 module.exports = app;
+

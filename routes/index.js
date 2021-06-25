@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const authenticateUser = require("../middlewares/authenticateUser.js");
+const db = require("../models");
+const User = db.user;
 //Get the main page
 router.get('/', function(req, res, next) {
   res.render('index',{username: req.session.user})
@@ -46,6 +48,26 @@ router.get('/login', function(req, res, next){
   res.render('login');
 });
 
+router.get("/confirm/:confirmationCode", (req, res, next) => {
+  User.findOne({
+    confirmationCode: req.params.confirmationCode,
+  })
+    .then((user) => {
+      console.log(user);
+      if (!user) {
+        return res.status(404).send({ message: "User Not found." });
+      }
+      user.status = "Active";
+      res.redirect('/login');
+      user.save((err) => {
+        if (err) {
+          res.status(500).send({ message: err });
+          return;
+        }
+      });
+    })
+    .catch((e) => console.log("error", e));
+})
   //Get the 404 page
   router.get('*', function(req, res, next) {
     res.render('404', {username: req.session.user});
