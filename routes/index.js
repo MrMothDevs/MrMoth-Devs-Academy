@@ -35,6 +35,9 @@ router.get('/courses', function(req, res, next) {
   res.render('courses', {username: req.session.user});
 });
 
+router.get('/members', function(req, res, next) {
+  res.render('members', {username: req.session.user});
+})
 //Get the contact page
 router.get('/contact', function(req, res, next) {
   res.render('contactus', {username: req.session.user});

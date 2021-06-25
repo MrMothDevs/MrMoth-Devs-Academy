@@ -25,7 +25,7 @@ const sendMail = (fname, lname, email, message, cb) => {
     });
 }
 
-const sendConfirmationEmail = (name, email, confirmationCode, cb) => {
+const sendConfirmationEmail = (name, email, confirmationCode) => {
     const mailOptions = {
         from: `${process.env.emailReceiver}`,
         to: email,
@@ -39,9 +39,9 @@ const sendConfirmationEmail = (name, email, confirmationCode, cb) => {
 
     transporter.sendMail(mailOptions, function (err, data) {
         if (err) {
-            cb(err, null);
+            console.log(err, null);
         } else {
-            cb(null, data);
+            console.log(null, data);
         }
     });
 }
