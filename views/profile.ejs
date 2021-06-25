@@ -4,23 +4,68 @@
 <hr class="profile-hr">
 <div class="profile">
       <div class="user">
+         <!-- Imazhi i perdoruesit -->
          <img src=<%= pfp %> loading="lazy" alt="avatar">
-         <label for="avatar"></label>
-         <input type="file" name="avatar" accept="image/png, image/jpeg">
-         <h1><i class="far fa-user"></i><%= username %><i class="fas fa-pencil-alt" style="font-size:24px; float: right;"></i></h1>
+         <!-- Emri i perdoruesit-->
+         <h1><i class="far fa-user"></i><%= username %> <button id="editBtn" aria-label="Edit"> <i class="fas fa-pencil-alt"></i></button></h1>
+         <!-- Emaili i perdoruesit-->
          <h2><i class="far fa-envelope-open"></i><%= email %></h2>
       </div>
       <div class="user-course">
+         <!-- Kurset e blera nga perdoruesi -->
          <h1>These are the bought courses: </h1>
-         <h2><a href="#"> Learn FrontEnd <span style="margin-left: 5px; font-size: 26px;">&#8921;</span></a></h2>
-         <h2><a href="#"> Learn BackEnd <span style="margin-left: 5px; font-size: 26px;"">&#8921;</span></a></h2>
-         <h2><a href="#"> Learn DevOPS <span style="margin-left: 5px; font-size: 26px;"">&#8921;</span></a></h2>
-         <h2><a href="#"> Learn MachineLearning <span style="margin-left: 5px; font-size: 26px;"">&#8921;</span></a></h2>
-         <h2><a href="#"> Learn AI <span style="margin-left: 5px; font-size: 26px;"">&#8921;</span></a></h2>
-         <h2><a href="#"> Learn Databases <span style="margin-left: 5px; font-size: 26px;"">&#8921;</span></a></h2>
+         <h2>Learn FrontEnd <span style="float: right;">&#36;50</span></h2>
+         <h2>Learn BackEnd <span style="float: right;">&#36;50</span></h2>
+         <h2>Learn DevOPS <span style="float: right;">&#36;50</span></h2>
+         <h2>Learn MachineLearning <span style="float: right;">&#36;50</span></h2>
+         <h2>Learn AI <span style="float: right;">&#36;50</span></h2>
+         <h2>Learn Database <span style="float: right;">&#36;50</span></h2>
       </div>
 </div>
 
+<!-- Profile Modal (start)-->
+<div class="edit" id="editProfile">
+   <div class="edit-content">
+         <form action="" class="form-edit">
+            <h1><span class="close-edit">&times;</span></h1>
+            <img src="images/avatar.png" alt="avatar" width="200px" height="200px">
+            <label for="avatar">Change avatar:</label>
+            <input type="file" name="avatar" accept="image/png, image/jpeg">
+            <label for="editName"></label>
+            <input type="text" name="editName" placeholder="Change username">
+            <label for="editPass"></label>
+            <input type="password" name="editPass" placeholder="Change your password" minlength="8" id="passw">
+            <i id="passeye" class="far fa-eye" onclick="viewPassword()"></i>
+            <label for="repeatPass"></label>
+            <input type="password" name="repeatPass" placeholder="Repeat password" min-length="8" id="repeat-passw" required> 
+            <i id="repeat-eye" class="far fa-eye" onclick="repeatPass()"></i>
+            <input type="submit" value="Save">
+         </form>
+   </div>
+</div>
+<!-- Profile Modal (end)-->
+
+<!-- Funksion ne JS per te shfaqur settings te perdoruesit-->
+<script>
+   const editModal = document.getElementById("editProfile");
+   const editBtn = document.getElementById("editBtn");
+   const closeEdit = document.getElementsByClassName("close-edit")[0];
+
+   editBtn.onclick = function() {
+      editModal.style.display = "block";
+   }
+
+   closeEdit.onclick = function() {
+      editModal.style.display = "none";
+   }
+
+   window.onclick = function(event) {
+      if(event.target == editModal) {
+         editModal.style.display = "none";
+      }
+   }
+
+</script>
 
 
   <!-- Footer (start) -->
@@ -46,6 +91,9 @@
 <!-- Footer (end) -->
 
 <!-- JavaScript -->
+
+<!-- JS per funksionin e passwordit-->
+<script src="js/password.js"></script>
 
 <!-- JS per funksionin e preloaderit -->
 <script src="js/loader.js"></script>
