@@ -274,6 +274,19 @@ h1 {
 .dark-mode .form-edit label:first-of-type {
 	color: #000;
 }
+.dark-mode .confirm-content {
+	background-color: var(--headingcolor);
+}
+.dark-mode .confirm-content {
+	color: var(--navcolor);
+}
+.dark-mode .close-confirm {
+	color: var(--navcolor);
+}
+.dark-mode .close-confirm:focus,
+.dark-mode .close-confirm:hover {
+	color: #000;
+}
  /* Navigimi */
 .navbar {
 	position: fixed;
@@ -529,8 +542,6 @@ h1 {
 .co-founder-image {
 	display: block;
 	margin: auto;
-	width: 200px;
-	height: 200px;
 	border-radius: 50%;
 	border: 6px solid rgba(255, 255, 255, 0.13);
 }
@@ -1453,19 +1464,36 @@ textarea:focus {
 	outline: none;
 }
 
-.alert {
+.success {
+	background-color: #04AA6D;
+	color: #000;
+}
+
+.alert, 
+.success {
 	width: 400px;
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 5px;
 	padding: 20px;
+}
+
+.alert {
 	background-color: #CC3300;
 	color: var(--navcolor);
 }
 
-.alertclose {
-	margin-left: 15px;
+.alert-close {
 	color: var(--navcolor);
+}
+
+.success-close {
+	color: #444;
+}
+
+.alertclose,
+.success-close {
+	margin-left: 15px;
 	float: right;
 	font-weight: bold;
 	font-size: 22px;
@@ -1474,7 +1502,8 @@ textarea:focus {
 	transition: .3s;
 }
 
-.alertclose:hover {
+.alertclose:hover,
+.success-close:hover {
 	color: black;
 }
 
@@ -1501,6 +1530,12 @@ textarea:focus {
 	position: relative;
 	top: 0;
 }
+
+.footer-profile {
+	position: relative;
+	top: 160px;
+}
+
 
 /* sign up (end) */
 
@@ -1728,6 +1763,7 @@ div#theme {
 	display: none;
 }
 
+
 /* profile section */
 
 .profile {
@@ -1736,8 +1772,6 @@ div#theme {
 	position: relative;
 	top: 50px;
 	width: 70%;
-	height: 100%;
-	padding: 10px;
 	border-radius: 10px;
 	border: 2px solid var(--headingcolor);
 	margin-left: auto;
@@ -1920,7 +1954,7 @@ input[type="file"]::-webkit-file-upload-button {
 	border: none;
 	outline: none;
 	color: #f0f0f0;
-	font-size: 20px;
+	font-size: 16px;
 	background-color: #36449B;
 	padding: 10px 15px;
 	cursor: pointer;
@@ -2003,7 +2037,7 @@ input[type="file"]::-webkit-file-upload-button {
 .form-edit input[type="password"]:focus,
 .form-edit input[type="text"]:focus {
 	outline: none;
-	box-shadow: 0 0 0 4px #1D2C87
+	box-shadow: 0 0 0 4px #1D2C87;
 }
 
 .confirmation {
@@ -2015,14 +2049,60 @@ input[type="file"]::-webkit-file-upload-button {
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	padding-top: 250px;
+	padding-top: 280px;
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .confirm-content {
 	background-color: var(--navcolor);
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
-	padding: 16px;
+	width: 25%;
+	padding: 20px;
 	text-align: center;
+	border-radius: 5px;
+}
+
+.confirm-content h1 {
+	text-align: right;
+}
+
+.confirm-content h2,
+.confirm-content p {
+	margin-bottom: 10px;
+}
+
+.close-confirm {
+	font-size: 40px;
+	font-weight: bold;
+	color: #444;
+}
+
+.close-confirm:focus,
+.close-confirm:hover {
+	color: #000;
+	cursor: pointer;
+}
+
+.cancel-btn,
+.buy-btn {
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	width: 25%;
+	padding: 10px 15px;
+	text-decoration: none;
+	margin: 10px auto;
+	cursor: pointer;
+}
+
+.cancel-btn {
+	background-color: #ccc;
+	color: #000;
+}
+
+.buy-btn {
+	background-color: #35439B;
+	color: var(--navcolor);
 }
