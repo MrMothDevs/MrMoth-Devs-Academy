@@ -32,12 +32,12 @@
             <label for="avatar">Change avatar:</label>
             <input type="file" name="avatar" accept="image/png, image/jpeg">
             <label for="editName"></label>
-            <input type="text" name="editName" placeholder="Change username">
+            <input type="text" name="editName" placeholder="Change username" autocomplete="username">
             <label for="editPass"></label>
-            <input type="password" name="editPass" placeholder="Change your password" minlength="8" id="passw">
+            <input type="password" name="editPass" placeholder="Change your password" minlength="8" id="passw" autocomplete="new-password">
             <i id="passeye" class="far fa-eye" onclick="viewPassword()"></i>
             <label for="repeatPass"></label>
-            <input type="password" name="repeatPass" placeholder="Repeat password" min-length="8" id="repeat-passw" required> 
+            <input type="password" name="repeatPass" placeholder="Repeat password" min-length="8" id="repeat-passw" autocomplete="new-password" required> 
             <i id="repeat-eye" class="far fa-eye" onclick="repeatPass()"></i>
             <input type="submit" value="Save">
          </form>
@@ -69,7 +69,7 @@
 
 
   <!-- Footer (start) -->
-  <footer class="footer">
+  <footer class="footer footer-profile">
    <img src="images/mda.png" loading="lazy" alt="logo" class="footer-logo">
    <section class="bottom-nav">
       <a href="/" rel="noopener">Home</a>
