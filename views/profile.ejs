@@ -1,5 +1,35 @@
 <%- include partials/header.ejs %>
 
+<header>
+   <nav id="navbar" class="nav-colored">
+      <img src="images/mda.png" alt="MDA logo" class="logo">
+      <ul class="menu">
+         <li class="nav-item">
+            <a href="/" class="nav-link hvr-underline-from-center" rel="noopener">Home</a>
+         </li>
+         <li class="nav-item">
+            <a href="courses" class="nav-link hvr-underline-from-center" rel="noopener">Courses</a>
+         </li>
+         <li class="nav-item">
+            <a href="contact" class="nav-link hvr-underline-from-center" rel="noopener">Contact Us</a>
+         </li>
+         <li class="nav-item">
+            <% if (!username){ %>
+               <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
+               <% } else { %>
+                  <a href="logout" role="button" class="signup-btn" rel="noopener">Log Out</a>
+                  <% } %>
+         </li>
+      </ul>
+      <!-- Butoni i animacionit te navigimit responsive-->
+      <div class="hamburger">
+         <span class="bar"></span>
+         <span class="bar"></span>
+         <span class="bar"></span>
+      </div>
+   </nav>
+</header>
+
 <h1 class="profile-heading">Your Profile</h1>
 <hr class="profile-hr">
 <div class="profile">

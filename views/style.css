@@ -350,26 +350,19 @@ h1 {
 
 
 /*sign up navbar */
-.colored {
-	position: relative;
+.nav-colored {
+	position: fixed;
 	top: 0;
-	background-color: var(--headingcolor);
-	width: 100%;
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	box-shadow: 0px 6px 8px 0px #000000;
-	z-index: 0;
-}
-
-.colored a {
-	text-decoration: none;
-}
-
-.colored .logo {
-	width: 50%;
-	margin-right: auto;
-	margin-left: auto;
+	background: var(--headingcolor);
+	border: none;
+	padding: 1rem 1.5rem;
+	z-index: 3;
+	width: 100%;
+	height: auto;
+	transition: all .5s;
 }
 
 
@@ -436,7 +429,7 @@ h1 {
 
 .profile-heading {
 	position: relative;
-	top: 10px;
+	top: 150px;
 }
 
 
@@ -475,7 +468,7 @@ h1 {
 
 .profile-hr {
 	position: relative;
-	top: 20px;
+	top: 160px;
 }
 
 
@@ -1531,10 +1524,8 @@ textarea:focus {
 	top: 0;
 }
 
-.footer-profile {
-	position: relative;
-	top: 160px;
-}
+/* .footer-profile {
+} */
 
 
 /* sign up (end) */
@@ -1770,7 +1761,7 @@ div#theme {
 	display: flex;
 	flex-wrap: wrap;
 	position: relative;
-	top: 50px;
+	top: 220px;
 	width: 70%;
 	border-radius: 10px;
 	border: 2px solid var(--headingcolor);
