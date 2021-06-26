@@ -400,12 +400,13 @@ h1 {
 }
 
 
-/* MrMothDevsAcademy, Our Activity, Our Staff */
+/* Headings */
 .first-heading,
 .second-heading,
 .third-heading,
 .heading-course, 
-.profile-heading {
+.profile-heading,
+.members-heading {
 	font-weight: 700;
 	font-size: 4vw;
 	line-height: 74px;
@@ -435,12 +436,13 @@ h1 {
 }
 
 
-/* Tre headings(homepage) */
+
 .first-hr,
 .second-hr,
 .third-hr,
 .courses-hr,
-.profile-hr {
+.profile-hr,
+.members-hr {
 	width: 20%;
 	border: 2px solid var(--headingcolor);
 	border-radius: 100px;
@@ -471,6 +473,11 @@ h1 {
 .profile-hr {
 	position: relative;
 	top: 160px;
+}
+
+.members-hr {
+	position: relative;
+	top: 20px;
 }
 
 
@@ -2125,4 +2132,51 @@ input[type="file"]::-webkit-file-upload-button {
 .buy-btn {
 	background-color: #35439B;
 	color: var(--navcolor);
+}
+
+.members {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	top: 150px;
+}
+
+.members-container {
+	width: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 60px;
+	flex-wrap: wrap;
+}
+
+.table-wrapper {
+	width: 100%;
+	border: 1px solid var(--headingcolor);
+	border-radius: 9px;
+	overflow: hidden;
+}
+
+.table-wrapper table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table-wrapper table thead {
+	background-color: var(--headingcolor);
+	color: var(--navcolor);
+	height: 40px;
+	text-transform: uppercase;
+	font-size: 1.25rem;
+}
+
+.table-wrapper table thead tr th {
+	padding: 10px;
+}
+
+.table-wrapper table tbody tr td {
+	padding: 10px;
+	text-align: center;
+	font-size: 1.15rem;
 }
