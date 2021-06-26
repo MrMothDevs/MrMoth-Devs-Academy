@@ -6,7 +6,14 @@ const auth = {
         domain: `${process.env.nodemailer_domain}`
     }
 };
-const transporter = nodemailer.createTransport(mailGun(auth));
+const transporter = nodemailer.createTransport({
+    host: 'smtp-relay.sendinblue.com',
+    port: '587',
+    auth: {
+        user: process.env.USER,
+        pass: process.env.SECRET
+    }
+});
 const sendMail = (fname, lname, email, message, cb) => {
     const mailOptions = {
         sender: fname, lname,
@@ -30,10 +37,10 @@ const sendConfirmationEmail = (name, email, confirmationCode) => {
         from: `${process.env.emailReceiver}`,
         to: email,
         subject: "Please confirm your account",
-        html: `<h1>MDA Email Confirmation</h1>
+        html: `<h1>Verify Your Account</h1>
         <h2>Hello ${name}</h2>
-        <p>Thank you for creating an account on MDA. Please confirm your email by clicking on the following link</p>
-        <a href=http://localhost:5500/confirm/${confirmationCode}> Click here HAHA sHampoo</a>
+        <p> You registered an account on MDA, before being able to use your account you need to verify that this is your email address by clicking here:<a href=http://localhost:5500/confirm/${confirmationCode}>Activate Account</a></p>
+        Kind Regards, MDA Team
         </div>`,
     };
 
