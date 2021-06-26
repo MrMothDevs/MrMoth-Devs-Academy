@@ -224,69 +224,91 @@ h1 {
 .dark-mode .fa-eye-slash {
 	color: #000;
 }
+
 .dark-mode .modal-content {
 	background-color: var(--headingcolor);
 }
+
 .dark-mode .modal-body .stars {
 	color: #959494;
 }
+
 .dark-mode .modal-body p {
 	color: var(--navcolor);
 }
+
 .dark-mode .modal-header {
 	color: var(--navcolor);
 }
+
 .dark-mode .close-modal {
 	color: var(--navcolor);
 }
+
 .dark-mode .close-modal:focus, 
 .dark-mode .close-modal:hover {
 	color: #959494;
 }
+
 .dark-mode .modal-footer h3 {
 	color: var(--navcolor);
 }
+
 .dark-mode .modal-footer h3 i {
 	color: #959494;
 }
+
 .dark-mode .profile-heading {
 	color: var(--navcolor);
 }
+
 .dark-mode .profile-hr {
 	border-color: var(--navcolor);
 }
+
 .dark-mode .profile {
 	border: 2px solid var(--navcolor);
 }
+
 .dark-mode .profile .user h1, 
 .dark-mode .profile .user h2 {
 	color: var(--navcolor);
 }
+
 .dark-mode .profile .user h1 button {
 	color: var(--navcolor);
 }
+
 .dark-mode .profile .user-course h1 {
 	color: var(--navcolor);
 }
+
 .dark-mode .profile .user-course h2{
 	color: var(--navcolor);
 }
+
 .dark-mode .form-edit label:first-of-type {
 	color: #000;
 }
+
 .dark-mode .confirm-content {
 	background-color: var(--headingcolor);
 }
+
 .dark-mode .confirm-content {
 	color: var(--navcolor);
 }
+
 .dark-mode .close-confirm {
 	color: var(--navcolor);
 }
+
 .dark-mode .close-confirm:focus,
 .dark-mode .close-confirm:hover {
 	color: #000;
 }
+
+
  /* Navigimi */
 .navbar {
 	position: fixed;
@@ -400,12 +422,13 @@ h1 {
 }
 
 
-/* MrMothDevsAcademy, Our Activity, Our Staff */
+/* Headings */
 .first-heading,
 .second-heading,
 .third-heading,
 .heading-course, 
-.profile-heading {
+.profile-heading,
+.members-heading {
 	font-weight: 700;
 	font-size: 4vw;
 	line-height: 74px;
@@ -435,12 +458,13 @@ h1 {
 }
 
 
-/* Tre headings(homepage) */
+/* Vijezimet */
 .first-hr,
 .second-hr,
 .third-hr,
 .courses-hr,
-.profile-hr {
+.profile-hr,
+.members-hr {
 	width: 20%;
 	border: 2px solid var(--headingcolor);
 	border-radius: 100px;
@@ -473,6 +497,11 @@ h1 {
 	top: 160px;
 }
 
+.members-hr {
+	position: relative;
+	top: 20px;
+}
+
 
 /* Paragraf (homepage) */
 .p-about,
@@ -498,8 +527,8 @@ h1 {
 	padding-right: 70px;
 }
 
+/*testimonals*/
 .hidden {
-	/*testimonals*/
 	overflow: hidden;
 }
 
@@ -555,16 +584,16 @@ h1 {
 	padding-top: 25px;
 }
 
+/* paragraf qe pershkruan stafin */
 .cto,
 .ceo {
-	/* paragraf qe pershkruan stafin */
 	font-size: 1.2vw;
 	line-height: 30px;
 	padding: 15px 200px 40px 200px;
 }
 
+/* pozicioni i punes */
 .job {
-	/* pozicioni i punes */
 	font-size: 1em;
 	font-weight: normal;
 	font-style: italic;
@@ -773,6 +802,7 @@ h1 {
 /* Carousel (End) */
 
 
+
 /* slogani */
 .line-1 {
 	font-family: 'Segoe UI', sans-serif;
@@ -976,7 +1006,7 @@ h1 {
 }
 
 
-/* Pjesa e div per ikonen > */
+/* Pjesa e div per ikonen (>) */
 #color-switcher .bottom a.color-link {
 	background: none repeat scroll 0 0 var(--headingcolor);
 	box-shadow: 2px 2px 0 0 rgba(0, 0, 0, .08);
@@ -997,7 +1027,7 @@ h1 {
 }
 
 
-/* Ikona > */
+/* Ikona (>) */
 #color-switcher .bottom a.color-link i {
 	margin: 6px 10px 6px 10px;
 	color: var(--navcolor);
@@ -1194,6 +1224,7 @@ h1 {
 /* Dark Mode Switch End */
 
 
+
 /* Kurset (start) */
 .course .box-container {
 	display: flex;
@@ -1306,7 +1337,192 @@ h1 {
 	position: relative;
 	top: 10px;
 }
+
+
+/* popup per informacion rreth kursit */
+.course-modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* informacionet e kurseve */
+.modal-content {
+	position: relative;
+    background-color: var(--navcolor);
+	margin: auto;
+	padding: 0;
+	border-radius: 5px;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+}
+
+/* animacion i shfaqjes se kursit */
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+/* (x) per te mbyllur kutine */
+.close-modal, 
+.close-edit {
+	color: #666;
+	float: right;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus,
+.close-edit:hover, 
+.close-edit:focus {
+	color: #444;
+	cursor: pointer;
+}
+
+.modal-header {
+	padding: 10px 16px;
+	color: #444;
+}
+
+.modal-header h1 {
+	text-align: center;
+}
+
+.modal-body {
+	padding: 2px 16px;
+	color: #666;
+	text-align: center;
+}
+
+.modal-body p {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.modal-body .stars {
+	color: var(--headingcolor);
+}
+
+.modal-footer {
+	padding: 2px 16px;;
+}
+.modal-footer h3  {
+	display: inline-block;
+	color: #666;
+	padding: 1rem;
+}
+.modal-footer h3 i {
+	color: var(--headingcolor);
+}
+
+/* butoni per te blere kursin */
+.modal-footer .get-btn {
+	border-radius: 9px;
+	border: none;
+	outline: none;
+	color: #f0f0f0;
+	font-size: 16px;
+	background-color: #36449B;
+	padding: 10px 15px;
+	cursor: pointer;
+	float: right;
+}
+
+.modal-footer .get-btn:hover {
+	background-color: var(--backgroundark);
+}
+
+
+
+/* popup per konfirmim te blerjes se kursit */
+.confirmation {
+	display: none;
+	position: fixed;
+	z-index: 3;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding-top: 280px;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.confirm-content {
+	background-color: var(--navcolor);
+	margin-left: auto;
+	margin-right: auto;
+	width: 25%;
+	padding: 20px;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.confirm-content h1 {
+	text-align: right;
+}
+
+.confirm-content h2,
+.confirm-content p {
+	margin-bottom: 10px;
+}
+
+.close-confirm {
+	font-size: 40px;
+	font-weight: bold;
+	color: #444;
+}
+
+.close-confirm:focus,
+.close-confirm:hover {
+	color: #000;
+	cursor: pointer;
+}
+
+/* butonat njeri per vazhdimin e blerjes se kursit dhe nje per anullim */
+.cancel-btn,
+.buy-btn {
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	width: 25%;
+	padding: 10px 15px;
+	text-decoration: none;
+	margin: 10px auto;
+	cursor: pointer;
+}
+
+.cancel-btn {
+	background-color: #ccc;
+	color: #000;
+}
+
+.buy-btn {
+	background-color: #35439B;
+	color: var(--navcolor);
+}
 /* Kurset (end) */
+
+
 
 
 /* sign up (start) */
@@ -1445,17 +1661,17 @@ input[type="submit"]:hover {
 	margin-top: 5px;
 }
 
-
+/* pozicionimi i contact form */
 .contact {
 	position: relative;
 	top: 80px;
 }
 
+/* pozicionimi i login */
 .login {
 	position: relative;
 	top: 130px;
 }
-
 
 /* ketu mund te vendosim mesazhin qe do nisim ne contact form */
 textarea {
@@ -1474,6 +1690,7 @@ textarea:focus {
 	outline: none;
 }
 
+/* kutia jeshile kur mesazhi ne contact form niset me sukses */
 .success {
 	background-color: #04AA6D;
 	color: #000;
@@ -1488,6 +1705,8 @@ textarea:focus {
 	padding: 20px;
 }
 
+
+/* kutia e validimit te sign up dhe login in */
 .alert {
 	background-color: #CC3300;
 	color: var(--navcolor);
@@ -1541,225 +1760,16 @@ textarea:focus {
 	top: 0;
 }
 
+/* per te rregulluar pozicionin e footerit ne profile */
 .footer-profile {
 	position: relative;
 	top: 350px;
 }
-
-
 /* sign up (end) */
 
 
-/* Responsive part */
-@media only screen and (max-width: 768px) {
-	.logo {
-		width: 30%;
-		padding-top: 10px;
-	}
-	.menu {
-		position: fixed;
-		left: -100%;
-		top: 6rem;
-		flex-direction: column;
-		background: rgba( 255, 255, 255, 0.25);
-		box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-		backdrop-filter: blur( 4px);
-		-webkit-backdrop-filter: blur( 4px);
-		border-radius: 10px;
-		width: 100%;
-		text-align: center;
-		transition: 0.3s;
-		z-index: 3;
-	}
-	.menu.active {
-		left: 0;
-	}
-	.nav-item {
-		margin: 2.5rem 0;
-	}
-	.nav-link {
-		color: #CECECE;
-	}
-	/* Nje vije qe shfaqet kur ben hover te links te menu */
-	.hvr-underline-from-center {
-		display: inline-block;
-		vertical-align: middle;
-		-webkit-transform: perspective(1px) translateZ(0);
-		transform: perspective(1px) translateZ(0);
-		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-		position: relative;
-		overflow: hidden;
-	}
-	.hvr-underline-from-center:before {
-		content: "";
-		position: absolute;
-		z-index: -1;
-		left: 51%;
-		right: 51%;
-		bottom: 0;
-		background: var(--backgroundark);
-		height: 4px;
-		-webkit-transition-property: left, right;
-		transition-property: left, right;
-		-webkit-transition-duration: 0.3s;
-		transition-duration: 0.3s;
-		-webkit-transition-timing-function: ease-out;
-		transition-timing-function: ease-out;
-	}
-	.hvr-underline-from-center:hover:before,
-	.hvr-underline-from-center:focus:before,
-	.hvr-underline-from-center:active:before {
-		left: 0;
-		right: 0;
-	}
-	.hamburger {
-		display: block;
-		cursor: pointer;
-	}
-	.hamburger.active .bar:nth-child(2) {
-		opacity: 0;
-	}
-	.hamburger.active .bar:nth-child(1) {
-		-webkit-transform: translateY(8px) rotate(45deg);
-		transform: translateY(8px) rotate(45deg);
-	}
-	.hamburger.active .bar:nth-child(3) {
-		-webkit-transform: translateY(-8px) rotate(-45deg);
-		transform: translateY(-8px) rotate(-45deg);
-	}
-	.first-hr {
-		position: relative;
-		top: 40px;
-	}
-	.p-about {
-		line-height: 18px;
-		position: relative;
-		top: 35px;
-		padding-left: 50px;
-		padding-right: 50px;
-	}
-	.second-heading {
-		position: relative;
-		top: 35px;
-	}
-	.second-hr {
-		position: relative;
-		top: 5px;
-	}
-	.p-activity {
-		line-height: 18px;
-		position: relative;
-		top: 25px;
-		padding-right: 50px;
-		padding-left: 50px;
-	}
-	.third-heading {
-		position: relative;
-		top: 35px;
-	}
-	.third-hr {
-		position: relative;
-		top: 5px;
-	}
-	.testimonals {
-		position: relative;
-		top: 35px;
-	}
-	.cto,
-	.ceo {
-		font-size: 15px;
-		line-height: normal;
-		padding-right: 20px;
-		padding-left: 20px;
-		padding-bottom: 45px;
-	}
-	.line-1 h1 {
-		font-size: 14px;
-	}
-	.line-1 {
-		width: 18em;
-	}
-	@keyframes typewriter {
-		from {
-			width: 0;
-		}
-		to {
-			width: 10em;
-		}
-	}
-	.footer {
-		position: relative;
-		top: 35px;
-	}
-	.bottom-nav {
-		padding-top: 20px;
-		padding-bottom: 10px;
-	}
-	.bottom-nav a:not(:last-child):after {
-		white-space: pre;
-		content: "     |     ";
-	}
-	.footer p {
-		padding-top: 10px;
-		font-size: 12px;
-	}
-	.fab {
-		padding: 20px 20px 10px 15px;
-		font-size: 15px;
-		color: var(--navcolor);
-	}
-	.form-section {
-		padding: 25px;
-	}
-}
 
-
-/* Galaxy Fold responsive */
-
-@media only screen and (max-width: 280px) {
-	.form-content {
-		max-width: 210px;
-		padding: 15px 20px;
-	}
-	.form-content h1 {
-		font-size: 1.15rem;
-	}
-	input[type="text"],
-	input[type="email"] {
-		width: 100%;
-		height: 30px;
-		font-size: 12px;
-		padding: 5px 16px 5px 10px;
-		margin-top: 10px;
-	}
-	textarea {
-		width: 100%;
-		height: 100px;
-		font-size: 13px;
-		padding: 10px 16px 10px 10px;
-		margin-top: 10px;
-	}
-	input[type="submit"] {
-		font-size: 1.2rem;
-		padding: 8px 10px 8px 10px;
-		margin-top: 10px;
-	}
-	.bottom-nav {
-		padding-top: 15px;
-		padding-bottom: 10px;
-	}
-	.bottom-nav a {
-		font-size: 0.65rem;
-	}
-	.footer-logo {
-		width: 50%;
-	}
-}
-
-.home-height {
-	height: auto;
-}
-
+/* 404 link te homepage */
 .homepage a {
 	color: white;
 }
@@ -1769,13 +1779,15 @@ textarea:focus {
 	text-align: center;
 	font-size: 20px;
 }
+
 div#theme {
 	display: none;
 }
 
 
-/* profile section */
 
+
+/* profile section (start) */
 .profile {
 	display: flex;
 	flex-wrap: wrap;
@@ -1788,6 +1800,7 @@ div#theme {
 	margin-right: auto;
 }
 
+/* username email img i perdoruesit */
 .profile .user {
 	flex: 1;
 	margin: 50px;
@@ -1795,6 +1808,7 @@ div#theme {
 	text-align: center;
 }
 
+/* imazhi i perdoruesit */
 .profile .user img {
 	display: block;
 	width: 200px;
@@ -1804,6 +1818,7 @@ div#theme {
 	margin-right: auto;
 }
 
+/* per te ndryshuar imazhin e perdoruesit */
 input[type="file"] {
 	display: inline-block;
 	background-color: #999;
@@ -1821,13 +1836,15 @@ input[type="file"]::-webkit-file-upload-button {
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-
+	
 }
 
+/* username */
 .profile .user h1 {
 	font-size: 1.87rem;
 }
 
+/* emaili */
 .profile .user h2  {
 	font-size: 1.25rem;
 }
@@ -1838,11 +1855,13 @@ input[type="file"]::-webkit-file-upload-button {
 	margin: 20px 40px;
 } 
 
+/* ikonat */
 .profile .user h1 i,
 .profile .user h2 i {
 	margin-right: 10px;
 }
 
+/* butoni i editimit te te dhenave */
 .profile .user h1 button {
 	outline: none;
 	background-color:transparent;
@@ -1853,6 +1872,7 @@ input[type="file"]::-webkit-file-upload-button {
 	cursor: pointer;
 }
 
+/* butoni per log out */
 .profile .user button {
 	border-radius: 9px;
 	border: none;
@@ -1863,6 +1883,7 @@ input[type="file"]::-webkit-file-upload-button {
 	padding: 10px 15px;
 }
 
+/* kurset e perdoruesit */
 .profile .user-course {
 	margin: 50px;
 }
@@ -1872,119 +1893,13 @@ input[type="file"]::-webkit-file-upload-button {
 	color: var(--headingcolor);
 }
 
+/* lista e kurseve */
 .profile .user-course h2 {
 	margin: 25px 45px;
 	color: var(--headingcolor);
 }
 
-
-
-.course-modal {
-	display: none;
-	position: fixed;
-	z-index: 1;
-	padding-top: 250px;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-	position: relative;
-    background-color: var(--navcolor);
-	margin: auto;
-	padding: 0;
-	border-radius: 5px;
-	width: 80%;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	animation-name: animatetop;
-	animation-duration: 0.4s;
-}
-
-@keyframes animatetop {
-	from {
-		top: -300px;
-		opacity: 0;
-	}
-	to {
-		top: 0;
-		opacity: 1;
-	}
-}
-
-.close-modal, 
-.close-edit {
-	color: #666;
-	float: right;
-	font-size: 35px;
-	font-weight: bold;
-}
-
-.close-modal:hover,
-.close-modal:focus,
-.close-edit:hover, 
-.close-edit:focus {
-	color: #444;
-	cursor: pointer;
-}
-
-.modal-header {
-	padding: 10px 16px;
-	color: #444;
-}
-
-.modal-header h1 {
-	text-align: center;
-}
-
-.modal-body {
-	padding: 2px 16px;
-	color: #666;
-	text-align: center;
-}
-
-.modal-body p {
-	font-size: 20px;
-	margin-bottom: 10px;
-}
-
-.modal-body .stars {
-	color: var(--headingcolor);
-}
-
-.modal-footer {
-	padding: 2px 16px;;
-}
-.modal-footer h3  {
-	display: inline-block;
-	color: #666;
-	padding: 1rem;
-}
-.modal-footer h3 i {
-	color: var(--headingcolor);
-}
-
-.modal-footer .get-btn {
-	border-radius: 9px;
-	border: none;
-	outline: none;
-	color: #f0f0f0;
-	font-size: 16px;
-	background-color: #36449B;
-	padding: 10px 15px;
-	cursor: pointer;
-	float: right;
-}
-
-.modal-footer .get-btn:hover {
-	background-color: var(--backgroundark);
-}
-
+/* editimi i te dhenave */
 .edit {
 	display: none;
 	position: fixed;
@@ -2059,70 +1974,261 @@ input[type="file"]::-webkit-file-upload-button {
 	outline: none;
 	box-shadow: 0 0 0 4px #1D2C87;
 }
+/* profile section (end) */
 
-.confirmation {
-	display: none;
-	position: fixed;
-	z-index: 3;
-	left: 0;
-	top: 0;
+
+/* anetaret (start) */
+.members {
 	width: 100%;
-	height: 100%;
-	overflow: auto;
-	padding-top: 280px;
-	background-color: rgba(0, 0, 0, 0.4);
+	margin: 0 auto;
+	position: relative;
+	top: 150px;
 }
 
-.confirm-content {
-	background-color: var(--navcolor);
-	margin-left: auto;
-	margin-right: auto;
-	width: 25%;
-	padding: 20px;
-	text-align: center;
-	border-radius: 5px;
+.members-container {
+	width: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 50px 60px;
+	flex-wrap: wrap;
 }
 
-.confirm-content h1 {
-	text-align: right;
+/* tabele me anetare */
+.table-wrapper {
+	width: 100%;
+	border: 1px solid var(--headingcolor);
+	border-radius: 9px;
+	overflow: hidden;
 }
 
-.confirm-content h2,
-.confirm-content p {
-	margin-bottom: 10px;
+.table-wrapper table {
+	width: 100%;
+	border-collapse: collapse;
 }
 
-.close-confirm {
-	font-size: 40px;
-	font-weight: bold;
-	color: #444;
-}
-
-.close-confirm:focus,
-.close-confirm:hover {
-	color: #000;
-	cursor: pointer;
-}
-
-.cancel-btn,
-.buy-btn {
-	border-radius: 5px;
-	border: none;
-	outline: none;
-	font-size: 16px;
-	width: 25%;
-	padding: 10px 15px;
-	text-decoration: none;
-	margin: 10px auto;
-	cursor: pointer;
-}
-
-.cancel-btn {
-	background-color: #ccc;
-	color: #000;
-}
-
-.buy-btn {
-	background-color: #35439B;
+/* username, email, kurset */
+.table-wrapper table thead {
+	background-color: var(--headingcolor);
 	color: var(--navcolor);
+	height: 40px;
+	text-transform: uppercase;
+	font-size: 1.25rem;
 }
+
+.table-wrapper table thead tr th {
+	padding: 10px;
+}
+
+/* te dhenat e anetareve */
+.table-wrapper table tbody tr td {
+	padding: 10px;
+	text-align: center;
+	font-size: 1.15rem;
+}
+
+
+	/* Responsive part */
+	@media only screen and (max-width: 768px) {
+		.logo {
+			width: 30%;
+			padding-top: 10px;
+		}
+		.menu {
+			position: fixed;
+			left: -100%;
+			top: 6rem;
+			flex-direction: column;
+			background: rgba( 255, 255, 255, 0.25);
+			box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+			backdrop-filter: blur( 4px);
+			-webkit-backdrop-filter: blur( 4px);
+			border-radius: 10px;
+			width: 100%;
+			text-align: center;
+			transition: 0.3s;
+			z-index: 3;
+		}
+		.menu.active {
+			left: 0;
+		}
+		.nav-item {
+			margin: 2.5rem;
+		}
+		.nav-link {
+			border-radius: 9px;
+			border: none;
+			outline: none;
+			color: #f0f0f0;
+			background: #36449B;
+			padding: 8px;
+		}
+		.nav-link:hover {
+			background: #081358;
+		}
+		.hamburger {
+			display: block;
+			cursor: pointer;
+		}
+		.hamburger.active .bar:nth-child(2) {
+			opacity: 0;
+		}
+		.hamburger.active .bar:nth-child(1) {
+			-webkit-transform: translateY(8px) rotate(45deg);
+			transform: translateY(8px) rotate(45deg);
+		}
+		.hamburger.active .bar:nth-child(3) {
+			-webkit-transform: translateY(-8px) rotate(-45deg);
+			transform: translateY(-8px) rotate(-45deg);
+		}
+		.first-heading {
+			position: relative;
+			top: 0;
+		}
+		.first-hr {
+			position: relative;
+			top: 0;
+		}
+		.p-about {
+			line-height: 18px;
+			position: relative;
+			top: 0;
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+		.second-heading {
+			position: relative;
+			top: 0;
+		}
+		.second-hr {
+			position: relative;
+			top: 0;
+		}
+		.p-activity {
+			line-height: 18px;
+			position: relative;
+			top: 5px;
+			padding-right: 50px;
+			padding-left: 50px;
+		}
+		.third-heading {
+			position: relative;
+			top: 0;
+		}
+		.third-hr {
+			position: relative;
+			top: -5px;
+		}
+		.testimonals {
+			position: relative;
+			top: 0;
+		}
+		.cto,
+		.ceo {
+			font-size: 15px;
+			line-height: normal;
+			padding-right: 20px;
+			padding-left: 20px;
+			padding-bottom: 45px;
+		}
+		.line-1 h1 {
+			font-size: 14px;
+		}
+		.line-1 {
+			width: 18em;
+		}
+		@keyframes typewriter {
+			from {
+				width: 0;
+			}
+			to {
+				width: 10em;
+			}
+		}
+		.footer {
+			position: relative;
+			top: 0;
+		}
+		.bottom-nav {
+			padding-top: 20px;
+			padding-bottom: 10px;
+		}
+		.bottom-nav a:not(:last-child):after {
+			white-space: pre;
+			content: "     |     ";
+		}
+		.footer p {
+			padding-top: 10px;
+			font-size: 12px;
+		}
+		.fab {
+			padding: 20px 20px 10px 15px;
+			font-size: 15px;
+			color: var(--navcolor);
+		}
+		.form-section {
+			padding: 25px;
+		}
+	}
+
+	@media only screen and (max-width: 1416px) {
+		.nav-link, .signup-btn {
+			font-size: 1.12rem;
+		}
+	}
+
+	@media only screen and (max-width: 1255px) {
+		.nav-item {
+			margin-left: 5rem;
+	    } 
+    }
+
+	@media only screen and (max-width: 386px) {
+		.bottom-nav a {
+			font-size: 0.75rem;
+		}
+    }
+
+
+
+	/* Galaxy Fold responsive */
+	@media only screen and (max-width: 280px) {
+		.form-content {
+			max-width: 210px;
+			padding: 15px 20px;
+		}
+		.form-content h1 {
+			font-size: 1.15rem;
+		}
+		input[type="text"],
+		input[type="email"] {
+			width: 100%;
+			height: 30px;
+			font-size: 12px;
+			padding: 5px 16px 5px 10px;
+			margin-top: 10px;
+		}
+		textarea {
+			width: 100%;
+			height: 100px;
+			font-size: 13px;
+			padding: 10px 16px 10px 10px;
+			margin-top: 10px;
+		}
+		input[type="submit"] {
+			font-size: 1.2rem;
+			padding: 8px 10px 8px 10px;
+			margin-top: 10px;
+		}
+		.bottom-nav {
+			padding-top: 15px;
+			padding-bottom: 10px;
+		}
+		.bottom-nav a {
+			font-size: 0.65rem;
+		}
+		.footer-logo {
+			width: 50%;
+		}
+	}
