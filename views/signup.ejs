@@ -6,13 +6,13 @@
          <img src="images/mda.png" alt="MDA logo" class="logo">
          <ul class="menu">
             <li class="nav-item">
-               <a href="/" class="nav-link hvr-underline-from-center" rel="noopener">Home</a>
+               <a href="/" class="nav-link" rel="noopener">Home</a>
             </li>
             <li class="nav-item">
-               <a href="courses" class="nav-link hvr-underline-from-center" rel="noopener">Courses</a>
+               <a href="courses" class="nav-link" rel="noopener">Courses</a>
             </li>
             <li class="nav-item">
-               <a href="contact" class="nav-link hvr-underline-from-center" rel="noopener">Contact Us</a>
+               <a href="contact" class="nav-link" rel="noopener">Contact Us</a>
             </li>
             <li class="nav-item">
              <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
@@ -46,6 +46,10 @@
                <p><strong>Warning!</strong>  <%= alert2.msg %></p>
             </div>
             <% } %>
+            <div class="success">
+               <span class="success-close">&times;</span>
+               <p><strong>Success!</strong> Your message has been successfully sent</p>
+            </div>
             <form class="form-content" method="POST" action="/signup">
                <h1>Create your accoount today</h1>
                <p>To stick together with a source of quality</p>
