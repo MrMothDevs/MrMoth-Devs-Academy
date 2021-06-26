@@ -384,6 +384,8 @@ h1 {
 }
 
 
+
+
 /* Background me Javascript  */
 .home-bkg {
 	background-color: var(--background);
@@ -1308,6 +1310,10 @@ h1 {
 
 
 /* sign up (start) */
+.signup {
+	position: relative;
+	top: 100px;
+}
 
 
 /* i gjithe backgroundi i formit */
@@ -1440,6 +1446,17 @@ input[type="submit"]:hover {
 }
 
 
+.contact {
+	position: relative;
+	top: 80px;
+}
+
+.login {
+	position: relative;
+	top: 130px;
+}
+
+
 /* ketu mund te vendosim mesazhin qe do nisim ne contact form */
 textarea {
 	width: 100%;
@@ -1503,29 +1520,31 @@ textarea:focus {
 /* per te rregulluar pozicionin e footerit ne signup form */
 .footer-signup {
 	position: relative;
-	top: 10px;
+	top: 90px;
 }
 
 /* per te rregulluar pozicionin e footerit ne login form */
 .footer-login {
 	position: relative;
-	top: 10px;
+	top: 150px;
 }
 
 /* per te rregulluar pozicionin e footerit ne contact form */
 .footer-contact {
 	position: relative;
-	top: 30px;
+	top: 80px;
 }
 
-/* per te rregulluar pozicionin e footerit ne contact form */
+/* per te rregulluar pozicionin e footerit ne 404 */
 .footer-404 {
 	position: relative;
 	top: 0;
 }
 
-/* .footer-profile {
-} */
+.footer-profile {
+	position: relative;
+	top: 350px;
+}
 
 
 /* sign up (end) */
@@ -1773,6 +1792,7 @@ div#theme {
 	flex: 1;
 	margin: 50px;
 	max-width: 100%;
+	text-align: center;
 }
 
 .profile .user img {
@@ -1815,7 +1835,6 @@ input[type="file"]::-webkit-file-upload-button {
 .profile .user h1, 
 .profile .user h2 {
 	color: var(--headingcolor);
-	text-align: center;
 	margin: 20px 40px;
 } 
 
@@ -1832,6 +1851,16 @@ input[type="file"]::-webkit-file-upload-button {
 	float: right;
 	color: var(--headingcolor);
 	cursor: pointer;
+}
+
+.profile .user button {
+	border-radius: 9px;
+	border: none;
+	outline: none;
+	color: #f0f0f0;
+	font-size: 24px;
+	background: #36449B;
+	padding: 10px 15px;
 }
 
 .profile .user-course {
