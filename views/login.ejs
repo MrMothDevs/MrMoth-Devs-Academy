@@ -44,15 +44,17 @@
          <p><strong>Warning!</strong>  <%= alert2.msg %></p>
       </div>
       <% } %>
-      <div class="success">
-         <span class="success-close">&times;</span>
-         <p><strong>Success!</strong> Your message has been successfully sent</p>
-      </div>
+      <% if(typeof alert3 != 'undefined') { %>
+         <div class="success">
+            <span class="success-close">&times;</span>
+            <p><strong>Success!</strong> <%= alert3.msg %></p>
+         </div>
+         <% } %>
       <form class="form-content" method="POST" action="/login">
          <h1>Login to your account</h1>
          <p>To stick together with a source of quality</p>
          <label for="name"></label>
-         <input type="text" name="username" placeholder="Username" autocomplete="username" required>
+         <input type="text" name="email" placeholder="Email" autocomplete="email" required>
          <label for="password"></label>
          <input type="password" name="password" placeholder="Password" minlength="8" id="passw" required>
          <i id="passeye" class="far fa-eye" onclick="viewPassword()"></i>

@@ -1,11 +1,4 @@
 const nodemailer = require('nodemailer');
-const mailGun = require('nodemailer-mailgun-transport');
-const auth = {
-    auth: {
-        api_key: `${process.env.nodemailer_api_key}`,
-        domain: `${process.env.nodemailer_domain}`
-    }
-};
 const transporter = nodemailer.createTransport({
     host: 'smtp-relay.sendinblue.com',
     port: '587',
@@ -14,7 +7,7 @@ const transporter = nodemailer.createTransport({
         pass: process.env.SECRET
     }
 });
-const sendMail = (fname, lname, email, message, cb) => {
+const sendMail = (fname, lname, email, message) => {
     const mailOptions = {
         sender: fname, lname,
         from: email,
@@ -25,9 +18,9 @@ const sendMail = (fname, lname, email, message, cb) => {
 
     transporter.sendMail(mailOptions, function (err, data) {
         if (err) {
-            cb(err, null);
+            console.log(err, null);
         } else {
-            cb(null, data);
+            console.log(null, data);
         }
     });
 }

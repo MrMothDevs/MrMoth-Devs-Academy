@@ -33,10 +33,18 @@
       <!-- Form (start) -->
       <div class="form-section contact">
          <div class="form">
-            <div class="success">
-               <span class="success-close">&times;</span>
-               <p><strong>Success!</strong> Your message has been successfully sent</p>
-            </div>
+            <% if(typeof alert2 != 'undefined') { %>
+               <div class="alert">
+                  <span class="alertclose" onclick="this.parentElement.style.display='none';">&times;</span>
+                  <p><strong>Warning!</strong>  <%= alert2.msg %></p>
+               </div>
+               <% } %>
+               <% if(typeof alert3 != 'undefined') { %>
+                  <div class="success">
+                     <span class="success-close">&times;</span>
+                     <p><strong>Success!</strong> <%= alert3.msg %></p>
+                  </div>
+                  <% } %>
             <form class="form-content" method="POST" action="/email">
                <h1>Get in touch</h1>
                <label for="fname"></label>

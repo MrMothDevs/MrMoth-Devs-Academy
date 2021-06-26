@@ -89,25 +89,22 @@ app.post('/signup', body('username', 'This username must be 6+ characters long')
   latestUser
     .save()
     .then(() => {
-      res.send({
-        message:
-          "User was registered successfully! Please check your email",
-      });
       sendMail.sendConfirmationEmail(
         latestUser.username,
         latestUser.email,
         latestUser.confirmationCode
       );
-      let alert2 = { msg: 'Registered account', location: 'body' }
+      
+      let alert3 = { msg: 'User was registered successfully! Please check your email', location: 'body' }
       res.render('signup', {
-        alert2
+        alert3
       })
       return;
     })
     .catch((err) => console.log(err));
 })
 
-app.post('/login', body('username', 'This username must be 6+ characters long').isLength({ min: 6 }), body('password', 'This password must be 6+ characters long').isLength({ min: 6 }), async (req, res) => {
+app.post('/login', body('email', 'There is something wrong with the email.').isEmail(), body('password', 'This password must be 6+ characters long').isLength({ min: 6 }), async (req, res) => {
   if (req.session.user) {
     return res.redirect("/");
   }
@@ -122,15 +119,15 @@ app.post('/login', body('username', 'This username must be 6+ characters long').
     })
     return;
   }
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
   // check for missing fields
-  if (!username || !password) {
+  if (!email || !password) {
     res.send("Please enter all the fields");
     return;
   }
 
-  const Member = await User.findOne({ username });
+  const Member = await User.findOne({ email });
 
   if (!Member) {
 
@@ -154,12 +151,14 @@ app.post('/login', body('username', 'This username must be 6+ characters long').
     return;
   }
   if (Member.status != "Active") {
-    return res.status(401).send({
-      message: "Pending Account. Please Verify Your Email!",
-    });
+    let alert2 = { msg: 'Pending Account. Please check your email to verify this account!', location: 'body' }
+    res.render('login', {
+      alert2
+    })
+    return;
   }
-  let email = Member.email
   let pfp = Member.pfp
+  let username = Member.email
   console.log(pfp)
   // else logged in
   req.session.user = {
@@ -180,11 +179,13 @@ app.post('/email', async (req, res) => {
   const data = { fname, lname, email, message }
   console.log('Data:', data);
   //res.json({message: 'Message received!'})
-  sendMail(fname, lname, email, message, function (err, data) {
+  sendMail.sendMail(fname, lname, email, message, function (err, data) {
     if (err) {
-      res.status(500).json({ message: 'Internal Error' });
+      let alert2 = { msg: 'Internal Error. Your email could not be sent!', location: 'body' }
+      res.render('contact', {
+        alert2
+      })
     } else {
-      res.status({ message: 'Email sent!!!' });
     }
   })
   res.redirect("/contact");

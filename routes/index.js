@@ -61,7 +61,7 @@ router.get("/confirm/:confirmationCode", (req, res, next) => {
         return res.status(404).send({ message: "User Not found." });
       }
       user.status = "Active";
-      res.redirect('/login');
+      res.redirect('/login')
       user.save((err) => {
         if (err) {
           res.status(500).send({ message: err });
