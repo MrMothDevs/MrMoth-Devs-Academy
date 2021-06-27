@@ -56,7 +56,7 @@ app.use('/users', usersRouter);
 
 
 // Post Requests //
-app.post('/signup', body('username', 'This username must be 6+ characters long').isLength({ min: 6 }), body('password', 'This password must be 6+ characters long').isLength({ min: 6 }), async (req, res) => {
+app.post('/signup', body('username', 'This username must be 3+ characters long').isLength({ min: 3 }), body('password', 'This password must be 6+ characters long').isLength({ min: 6 }), async (req, res) => {
   const { email, password, username, birthday, gender } = req.body;
   let pfp = 'images/avatar.png'
   // check for missing fields
