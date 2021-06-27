@@ -856,10 +856,14 @@ h1 {
 /* Pjesa e footerit */
 .footer {
 	background-color: var(--background);
-	max-width: 100%;
+	width: 100%;
+    position: absolute;
+	color: #fff;
+}
+
+.footer-home {
 	position: relative;
 	top: 500px;
-	color: #fff;
 }
 
 
@@ -1332,13 +1336,6 @@ h1 {
 }
 
 
-/* Footer per faqjen e kurseve */
-.footer-course {
-	position: relative;
-	top: 10px;
-}
-
-
 /* popup per informacion rreth kursit */
 .course-modal {
 	display: none;
@@ -1527,8 +1524,7 @@ h1 {
 
 /* sign up (start) */
 .signup {
-	position: relative;
-	top: 100px;
+	margin-top: 10rem;
 }
 
 
@@ -1616,13 +1612,6 @@ input[type="date"] {
 }
 
 
-/* kutiza e check-ut */
-.remember-check {
-	display: inline-block;
-	margin-top: 20px;
-	text-align: start;
-}
-
 
 /* paragrafi i dyte */
 .form-content p:nth-of-type(2) {
@@ -1663,14 +1652,12 @@ input[type="submit"]:hover {
 
 /* pozicionimi i contact form */
 .contact {
-	position: relative;
-	top: 80px;
+	margin-top: 8rem;
 }
 
 /* pozicionimi i login */
 .login {
-	position: relative;
-	top: 130px;
+	margin-top: 10rem;
 }
 
 /* ketu mund te vendosim mesazhin qe do nisim ne contact form */
@@ -1736,29 +1723,6 @@ textarea:focus {
 	color: black;
 }
 
-/* per te rregulluar pozicionin e footerit ne signup form */
-.footer-signup {
-	position: relative;
-	top: 90px;
-}
-
-/* per te rregulluar pozicionin e footerit ne login form */
-.footer-login {
-	position: relative;
-	top: 150px;
-}
-
-/* per te rregulluar pozicionin e footerit ne contact form */
-.footer-contact {
-	position: relative;
-	top: 80px;
-}
-
-/* per te rregulluar pozicionin e footerit ne 404 */
-.footer-404 {
-	position: relative;
-	top: 0;
-}
 
 /* per te rregulluar pozicionin e footerit ne profile */
 .footer-profile {
@@ -2063,6 +2027,7 @@ input[type="file"]::-webkit-file-upload-button {
 			color: #f0f0f0;
 			background: #36449B;
 			padding: 8px;
+			
 		}
 		.nav-link:hover {
 			background: #081358;
@@ -2132,6 +2097,11 @@ input[type="file"]::-webkit-file-upload-button {
 			padding-left: 20px;
 			padding-bottom: 45px;
 		}
+		.co-founder-image,
+		.founder-image {
+			max-width: 100%;
+			height: auto;
+		}
 		.line-1 h1 {
 			font-size: 14px;
 		}
@@ -2146,10 +2116,6 @@ input[type="file"]::-webkit-file-upload-button {
 				width: 10em;
 			}
 		}
-		.footer {
-			position: relative;
-			top: 0;
-		}
 		.bottom-nav {
 			padding-top: 20px;
 			padding-bottom: 10px;
@@ -2157,6 +2123,10 @@ input[type="file"]::-webkit-file-upload-button {
 		.bottom-nav a:not(:last-child):after {
 			white-space: pre;
 			content: "     |     ";
+		}
+		.footer-home {
+			position: relative;
+			top: 0;
 		}
 		.footer p {
 			padding-top: 10px;
@@ -2169,13 +2139,6 @@ input[type="file"]::-webkit-file-upload-button {
 		}
 		.form-section {
 			padding: 25px;
-		}
-		.contact {
-			position: relative;
-			top: 150px;
-		}
-		.footer-contact {
-			margin-top: 150px;
 		}
 	}
 
@@ -2320,7 +2283,7 @@ input[type="file"]::-webkit-file-upload-button {
 		}
 		.course .box-container .box .price {
 			position: absolute;
-			top: 7rem;
+			top: 8rem;
 			height: 4rem;
 			width: 4rem;
 			line-height: 4rem;
@@ -2328,13 +2291,6 @@ input[type="file"]::-webkit-file-upload-button {
 		}
 		.navbar {
 			padding: 1rem 0.5rem;
-		}
-		.contact {
-			position: relative;
-			top: 70px;
-		}
-		.footer-contact {
-			margin-top: 70px;
 		}
 		.line-1 h1 {
 			font-size: 12px;
@@ -2393,5 +2349,30 @@ input[type="file"]::-webkit-file-upload-button {
 			width: 50px;
 			padding: 5px;
 			margin: 5px auto;
+		}
+		.form-content {
+			padding: 15px;
+		}
+		.form-content h1 {
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.form-content p {
+			font-size: 12px;
+		}
+		input[type="text"],
+		input[type="email"],
+		input[type="password"],
+		input[type="date"],
+		.gender {
+			height: 40px;
+			padding: 10px;
+			font-size: 12.5px;
+		}
+
+		.form-content input[type="submit"] {
+			padding: 5px 10px;
+			font-size: 1rem;
+			margin: 10px auto;
 		}
 	}
