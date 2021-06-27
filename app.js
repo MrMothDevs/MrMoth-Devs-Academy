@@ -158,7 +158,7 @@ app.post('/login', body('email', 'There is something wrong with the email.').isE
     return;
   }
   let pfp = Member.pfp
-  let username = Member.email
+  let username = Member.username
   console.log(pfp)
   // else logged in
   req.session.user = {
@@ -168,6 +168,30 @@ app.post('/login', body('email', 'There is something wrong with the email.').isE
   };
   res.redirect("/profile");
 })
+
+app.post('/edit', async (req, res) => {
+  const { editName, editPass} = req.body;
+  let pfp = 'images/avatar.png'
+  // check for missing fields
+  let username = req.session.user.username
+  let newUsername = editName
+  let newPassword = editPass
+  console.log(newUsername,  newPassword)
+  if (!newUsername || !newPassword) {
+    res.send("Please enter all the fields");
+    return;
+  }
+
+  // lets hash the password
+  const hashedPassword = await bcrypt.hash(newPassword, 12);
+  const Member = await User.findOne({ username });
+  console.log(Member.username)
+  const Update = User.findOneAndUpdate({username: Member.username}, { username: newUsername, password: hashedPassword })
+  Update.then(
+    res.redirect('/profile?success')
+  )
+})
+
 app.post('/email', async (req, res) => {
   const { fname, lname, email, message } = req.body;
 

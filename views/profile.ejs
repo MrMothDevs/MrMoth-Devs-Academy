@@ -34,13 +34,19 @@
 <hr class="profile-hr">
 <div class="profile">
       <div class="user">
+         <% if(typeof alert3 != 'undefined') { %>
+         <div class="success">
+            <span class="success-close">&times;</span>
+            <p><strong>Success!</strong><%= alert3.msg %></p>
+         </div>
+         <% } %>
          <!-- Imazhi i perdoruesit -->
          <img src=<%= pfp %> loading="lazy" alt="avatar">
          <!-- Emri i perdoruesit-->
          <h1><i class="far fa-user"></i><%= username %> <button id="editBtn" aria-label="Edit"> <i class="fas fa-pencil-alt"></i></button></h1>
          <!-- Emaili i perdoruesit-->
          <h2><i class="far fa-envelope-open"></i><%= email %></h2>
-         <button>Log Out</button>
+         <a href="logout" role="button" class="signup-btn" rel="noopener">Log Out</a>
       </div>
       <div class="user-course">
          <!-- Kurset e blera nga perdoruesi -->
@@ -57,7 +63,7 @@
 <!-- Profile Modal (start)-->
 <div class="edit" id="editProfile">
    <div class="edit-content">
-         <form action="" class="form-edit">
+         <form  method="POST" action="/edit" class="form-edit">
             <h1><span class="close-edit">&times;</span></h1>
             <img src="images/avatar.png" alt="avatar" width="200px" height="200px">
             <label for="avatar">Change avatar:</label>

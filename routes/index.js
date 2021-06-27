@@ -16,6 +16,9 @@ router.get('/signup', function(req, res, next) {
   
 router.get("/logout", authenticateUser, (req, res) => {
   req.session.user = null;
+  if(req.originalUrl === '/logout?saved'){
+    return res.redirect('/login?success')
+  }
   res.redirect("/login");
 });
   //Get the profile page
@@ -27,6 +30,10 @@ router.get('/profile', function(req, res, next) {
   let username = req.session.user.username
   let email = req.session.user.email
   let pfp = req.session.user.pfp
+  console.log(req.originalUrl)
+  if(req.originalUrl === '/profile?success'){
+    res.redirect('/logout?saved')
+  }
   res.render('profile', {username: username, email: email, pfp: pfp});
 });
 
@@ -47,6 +54,10 @@ router.get('/contact', function(req, res, next) {
 router.get('/login', function(req, res, next){
   if (req.session.user){
     return res.redirect('/')
+  }
+  let alert3 = { msg: 'The profile has been successfully updated!', location: 'body' }
+  if(req.originalUrl === '/login?success'){
+    return res.render('login', {alert3});
   }
   res.render('login');
 });
