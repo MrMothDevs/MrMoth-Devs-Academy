@@ -864,6 +864,12 @@ margin-top: 150px;
 	top: 500px;
 }
 
+.footer-members {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
 
 /* Imazhi i logos ne footer */
 .footer img {
@@ -1722,11 +1728,6 @@ textarea:focus {
 }
 
 
-per te rregulluar pozicionin e footerit ne profile
-.footer-profile {
-	position: relative;
-	top: 350px;
-}
 /* sign up (end) */
 
 
@@ -1967,6 +1968,7 @@ input[type="file"]::-webkit-file-upload-button {
 .table-wrapper table {
 	width: 100%;
 	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 /* username, email, kurset */
@@ -2185,8 +2187,54 @@ input[type="file"]::-webkit-file-upload-button {
 			font-size: 15px;
 			padding: 8px 12px;
 		}
-	
+		.members-heading {
+			position: relative;
+			top: 0;
+		} 
+		.profile-heading,
+		.members-heading {
+			line-height: normal;
+		}
 	}
+
+	@media screen and (max-width: 600px) {
+		table {
+		  border: 0;
+		}
+	
+		table thead {
+		  border: none;
+		  clip: rect(0 0 0 0);
+		  height: 1px;
+		  margin: -1px;
+		  padding: 0;
+		  overflow: hidden;
+		  position: absolute;
+		  width: 1px;
+		  font-size: 1rem;
+		}
+		
+		table tr {
+		  border-bottom: 3px solid var(--headingcolor);
+		  display: block;
+		  margin-bottom: .625em;
+		}
+		
+		table td {
+		  border-bottom: 1px solid var(--headingcolor);
+		  display: block;
+		  font-size: .8em;
+		  text-align: right;
+		}
+		
+		table td::before {
+		  content: attr(data-label);
+		  float: left;
+		  font-weight: bold;
+		  text-transform: uppercase;
+		}
+	
+	  }
 
 
 	@media only screen and (max-width: 1416px) {
@@ -2223,6 +2271,34 @@ input[type="file"]::-webkit-file-upload-button {
 			height: 6rem;
 			line-height: 6rem;
 			font-size: 2.5rem;
+		}
+		.profile .user h1 {
+			font-size: 20px;
+		}
+		.profile .user h2 {
+			font-size: 12px;
+		}
+		.profile .user-course h1 {
+			font-size: 15px;
+		}
+		.profile .user-course h2 {
+			font-size: 10px;
+		}	
+		.profile .user h1 i,
+		.profile .user h2 i {
+			margin-right: 2px;
+		}	
+		.profile .user {
+			margin: 15px;
+		}
+		.profile .user-course {
+			margin: 15px;
+		}
+		.profile-heading {
+			margin-top: 80px;
+		}
+		.profile-hr {
+			margin-top: 5px;
 		}
 	}
 
@@ -2425,5 +2501,34 @@ input[type="file"]::-webkit-file-upload-button {
 		.alert p, 
 		.success p {
 			font-size: 0.8rem;
+		}
+		.members {
+			position: relative;
+			top: 90px;
+			width: 100%;
+			height: 100%;
+		}
+		.members-container {
+			padding: 20px 10px;
+		}
+		.members-hr {
+			position: relative;
+			top: 5px;
+		}
+	}
+
+	@media only screen and (max-width: 414px) {
+		.profile-heading {
+			margin-top: 100px;
+		}
+		.profile {
+			margin-bottom: 100px;
+		}
+		.login .form-content h1 {
+			font-size: 25px;
+		}
+		.login .form-content {
+			padding: 30px 25px;
+			margin-bottom: 25px;
 		}
 	}
