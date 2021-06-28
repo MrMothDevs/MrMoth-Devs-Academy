@@ -453,8 +453,7 @@ h1 {
 }
 
 .profile-heading {
-	position: relative;
-	top: 150px;
+margin-top: 150px;
 }
 
 
@@ -493,8 +492,7 @@ h1 {
 }
 
 .profile-hr {
-	position: relative;
-	top: 160px;
+	margin-top: 15px;
 }
 
 .members-hr {
@@ -1724,7 +1722,7 @@ textarea:focus {
 }
 
 
-/* per te rregulluar pozicionin e footerit ne profile */
+per te rregulluar pozicionin e footerit ne profile
 .footer-profile {
 	position: relative;
 	top: 350px;
@@ -1755,19 +1753,16 @@ div#theme {
 .profile {
 	display: flex;
 	flex-wrap: wrap;
-	position: relative;
-	top: 220px;
 	width: 70%;
 	border-radius: 10px;
 	border: 2px solid var(--headingcolor);
-	margin-left: auto;
-	margin-right: auto;
+	margin: 20px auto;
 }
 
 /* username email img i perdoruesit */
 .profile .user {
 	flex: 1;
-	margin: 50px;
+	margin: 40px;
 	max-width: 100%;
 	text-align: center;
 }
@@ -1837,7 +1832,7 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 /* butoni per log out */
-.profile .user button {
+.profile .user a {
 	border-radius: 9px;
 	border: none;
 	outline: none;
@@ -1845,11 +1840,13 @@ input[type="file"]::-webkit-file-upload-button {
 	font-size: 24px;
 	background: #36449B;
 	padding: 10px 15px;
+	text-decoration: none;
 }
 
 /* kurset e perdoruesit */
 .profile .user-course {
-	margin: 50px;
+	max-width: 100%;
+	margin: 40px;
 }
 
 .profile .user-course h1 {
@@ -2148,8 +2145,49 @@ input[type="file"]::-webkit-file-upload-button {
 		.success p {
 			font-size: 1rem;
 		}
+		.profile-hr {
+			margin-top: 5px;
+		}
+		.profile .user h1 {
+			font-size: 25px;
+		}
+		.profile .user h2 {
+			font-size: 15px;
+		}
+		.profile .user-course h1 {
+			font-size: 17px;
+		}
+		.profile .user-course h2 {
+			font-size: 12px;
+		}	
+		.profile .user h1 i,
+		.profile .user h2 i {
+			margin-right: 5px;
+		}	
+		.profile .user h1,
+		.profile .user h2  {
+			margin: 10px;
+		}
+		.profile .user img {
+			width: 100px;
+			margin: 10px auto;
+		}
+		.profile .user h1 button {
+			font-size: 20px;
+		}
+		.profile .user-course h1 {
+			margin: 10px;
+		}
+		.profile .user-course h2 {
+			margin: 10px 15px;
+		}
+		.profile .user a {
+			font-size: 15px;
+			padding: 8px 12px;
+		}
 	
 	}
+
 
 	@media only screen and (max-width: 1416px) {
 		.nav-link, .signup-btn {
