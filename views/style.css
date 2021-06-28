@@ -2140,6 +2140,15 @@ input[type="file"]::-webkit-file-upload-button {
 		.form-section {
 			padding: 25px;
 		}
+		.alert,
+		.success {
+			width: 100%;
+		}
+		.alert p,
+		.success p {
+			font-size: 1rem;
+		}
+	
 	}
 
 	@media only screen and (max-width: 1416px) {
@@ -2351,7 +2360,7 @@ input[type="file"]::-webkit-file-upload-button {
 			margin: 5px auto;
 		}
 		.form-content {
-			padding: 15px;
+			padding: 10px;
 		}
 		.form-content h1 {
 			font-size: 16px;
@@ -2374,5 +2383,9 @@ input[type="file"]::-webkit-file-upload-button {
 			padding: 5px 10px;
 			font-size: 1rem;
 			margin: 10px auto;
+		}
+		.alert p, 
+		.success p {
+			font-size: 0.8rem;
 		}
 	}
