@@ -290,6 +290,9 @@ h1 {
 .dark-mode .form-edit label:first-of-type {
 	color: #000;
 }
+.dark-mode .form-edit .close-edit {
+	color: #000;
+}
 
 .dark-mode .confirm-content {
 	background-color: var(--headingcolor);
@@ -307,8 +310,12 @@ h1 {
 .dark-mode .close-confirm:hover {
 	color: #000;
 }
-
-
+.dark-mode table caption {
+	color: var(--navcolor);
+}
+.dark-mode table tr {
+	border: 2px solid var(--navcolor);
+}
  /* Navigimi */
 .navbar {
 	position: fixed;
@@ -1338,125 +1345,11 @@ margin-top: 150px;
 	font-size: 3rem;
 }
 
-
-/* popup per informacion rreth kursit */
-.course-modal {
-	display: none;
-	position: fixed;
-	z-index: 1;
-	padding-top: 250px;
-	margin-left: auto;
-	margin-right: auto;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.4);
-}
-
-/* informacionet e kurseve */
-.modal-content {
-	position: relative;
-    background-color: var(--navcolor);
-	margin: auto;
-	padding: 0;
-	border-radius: 5px;
-	width: 80%;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	animation-name: animatetop;
-	animation-duration: 0.4s;
-}
-
-/* animacion i shfaqjes se kursit */
-@keyframes animatetop {
-	from {
-		top: -300px;
-		opacity: 0;
-	}
-	to {
-		top: 0;
-		opacity: 1;
-	}
-}
-
-/* (x) per te mbyllur kutine */
-.close-modal, 
-.close-edit {
-	color: #666;
-	float: right;
-	font-size: 35px;
-	font-weight: bold;
-}
-
-.close-modal:hover,
-.close-modal:focus,
-.close-edit:hover, 
-.close-edit:focus {
-	color: #444;
-	cursor: pointer;
-}
-
-.modal-header {
-	padding: 10px 16px;
-	color: #444;
-}
-
-.modal-header h1 {
-	text-align: center;
-}
-
-.modal-body {
-	padding: 2px 16px;
-	color: #666;
-	text-align: center;
-}
-
-.modal-body p {
-	font-size: 20px;
-	margin-bottom: 10px;
-}
-
-.modal-body .stars {
-	color: var(--headingcolor);
-}
-
-.modal-footer {
-	padding: 2px 16px;
-}
-.modal-footer h3  {
-	display: inline-block;
-	color: #666;
-	padding: 1rem;
-}
-.modal-footer h3 i {
-	color: var(--headingcolor);
-}
-
-/* butoni per te blere kursin */
-.modal-footer .get-btn {
-	border-radius: 9px;
-	border: none;
-	outline: none;
-	color: #f0f0f0;
-	font-size: 16px;
-	background-color: #36449B;
-	padding: 10px 15px;
-	cursor: pointer;
-	float: right;
-}
-
-.modal-footer .get-btn:hover {
-	background-color: var(--backgroundark);
-}
-
-
-
 /* popup per konfirmim te blerjes se kursit */
 .confirmation {
 	display: none;
 	position: fixed;
-	z-index: 3;
+	z-index: 1;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -1859,16 +1752,7 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 
-@keyframes animatetop {
-	from {
-		top: -300px;
-		opacity: 0;
-	}
-	to {
-		top: 0;
-		opacity: 1;
-	}
-}
+
 
 
 .form-edit h2 {
@@ -1889,7 +1773,7 @@ input[type="file"]::-webkit-file-upload-button {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	animation-name: animatetop;
 	animation-duration: 0.4s;
-    width: 30%;
+    width: 500px;
 	padding: 20px 40px 20px 40px;
 	margin: 20px auto;
 }
@@ -1917,6 +1801,8 @@ input[type="file"]::-webkit-file-upload-button {
 	outline: none;
 	box-shadow: 0 0 0 4px #1D2C87;
 }
+
+
 /* profile section (end) */
 
 
@@ -1982,6 +1868,12 @@ table th {
 	  width: 1px;
 	}
 	
+	.dark-mode table tr {
+		border-bottom: 3px solid var(--navcolor);
+	}
+	.dark-mode table td {
+		border-bottom: 1px solid var(--navcolor);
+	}
 	table tr {
 	  border-bottom: 3px solid var(--headingcolor);
 	  display: block;
@@ -2211,22 +2103,37 @@ table th {
 		.members-heading {
 			line-height: normal;
 		}
-		.modal-header h1 {
-			font-size: 1.7rem;
+		.form-edit {
+			width: 300px;
+			padding: 10px 20px;
+			margin: 10px auto;
 		}
-		.modal-body p {
-			font-size: 1.1rem;
+		.form-edit img {
+			margin: 5px auto;
+			width: 100px;
+			height: auto;
 		}
-		.modal-footer h3 {
-			font-size: 1rem;
+		input[type="file"] {
+			display: block;
+			margin-left: 0;
 		}
-		.modal-footer {
-			padding: 5px;
-			text-align: center;
+		input[type="file"]::-webkit-file-upload-button {
+			padding: 10px;
+			font-size: 13px;
 		}
-		.modal-footer .get-btn {
-			float: none;
+		.form-edit input[type="submit"] {
+			font-size: 18px;
+			padding: 10px 15px;
+			margin: 20px auto auto auto;
 		}
+		
+		.form-edit input[type="text"],
+		.form-edit input[type="password"]{
+			font-size: 13px;
+			padding: 10px 12px;
+			height: 40px;
+		}
+
 	}
 
 	@media only screen and (max-width: 1416px) {
@@ -2494,6 +2401,75 @@ table th {
 			position: relative;
 			top: 5px;
 		}
+		.confirm-content p {
+			font-size: 13px;
+		}
+		.edit {
+			padding-top: 150px;
+		}
+		.form-edit {
+			width: 200px;
+			padding: 15px;
+			margin: 10px auto;
+			animation-name: editTop;
+			animation-duration: .4s;
+		}
+		@keyframes editTop {
+			from {
+				top: -200px;
+				opacity: 0;
+			}
+			to {
+				top: 0;
+				opacity: 1;
+			}
+		}
+		.form-edit img {
+			margin: 5px auto;
+			width: 50px;
+			height: auto;
+		}
+		.form-edit h2 {
+			font-size: 16px;
+		}
+		input[type="file"] {
+			display: block;
+			margin-left: 0;
+			width: 160px;
+			font-size: 11px;
+		}
+		input[type="file"]::-webkit-file-upload-button {
+			padding: 10px;
+			font-size: 12px;
+		}
+		.form-edit input[type="submit"] {
+			font-size: 15px;
+			padding: 8px 10px;
+			margin: 15px auto auto auto;
+		}
+		
+		.form-edit input[type="text"],
+		.form-edit input[type="password"] { 
+			margin-top: 15px;
+			font-size: 11px;
+			padding: 5px 10px;
+			height: 35px;
+		}
+		[aria-label]:hover::after {
+			display: none;
+		}
+		.fa-eye,
+		.fa-eye-slash {
+			float: right;
+			position: relative;
+			top: -25px;
+			right: 15px;
+			font-size: 14px;
+		}
+		.close-edit {
+			font-size: 30px;
+		}
+
 	}
 
 	@media only screen and (max-width: 414px) {
