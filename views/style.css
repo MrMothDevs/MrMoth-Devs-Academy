@@ -1470,31 +1470,14 @@ margin-top: 150px;
 	background-color: var(--navcolor);
 	margin-left: auto;
 	margin-right: auto;
-	width: 25%;
+	width: 300px;
 	padding: 20px;
 	text-align: center;
 	border-radius: 5px;
 }
 
-.confirm-content h1 {
-	text-align: right;
-}
-
-.confirm-content h2,
 .confirm-content p {
-	margin-bottom: 10px;
-}
-
-.close-confirm {
-	font-size: 40px;
-	font-weight: bold;
-	color: #444;
-}
-
-.close-confirm:focus,
-.close-confirm:hover {
-	color: #000;
-	cursor: pointer;
+	margin: 10px auto;
 }
 
 /* butonat njeri per vazhdimin e blerjes se kursit dhe nje per anullim */
@@ -1504,10 +1487,10 @@ margin-top: 150px;
 	border: none;
 	outline: none;
 	font-size: 16px;
-	width: 25%;
-	padding: 10px 15px;
+	width: 100px;
+	height: 40px;
+	padding: 10px 20px 10px 20px;
 	text-decoration: none;
-	margin: 10px auto;
 	cursor: pointer;
 }
 
@@ -2228,6 +2211,22 @@ table th {
 		.members-heading {
 			line-height: normal;
 		}
+		.modal-header h1 {
+			font-size: 1.7rem;
+		}
+		.modal-body p {
+			font-size: 1.1rem;
+		}
+		.modal-footer h3 {
+			font-size: 1rem;
+		}
+		.modal-footer {
+			padding: 5px;
+			text-align: center;
+		}
+		.modal-footer .get-btn {
+			float: none;
+		}
 	}
 
 	@media only screen and (max-width: 1416px) {
@@ -2444,20 +2443,7 @@ table th {
 		}
 		.confirm-content {
 			width: 150px;
-			padding: 0 10px 10px 10px;
-		}
-		.confirm-content h2 {
-			font-size: 15px;
-		}
-		.close-confirm {
-			font-size: 25px;
-		}
-		.confirm-content p {
-			font-size: 12px;
-		}
-		.confirm-content h2, 
-		.confirm-content p {
-			margin-bottom: 5px;
+			padding: 5px 10px;
 		}
 		.cancel-btn,
 		.buy-btn {
