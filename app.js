@@ -212,7 +212,7 @@ app.post('/email', async (req, res) => {
     } else {
     }
   })
-  res.redirect("/contact");
+  res.redirect("/contact?success");
 })
 
 // catch 404 and forward to error handler

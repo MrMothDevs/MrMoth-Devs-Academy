@@ -3,6 +3,7 @@ var router = express.Router();
 const authenticateUser = require("../middlewares/authenticateUser.js");
 const db = require("../models");
 const User = db.user;
+const Courses = db.courses
 //Get the main page
 router.get('/', function(req, res, next) {
   res.render('index',{username: req.session.user})
@@ -38,8 +39,10 @@ router.get('/profile', function(req, res, next) {
 });
 
 //Get the courses page
-router.get('/courses', function(req, res, next) {
-  res.render('courses', {username: req.session.user});
+router.get('/courses', async function(req, res, next) {
+  Courses.find({}).then(await function(course) {
+     res.render('courses', {username: req.session.user, course: course});
+  })
 });
 
 router.get('/members', function(req, res, next) {
@@ -47,6 +50,10 @@ router.get('/members', function(req, res, next) {
 })
 //Get the contact page
 router.get('/contact', function(req, res, next) {
+  let alert3 = { msg: 'The email has been successfully sent!', location: 'body' }
+  if(req.originalUrl === '/contact?success'){
+    return res.render('contactus', {username: req.session.user, alert3});
+  }
   res.render('contactus', {username: req.session.user});
 });
 
