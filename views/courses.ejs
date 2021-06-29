@@ -81,41 +81,7 @@
                </div>
             </div>
             <!-- Popup i kursit 1 (start) -->
-            <div class="courseModal course-modal">
-               <div class="modal-content">
-                  <div class="modal-header">
-                     <span class="close-modal">&times;</span>
-                     <h1>
-                        <%= cours.title %>
-                     </h1>
-                  </div>
-                  <div class="modal-body">
-                     <p>
-                        <%= cours.info %>
-                     </p>
-                     <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half"></i>
-                     </div>
-                  </div>
-                  <div class="modal-footer">
-                     <h3> <i class="far fa-clock"></i>
-                        <%= cours.time %>
-                     </h3>
-                     <h3> <i class="far fa-calendar-alt"></i>
-                        <%= cours.lasting %>
-                     </h3>
-                     <h3> <i class="fas fa-book"></i>
-                        <%= cours.modules %> modules
-                     </h3>
-                     <button class="get-btn" onclick="document.getElementById('1').style.display = 'block'">BUY <span
-                           style="font-size: 20px;">&#8680;</span></button>
-                  </div>
-               </div>
-            </div>
+            
             <!-- Kuti konfirmimi per blerjen e kursit (start)-->
             <div id="1" class="confirmation">
                <div class="confirm-content">
@@ -130,7 +96,11 @@
             <!-- Funksioni ne JS per shfaqeje e kutise se konfirmimit (start) -->
             <script>
                var confModal = document.getElementById('1');
+               var course = document.getElementsByClassName('courseBtn')[0];
 
+               course.onclick = function() {
+                  confModal.style.display = "block";
+               }
                window.onclick = function (event) {
                   if (event.target == confModal) {
                      confModal.style.display = "none";
