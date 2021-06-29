@@ -453,8 +453,7 @@ h1 {
 }
 
 .profile-heading {
-	position: relative;
-	top: 150px;
+margin-top: 150px;
 }
 
 
@@ -493,8 +492,7 @@ h1 {
 }
 
 .profile-hr {
-	position: relative;
-	top: 160px;
+	margin-top: 15px;
 }
 
 .members-hr {
@@ -864,6 +862,11 @@ h1 {
 .footer-home {
 	position: relative;
 	top: 500px;
+}
+
+.footer-members {
+	position: relative;
+	bottom: 0;
 }
 
 
@@ -1723,12 +1726,6 @@ textarea:focus {
 	color: black;
 }
 
-
-/* per te rregulluar pozicionin e footerit ne profile */
-.footer-profile {
-	position: relative;
-	top: 350px;
-}
 /* sign up (end) */
 
 
@@ -1755,19 +1752,16 @@ div#theme {
 .profile {
 	display: flex;
 	flex-wrap: wrap;
-	position: relative;
-	top: 220px;
 	width: 70%;
 	border-radius: 10px;
 	border: 2px solid var(--headingcolor);
-	margin-left: auto;
-	margin-right: auto;
+	margin: 20px auto;
 }
 
 /* username email img i perdoruesit */
 .profile .user {
 	flex: 1;
-	margin: 50px;
+	margin: 40px;
 	max-width: 100%;
 	text-align: center;
 }
@@ -1837,7 +1831,7 @@ input[type="file"]::-webkit-file-upload-button {
 }
 
 /* butoni per log out */
-.profile .user button {
+.profile .user a {
 	border-radius: 9px;
 	border: none;
 	outline: none;
@@ -1845,11 +1839,13 @@ input[type="file"]::-webkit-file-upload-button {
 	font-size: 24px;
 	background: #36449B;
 	padding: 10px 15px;
+	text-decoration: none;
 }
 
 /* kurset e perdoruesit */
 .profile .user-course {
-	margin: 50px;
+	max-width: 100%;
+	margin: 40px;
 }
 
 .profile .user-course h1 {
@@ -1942,55 +1938,91 @@ input[type="file"]::-webkit-file-upload-button {
 
 
 /* anetaret (start) */
-.members {
-	width: 100%;
-	margin: 0 auto;
-	position: relative;
-	top: 150px;
-}
-
-.members-container {
-	width: 100%;
-	position: relative;
+.table-wrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 50px 60px;
-	flex-wrap: wrap;
-}
-
-/* tabele me anetare */
-.table-wrapper {
 	width: 100%;
-	border: 1px solid var(--headingcolor);
-	border-radius: 9px;
-	overflow: hidden;
+	margin: 150px auto;
+	padding: 20px;
 }
-
-.table-wrapper table {
-	width: 100%;
+table {
+	border: 2px solid #ccc;
 	border-collapse: collapse;
+	width: 100%;
+	
 }
-
-/* username, email, kurset */
-.table-wrapper table thead {
+  
+table caption {
+	font-size: 1.5em;
+	margin: .5em 0 .75em;
+	color: var(--headingcolor);
+	font-weight: bold;
+}
+  
+table tr {
+	border: 2px solid var(--headingcolor);
+	padding: .35em;
+}
+  
+table th,
+table td {
+	padding: .625em;
+	text-align: center;
+}
+  
+table th {
+	font-size: .85em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
 	background-color: var(--headingcolor);
 	color: var(--navcolor);
-	height: 40px;
-	text-transform: uppercase;
-	font-size: 1.25rem;
 }
-
-.table-wrapper table thead tr th {
-	padding: 10px;
-}
-
-/* te dhenat e anetareve */
-.table-wrapper table tbody tr td {
-	padding: 10px;
-	text-align: center;
-	font-size: 1.15rem;
-}
+  
+@media screen and (max-width: 600px) {
+	table {
+	  border: 0;
+	}
+  
+	table caption {
+	  font-size: 1.3em;
+	}
+	
+	table thead {
+	  border: none;
+	  clip: rect(0 0 0 0);
+	  height: 1px;
+	  margin: -1px;
+	  overflow: hidden;
+	  padding: 0;
+	  position: absolute;
+	  width: 1px;
+	}
+	
+	table tr {
+	  border-bottom: 3px solid var(--headingcolor);
+	  display: block;
+	  margin-bottom: .625em;
+	}
+	
+	table td {
+	  border-bottom: 1px solid var(--headingcolor);
+	  display: block;
+	  font-size: .8em;
+	  text-align: right;
+	}
+	
+	table td::before {
+	  content: attr(data-label);
+	  float: left;
+	  font-weight: bold;
+	  text-transform: uppercase;
+	}
+	
+	table td:last-child {
+	  border-bottom: 0;
+	}
+  }
 
 
 	/* Responsive part */
@@ -2140,6 +2172,62 @@ input[type="file"]::-webkit-file-upload-button {
 		.form-section {
 			padding: 25px;
 		}
+		.alert,
+		.success {
+			width: 100%;
+		}
+		.alert p,
+		.success p {
+			font-size: 1rem;
+		}
+		.profile-hr {
+			margin-top: 5px;
+		}
+		.profile .user h1 {
+			font-size: 25px;
+		}
+		.profile .user h2 {
+			font-size: 15px;
+		}
+		.profile .user-course h1 {
+			font-size: 17px;
+		}
+		.profile .user-course h2 {
+			font-size: 12px;
+		}	
+		.profile .user h1 i,
+		.profile .user h2 i {
+			margin-right: 5px;
+		}	
+		.profile .user h1,
+		.profile .user h2  {
+			margin: 10px;
+		}
+		.profile .user img {
+			width: 100px;
+			margin: 10px auto;
+		}
+		.profile .user h1 button {
+			font-size: 20px;
+		}
+		.profile .user-course h1 {
+			margin: 10px;
+		}
+		.profile .user-course h2 {
+			margin: 10px 15px;
+		}
+		.profile .user a {
+			font-size: 15px;
+			padding: 8px 12px;
+		}
+		.members-heading {
+			position: relative;
+			top: 0;
+		} 
+		.profile-heading,
+		.members-heading {
+			line-height: normal;
+		}
 	}
 
 	@media only screen and (max-width: 1416px) {
@@ -2176,6 +2264,34 @@ input[type="file"]::-webkit-file-upload-button {
 			height: 6rem;
 			line-height: 6rem;
 			font-size: 2.5rem;
+		}
+		.profile .user h1 {
+			font-size: 20px;
+		}
+		.profile .user h2 {
+			font-size: 12px;
+		}
+		.profile .user-course h1 {
+			font-size: 15px;
+		}
+		.profile .user-course h2 {
+			font-size: 10px;
+		}	
+		.profile .user h1 i,
+		.profile .user h2 i {
+			margin-right: 2px;
+		}	
+		.profile .user {
+			margin: 15px;
+		}
+		.profile .user-course {
+			margin: 15px;
+		}
+		.profile-heading {
+			margin-top: 80px;
+		}
+		.profile-hr {
+			margin-top: 5px;
 		}
 	}
 
@@ -2351,7 +2467,7 @@ input[type="file"]::-webkit-file-upload-button {
 			margin: 5px auto;
 		}
 		.form-content {
-			padding: 15px;
+			padding: 10px;
 		}
 		.form-content h1 {
 			font-size: 16px;
@@ -2374,5 +2490,38 @@ input[type="file"]::-webkit-file-upload-button {
 			padding: 5px 10px;
 			font-size: 1rem;
 			margin: 10px auto;
+		}
+		.alert p, 
+		.success p {
+			font-size: 0.8rem;
+		}
+		.members {
+			position: relative;
+			top: 90px;
+			width: 100%;
+			height: 100%;
+		}
+		.members-container {
+			padding: 20px 10px;
+		}
+		.members-hr {
+			position: relative;
+			top: 5px;
+		}
+	}
+
+	@media only screen and (max-width: 414px) {
+		.profile-heading {
+			margin-top: 100px;
+		}
+		.profile {
+			margin-bottom: 100px;
+		}
+		.login .form-content h1 {
+			font-size: 25px;
+		}
+		.login .form-content {
+			padding: 30px 25px;
+			margin-bottom: 25px;
 		}
 	}
