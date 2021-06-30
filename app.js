@@ -165,13 +165,15 @@ app.post('/login', body('email', 'There is something wrong with the email.').isE
   let pfp = Member.pfp
   let username = Member.username
   let inventory = Member.inventory
+  let permissions = Member.permissions
 
   // Logged in
   req.session.user = {
     username,
     email,
     pfp, 
-    inventory
+    inventory,
+    permissions
   };
   res.redirect("/profile");
 })

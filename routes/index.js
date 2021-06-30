@@ -40,15 +40,14 @@ router.get('/profile', async function (req, res, next) {
   console.log(req.session.user)
   let username = req.session.user.username
   let email = req.session.user.email
-  let pfp = req.session.user.pfp
+  let inventory = req.session.user.inventory
+  let permissions = req.session.user.permissions
   console.log(req.originalUrl)
   if (req.originalUrl === '/profile?success') {
     res.redirect('/logout?saved')
   }
-  const Member = await User.findOne({
-    username: req.session.user.username,
-  })
-  res.render('profile', { username: username, email: email, pfp: pfp, users: Member.inventory, permissions: Member.permissions});
+  console.log(inventory)
+  res.render('profile', { username: username, email: email, users: inventory, permissions: permissions});
 });
 
 //Courses Page
