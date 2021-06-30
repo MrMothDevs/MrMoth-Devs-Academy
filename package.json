@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/MrMothDevs/MrMoth-Devs-Acamdey/issues"
   },
+  "engines": {
+    "node": "14.x"
+  },
   "homepage": "https://github.com/MrMothDevs/MrMoth-Devs-Acamdey#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
