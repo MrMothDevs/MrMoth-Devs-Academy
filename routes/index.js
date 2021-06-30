@@ -91,9 +91,9 @@ router.get('/members', async function (req, res, next) {
 router.get('/contact', function (req, res, next) {
   let alert3 = { msg: 'The email has been successfully sent!', location: 'body' }
   if (req.originalUrl === '/contact?success') {
-    return res.render('contactus', { username: req.session.user, alert3 });
+    return res.render('contactUs', { username: req.session.user, alert3 });
   }
-  res.render('contact', { user: req.session.user });
+  res.render('contactUs', { user: req.session.user });
 });
 
 //Login Page
