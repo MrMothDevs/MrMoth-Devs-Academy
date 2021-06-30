@@ -36,7 +36,7 @@ router.get('/profile', async function (req, res, next) {
     res.redirect('/logout?saved')
   }
   const Member = await User.findOne({
-    user: req.session.user.user,
+    username: req.session.user.username,
   })
   console.log(Member)
   res.render('profile', { username: username, email: email, pfp: pfp, users: Member.inventory});
@@ -108,7 +108,7 @@ router.get("/courses/purchase/:id", (req, res, next) => {
         return res.redirect('/login')
       }
       const Member = await User.findOne({
-        user: req.session.user.user,
+        username: req.session.user.username,
       })
       console.log(Member)
       console.log(course);
