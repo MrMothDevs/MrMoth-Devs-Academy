@@ -23,6 +23,7 @@ const UserSchema = new mongoose.Schema({
   },
   pfp: {
     type: String,
+    data: Buffer,
     required: true,
   },
   status: {
@@ -33,10 +34,10 @@ const UserSchema = new mongoose.Schema({
   confirmationCode: { 
     type: String, 
     unique: true },
-  roles: [
+  permissions: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Role"
+      type: String,
+      default: 'User'
     }
   ],
   inventory: {

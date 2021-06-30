@@ -14,10 +14,10 @@
             <a href="contact" class="nav-link" rel="noopener">Contact Us</a>
          </li>
          <li class="nav-item">
-            <% if (!username){ %>
+            <% if (!user){ %>
                <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
                <% } else { %>
-                  <a href="logout" role="button" class="signup-btn" rel="noopener">Profile</a>
+                  <a href="profile" role="button" class="signup-btn" rel="noopener">Profile</a>
                   <% } %>
          </li>
       </ul>
@@ -40,26 +40,13 @@
               </tr>
             </thead>
             <tbody>
+               <% members.forEach( function(member) { %>
               <tr>
-                <td data-label="Username">Kristjan Seraj</td>
-                <td data-label="Email">serajkristi@gmail.com</td>
-                <td data-label="Courses">Learn FrontEnd <br> Learn BackEnd</td>
+                <td data-label="Username"><%= member.username %></td>
+                <td data-label="Email"><%= member.email %></td>
+                <td data-label="Courses"><%= member.inventory %></td>
               </tr>
-              <tr>
-                <td data-label="Username">Kristjan Seraj</td>
-                <td data-label="Email">serajkristi@gmail.com</td>
-                <td data-label="Courses">Learn FrontEnd <br> Learn BackEnd</td>
-              </tr>
-              <tr>
-                <td data-label="Username">Kristjan Seraj</td>
-                <td data-label="Email">serajkristi@gmail.com</td>
-                <td data-label="Courses">Learn FrontEnd <br> Learn BackEnd</td>
-              </tr>
-              <tr>
-                <td data-label="Username">Kristjan Seraj</td>
-                <td data-label="Email">serajkristi@gmail.com</td>
-                <td data-label="Courses">Learn FrontEnd <br> Learn BackEnd</td>
-              </tr>
+              <% }) %>
             </tbody>
           </table>
 </div>
@@ -106,7 +93,6 @@
  
  <!-- Js per funksionin e shfaqjes se navigimit ne mobile -->
  <script src="js/navbar.js"></script>
- 
  <!-- Carousel JS -->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
  </body>

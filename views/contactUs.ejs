@@ -14,10 +14,10 @@
             <a href="contact" class="nav-link" rel="noopener">Contact Us</a>
          </li>
          <li class="nav-item">
-            <% if (!username){ %>
+            <% if (!user){ %>
                <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
                <% } else { %>
-                  <a href="logout" role="button" class="signup-btn" rel="noopener">Profile</a>
+                  <a href="profile" role="button" class="signup-btn" rel="noopener">Profile</a>
                   <% } %>
          </li>
       </ul>

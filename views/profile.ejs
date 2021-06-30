@@ -10,14 +10,20 @@
          <li class="nav-item">
             <a href="courses" class="nav-link" rel="noopener">Courses</a>
          </li>
-         <li class="nav-item">
-            <a href="contact" class="nav-link" rel="noopener">Contact Us</a>
-         </li>
+         <% if (permissions == "Admin"){ %>
+            <li class="nav-item">
+               <a href="members" class="nav-link" rel="noopener">Members</a>
+            </li>
+            <% } else { %>
+               <li class="nav-item">
+                  <a href="contact" class="nav-link" rel="noopener">Contact Us</a>
+               </li>
+               <% } %>
          <li class="nav-item">
             <% if (!username){ %>
                <a href="signup" role="button" class="signup-btn" rel="noopener">Sign Up</a>
                <% } else { %>
-                  <a href="logout" role="button" class="signup-btn" rel="noopener">Profile</a>
+                  <a href="logout" role="button" class="signup-btn" rel="noopener">Logout</a>
                   <% } %>
          </li>
       </ul>

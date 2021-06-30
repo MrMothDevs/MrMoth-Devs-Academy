@@ -5,14 +5,21 @@ const db = require("../models");
 const User = db.user;
 const Courses = db.courses
 //Get the main page
-router.get('/', function (req, res, next) {
-  res.render('index', { username: req.session.user })
+router.get('/', async function (req, res, next) {
+  if (!req.session.user){
+   return res.render('index', { user: req.session.user, permissions: 'User'})
+  }
+  const Member = await User.findOne({
+    username: req.session.user.username,
+  })
+  res.render('index', { user: req.session.user, permissions: Member.permissions })
+
 })
 
 
 //Get the signup page
 router.get('/signup', function (req, res, next) {
-  res.render('signup', { username: req.session.user });
+  res.render('signup', { user: req.session.user });
 });
 
 router.get("/logout", authenticateUser, (req, res) => {
@@ -38,25 +45,43 @@ router.get('/profile', async function (req, res, next) {
   const Member = await User.findOne({
     username: req.session.user.username,
   })
-  console.log(Member)
-  res.render('profile', { username: username, email: email, pfp: pfp, users: Member.inventory});
+  res.render('profile', { username: username, email: email, pfp: pfp, users: Member.inventory, permissions: Member.permissions});
 });
 
 //Get the courses page
 router.get('/courses', async function (req, res, next) {
   if (req.originalUrl === '/courses?error') {
-    Courses.find({}).then(await function (course) {
+    Courses.find({}).then(async function (course) {
       let alert2 = { msg: 'You have already purchased this course!', location: 'body' }
-      return res.render('courses', { username: req.session.user, course: course, alert2 });
+      return res.render('courses', { user: req.session.user, course: course, alert2, permissions: Member.permissions});
     })
   }
-  Courses.find({}).then(await function (course) {
-    res.render('courses', { username: req.session.user, course: course });
+  Courses.find({}).then(async function (course) {
+    if (req.session.user){
+      const Member = await User.findOne({
+        username: req.session.user.username,
+      })
+      return res.render('courses', {  user: req.session.user, course: course, permissions: Member.permissions})
+     }else {
+      return res.render('courses', { user: req.session.user, course: course, permissions: 'User'});
+     }
   })
 });
 
-router.get('/members', function (req, res, next) {
-  res.render('members', { username: req.session.user });
+router.get('/members', async function (req, res, next) {
+  if (!req.session.user) {
+    return res.redirect('/login')
+  }
+  const Member = await User.findOne({
+    username: req.session.user.username,
+  })
+  if(Member.permissions == "Admin"){
+    User.find({}).then(await function (members) {
+    return res.render('members', { user: req.session.user, members: members });
+    })
+  } else {
+    res.redirect('/profile')
+  }
 })
 //Get the contact page
 router.get('/contact', function (req, res, next) {
@@ -64,7 +89,7 @@ router.get('/contact', function (req, res, next) {
   if (req.originalUrl === '/contact?success') {
     return res.render('contactus', { username: req.session.user, alert3 });
   }
-  res.render('contactus', { username: req.session.user });
+  res.render('contactus', { user: req.session.user });
 });
 
 //Get the login page
@@ -128,6 +153,6 @@ router.get("/courses/purchase/:id", (req, res, next) => {
 })
 //Get the 404 page
 router.get('*', function (req, res, next) {
-  res.render('404', { username: req.session.user });
+  res.render('404', { user: req.session.user });
 });
 module.exports = router;
