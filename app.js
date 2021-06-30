@@ -159,12 +159,14 @@ app.post('/login', body('email', 'There is something wrong with the email.').isE
   }
   let pfp = Member.pfp
   let username = Member.username
+  let inventory = Member.inventory
   console.log(pfp)
   // else logged in
   req.session.user = {
     username,
     email,
-    pfp
+    pfp, 
+    inventory
   };
   res.redirect("/profile");
 })

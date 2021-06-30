@@ -38,7 +38,13 @@ const UserSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "Role"
     }
-  ]
+  ],
+  inventory: {
+    type: Array
+},
+  purchases: {
+   type: Array
+ }
 });
 
 module.exports = new mongoose.model("User", UserSchema);

@@ -24,6 +24,14 @@ const CoursesSchema = new mongoose.Schema({
     modules: {
       type: String,
       required: true,
+    },
+    id: {
+      type: String,
+      required: true,
+    },
+    secondaryId: {
+      type: String,
+      required: true,
     }
   });
   

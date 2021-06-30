@@ -45,6 +45,12 @@
 
    <!-- Kursi 1 (start)-->
    <section class="course">
+      <% if(typeof alert2 != 'undefined') { %>
+         <div class="alert">
+            <span class="alertclose" onclick="this.parentElement.style.display='none';">&times;</span>
+            <p><strong>Warning!</strong>  <%= alert2.msg %></p>
+         </div>
+         <% } %>
       <h1 class="heading-course">Our Courses</h1>
       <hr class="courses-hr">
       <div class="box-container">
@@ -61,7 +67,7 @@
                      <i class="fas fa-star"></i>
                      <i class="fas fa-star-half"></i>
                   </div>
-                  <h1 class="title courseBtn">
+                  <h1 onclick="confModal.style.display= 'block';  pp = '<%= cours.id %>'; console.log(pp)" class="title courseBtn" id="<%= cours.id %>">
                      <%= cours.title %>
                   </h1>
                   <p>
@@ -83,24 +89,18 @@
             <!-- Popup i kursit 1 (start) -->
             
             <!-- Kuti konfirmimi per blerjen e kursit (start)-->
-            <div id="1" class="confirmation">
+            <div id="<%= cours.secondaryId %>" class="confirmation">
                <div class="confirm-content">
-                  <p>Do you want to buy Learn FrontEnd course?</p>
-                     <button onclick="document.getElementById('1').style.display='none'"
-                        class="cancel-btn">NO</button>
-                     <button onclick="document.getElementById('1').style.display='none'" class="buy-btn">YES</button>
+                  <p>Do you want to buy this course?</p>
+                     <button onclick="document.getElementById('<%= cours.secondaryId %>').style.display='none'" class="cancel-btn">NO</button>
+                     <button onclick="location.href = `/courses/purchase/${pp}`" class="buy-btn">YES</button>
                </div>
             </div>
             <!-- Kuti konfirmimi per blerjen e kursit (end)-->
 
             <!-- Funksioni ne JS per shfaqeje e kutise se konfirmimit (start) -->
             <script>
-               var confModal = document.getElementById('1');
-               var course = document.querySelector('.box-container');
-
-               course.onclick = function() {
-                  confModal.style.display = "block";
-               }
+               var confModal = document.getElementById('<%= cours.secondaryId %>');
                window.onclick = function (event) {
                   if (event.target == confModal) {
                      confModal.style.display = "none";

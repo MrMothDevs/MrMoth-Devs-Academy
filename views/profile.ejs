@@ -51,12 +51,9 @@
       <div class="user-course">
          <!-- Kurset e blera nga perdoruesi -->
          <h1>These are the bought courses: </h1>
-         <h2>Learn FrontEnd <span style="float: right;">&#36;50</span></h2>
-         <h2>Learn BackEnd <span style="float: right;">&#36;50</span></h2>
-         <h2>Learn DevOPS <span style="float: right;">&#36;50</span></h2>
-         <h2>Learn MachineLearning <span style="float: right;">&#36;50</span></h2>
-         <h2>Learn AI <span style="float: right;">&#36;50</span></h2>
-         <h2>Learn Database <span style="float: right;">&#36;50</span></h2>
+         <% users.forEach(async function(user, idx) { %>
+         <h2><%= user %> <span style="float: right;">#<%= idx %></span></h2>
+         <% }) %>
       </div>
 </div>
 
