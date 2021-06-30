@@ -9,7 +9,7 @@ const { body, validationResult } = require('express-validator')
 require('dotenv').config()
 const db = require("./models");
 const User = db.user;
-let port = ('5500')
+let port = ('5000')
 var indexRouter = require('./routes/index');
 const sendMail = require('./middlewares/mail');
 var jwt = require("jsonwebtoken");
