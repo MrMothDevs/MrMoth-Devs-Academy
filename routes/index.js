@@ -4,7 +4,9 @@ const authenticateUser = require("../middlewares/authenticateUser.js");
 const db = require("../models");
 const User = db.user;
 const Courses = db.courses
-//Get the main page
+
+
+//Main Page
 router.get('/', async function (req, res, next) {
   if (!req.session.user){
    return res.render('index', { user: req.session.user, permissions: 'User'})
@@ -17,7 +19,7 @@ router.get('/', async function (req, res, next) {
 })
 
 
-//Get the signup page
+//Sign Up Page
 router.get('/signup', function (req, res, next) {
   res.render('signup', { user: req.session.user });
 });
@@ -29,7 +31,8 @@ router.get("/logout", authenticateUser, (req, res) => {
   }
   res.redirect("/login");
 });
-//Get the profile page
+
+//Profile Page
 router.get('/profile', async function (req, res, next) {
   if (!req.session.user) {
     return res.redirect('/login');
@@ -48,7 +51,7 @@ router.get('/profile', async function (req, res, next) {
   res.render('profile', { username: username, email: email, pfp: pfp, users: Member.inventory, permissions: Member.permissions});
 });
 
-//Get the courses page
+//Courses Page
 router.get('/courses', async function (req, res, next) {
   if (req.originalUrl === '/courses?error') {
     Courses.find({}).then(async function (course) {
@@ -68,6 +71,7 @@ router.get('/courses', async function (req, res, next) {
   })
 });
 
+//Members Page
 router.get('/members', async function (req, res, next) {
   if (!req.session.user) {
     return res.redirect('/login')
@@ -83,7 +87,8 @@ router.get('/members', async function (req, res, next) {
     res.redirect('/profile')
   }
 })
-//Get the contact page
+
+//Contact Page
 router.get('/contact', function (req, res, next) {
   let alert3 = { msg: 'The email has been successfully sent!', location: 'body' }
   if (req.originalUrl === '/contact?success') {
@@ -92,7 +97,7 @@ router.get('/contact', function (req, res, next) {
   res.render('contactus', { user: req.session.user });
 });
 
-//Get the login page
+//Login Page
 router.get('/login', function (req, res, next) {
   if (req.session.user) {
     return res.redirect('/')
@@ -104,6 +109,7 @@ router.get('/login', function (req, res, next) {
   res.render('login');
 });
 
+//Konfirmi i akauntit 
 router.get("/confirm/:confirmationCode", (req, res, next) => {
   User.findOne({
     confirmationCode: req.params.confirmationCode,
@@ -124,6 +130,8 @@ router.get("/confirm/:confirmationCode", (req, res, next) => {
     })
     .catch((e) => console.log("error", e));
 })
+
+//Blerja e nje kursi
 router.get("/courses/purchase/:id", (req, res, next) => {
   Courses.findOne({
     id: req.params.id,
@@ -151,7 +159,8 @@ router.get("/courses/purchase/:id", (req, res, next) => {
     })
     .catch((e) => console.log("error", e));
 })
-//Get the 404 page
+
+//404 Page
 router.get('*', function (req, res, next) {
   res.render('404', { user: req.session.user });
 });

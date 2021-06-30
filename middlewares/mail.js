@@ -7,6 +7,8 @@ const transporter = nodemailer.createTransport({
         pass: process.env.SECRET
     }
 });
+
+//Emaili qe vin nga forma e contact us
 const sendMail = (fname, lname, email, message) => {
     const mailOptions = {
         sender: fname, lname,
@@ -25,6 +27,7 @@ const sendMail = (fname, lname, email, message) => {
     });
 }
 
+//Emaili qe dergohet te perdorues per verifikimin e akauntit
 const sendConfirmationEmail = (name, email, confirmationCode) => {
     const mailOptions = {
         from: `${process.env.emailReceiver}`,
@@ -47,5 +50,5 @@ const sendConfirmationEmail = (name, email, confirmationCode) => {
 }
 
 
-// Exporting the sendmail
+// Eksportojm sendmail dhe sendConfirmationEmail
 module.exports = { sendMail, sendConfirmationEmail }

@@ -2,34 +2,33 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const { body, validationResult } = require('express-validator')
-const bodyParser = require('body-parser')
+// Configurimi i dotenv, ka informacione te rendesishme qe duhen per te ven ne pun aplikacionin
 require('dotenv').config()
 const db = require("./models");
 const User = db.user;
-const Role = db.role;
 let port = ('5500')
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 const sendMail = require('./middlewares/mail');
 var jwt = require("jsonwebtoken");
+const session = require('express-session');
 
 var app = express();
 
 
-// view engine setup
+// View Engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-//app.use(logger('dev'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'views')));
 
+//Lidhja me databasen (Mongodb x Mongoose)
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -42,7 +41,8 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch((err) => {
     console.log(err);
   });
-const session = require('express-session');
+
+//Ruajtja e sezjoneve (me express-session)
 app.use(session({
   secret: `${process.env.session_secret}`,
   resave: false,
@@ -50,28 +50,31 @@ app.use(session({
   expires: 300000,
 }));
 
+//Redirekti i routerit kryesor
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-
 
 // Post Requests //
+
+//Rregjistrimi i perdoruesit
 app.post('/signup', body('username', 'This username must be 3+ characters long').isLength({ min: 3 }), body('password', 'This password must be 6+ characters long').isLength({ min: 6 }), async (req, res) => {
   const { email, password, username, birthday, gender } = req.body;
   let pfp = 'images/avatar.png'
-  // check for missing fields
+  // Kontroll i formave
   if (!email || !password || !username || !birthday || !gender) {
     res.send("Please enter all the fields");
     return;
   }
+
+  //Nese gjejm probleme i bejm render faqes bashk me problemim
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
-    // return res.status(422).jsonp(errors.array())
     const alert = errors.array()
     res.render('signup', {
       alert
     })
   }
+
+
   const doesUserExitsAlreay = await User.findOne({ email });
 
   if (doesUserExitsAlreay) {
@@ -82,7 +85,7 @@ app.post('/signup', body('username', 'This username must be 3+ characters long')
     return;
   }
 
-  // lets hash the password
+  // I bejm passwordid Hash 
   const token = jwt.sign({ email: email }, process.env.token_secret);
   const hashedPassword = await bcrypt.hash(password, 12);
   const latestUser = new User({ email, password: hashedPassword, username, birthday, gender, pfp, confirmationCode: token,});
@@ -104,14 +107,15 @@ app.post('/signup', body('username', 'This username must be 3+ characters long')
     .catch((err) => console.log(err));
 })
 
+//Logimi i perdoruesit
 app.post('/login', body('email', 'There is something wrong with the email.').isEmail(), body('password', 'This password must be 6+ characters long').isLength({ min: 6 }), async (req, res) => {
   if (req.session.user) {
     return res.redirect("/");
   }
+  
+  //Nese gjejm probleme i bejm render faqes bashk me problemim
   const errors = validationResult(req)
-
   if (!errors.isEmpty()) {
-    // return res.status(422).jsonp(errors.array())
     const alert = errors.array()
     console.log(alert)
     res.render('login', {
@@ -121,12 +125,13 @@ app.post('/login', body('email', 'There is something wrong with the email.').isE
   }
   const { email, password } = req.body;
 
-  // check for missing fields
+  // Kontrolli i formave dhe validimi i tyre
   if (!email || !password) {
     res.send("Please enter all the fields");
     return;
   }
 
+  //Kerkojm per perdoruesin ne databaz
   const Member = await User.findOne({ email });
 
   if (!Member) {
@@ -160,8 +165,8 @@ app.post('/login', body('email', 'There is something wrong with the email.').isE
   let pfp = Member.pfp
   let username = Member.username
   let inventory = Member.inventory
-  console.log(pfp)
-  // else logged in
+
+  // Logged in
   req.session.user = {
     username,
     email,
@@ -171,10 +176,11 @@ app.post('/login', body('email', 'There is something wrong with the email.').isE
   res.redirect("/profile");
 })
 
+//Editimi i profilit te perdoruesit
 app.post('/edit', async (req, res) => {
   const { editName, editPass} = req.body;
-  let pfp = 'images/avatar.png'
-  // check for missing fields
+
+  // Kontrolli i formave dhe validimi i tyre
   let username = req.session.user.username
   let newUsername = editName
   let newPassword = editPass
@@ -184,7 +190,7 @@ app.post('/edit', async (req, res) => {
     return;
   }
 
-  // lets hash the password
+  // I bejm passwordid Hash 
   const hashedPassword = await bcrypt.hash(newPassword, 12);
   const Member = await User.findOne({ username });
   console.log(Member.username)
@@ -194,17 +200,17 @@ app.post('/edit', async (req, res) => {
   )
 })
 
+//Dergesa e nje emaili te MDA (Contact Us)
 app.post('/email', async (req, res) => {
   const { fname, lname, email, message } = req.body;
 
-  // check for missing fields
+  // Kontrolli i formave dhe validimi i tyre
   if (!fname || !lname || !email || !message) {
     res.send("Please enter all the fields");
     return;
   }
-  const data = { fname, lname, email, message }
-  console.log('Data:', data);
-  //res.json({message: 'Message received!'})
+
+  // Dergese e emailit te MDA
   sendMail.sendMail(fname, lname, email, message, function (err, data) {
     if (err) {
       let alert2 = { msg: 'Internal Error. Your email could not be sent!', location: 'body' }
@@ -217,21 +223,21 @@ app.post('/email', async (req, res) => {
   res.redirect("/contact?success");
 })
 
-// catch 404 and forward to error handler
+// Nese perdoruesi hap nje faqe jo egzsistuese
 app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
 app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
+  // Bejm render faqen me error
   res.status(err.status || 500);
   res.render('error');
 });
+
 app.listen(port, () => console.info(`Listening on port ${port}`));
 module.exports = app;
 
