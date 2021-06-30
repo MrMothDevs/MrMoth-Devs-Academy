@@ -55,7 +55,7 @@ router.get('/courses', async function (req, res, next) {
   if (req.originalUrl === '/courses?error') {
     Courses.find({}).then(async function (course) {
       let alert2 = { msg: 'You have already purchased this course!', location: 'body' }
-      return res.render('courses', { user: req.session.user, course: course, alert2, permissions: Member.permissions});
+      return res.render('courses', { user: req.session.user, course: course, alert2: alert2, permissions: Member.permissions});
     })
   }
   Courses.find({}).then(async function (course) {
