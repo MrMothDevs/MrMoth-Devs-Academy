@@ -240,6 +240,6 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-app.listen(port, () => console.info(`Listening on port ${port}`));
+app.listen(port || 5000, () => console.info(`Listening on port ${port}`));
 module.exports = app;
 
