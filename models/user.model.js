@@ -41,10 +41,7 @@ const UserSchema = new mongoose.Schema({
   ],
   inventory: {
     type: Array
-},
-  purchases: {
-   type: Array
- }
+}
 });
 
 module.exports = new mongoose.model("User", UserSchema);
