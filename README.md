@@ -5,12 +5,24 @@ MrMothDevs Academy a.k.a MDA eshte nje E-Learning Web App i cili ofron kurse te 
 
 ## Si te bejme setup
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Do te perdorim [npm](https://www.npmjs.com/) te instalojm te gjitha dependecit.
 
 ```bash
-pip install foobar
+npm install
 ```
 
+Me pas hapim nje file .env ne direktorine kryesore dhe vendosim:
+(Nese ju kemi derguar .env ne email atehere vendosni ate file!)
+```bash
+MONGO_URI=
+nodemailer_api_key=
+nodemailer_domain=
+emailReceiver=
+session_secret=
+token_secret=
+USER=
+SECRET=
+```
 ## Frontend
 
 Kristjan Seraj 
@@ -33,6 +45,25 @@ Bootstrap eshte perdorur per funksionin e nje carousel dhe ndertimin e tij.
 
 
 ## Backend
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+- Twitter - [@remixors](https://twitter.com/remixors)
+- Gmail - ergindapaj081@gmail.com
 
-Please make sure to update tests as appropriate.
+Per pjesen Backend anetari i grupit [MrMothDevs](https://github.com/MrMothDevs), Ergin Dapaj ka perdorur Node js, express, ejs, mongodb, mongoose etj.
+
+Per template engine eshte perdorur ejs, eshte e thjeshte ne perdorim dhe efektive.
+Rregjistrimet e llogarive behen nepermjet databases Mongodb dhe Mongoose per menaxhimin e te dhenave, dhe passworded behen hash.
+
+Pas rregjistrimit kryhet verifikimi i llogarise nepermjet emailit, ne kete rast kemi perdorur [SendinBlue](https://www.sendinblue.com/) si serverin SMTP.
+Verifikimi kryhet nepermjet nje kodi unik qe krijohet ne te njejten kohe me llogarine!
+
+Me pas vjen [Courses](https://mrmothdevs.herokuapp.com/courses), kurset jan te vendosura manualisht ne databaze dhe me pas shfaqen ne web.
+Ju mund te blini nje kurs, nese nuk jeni loguar do te beheni redirect te login dhe me pas e blini.
+Pasi ju blini nje kurs ai automatikisht do shtohet ne te dhenat e llogarise tende.
+
+[ContactUs](https://mrmothdevs.herokuapp.com/contact), Gjithashtu perdor si server SMTP [SendinBlue](https://www.sendinblue.com/).
+Te gjitha te dhenat do te dergohen te emaili qe eshte deklaruar ne direktorin .env!
+
+[Profile](https://mrmothdevs.herokuapp.com/profile), Profili na lejon te editojm Username, Password dhe gjithashtu te shikojm kurset e blera.
+Nese llogaria jot ka Admin, ju mund te aksesoni [Members](https://mrmothdevs.herokuapp.com/members). (Roli admin mund te jepet vetem manualisht nga databaza.)
+
+

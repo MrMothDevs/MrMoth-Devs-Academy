@@ -93,7 +93,7 @@ router.get('/contact', function (req, res, next) {
   if (req.originalUrl === '/contact?success') {
     return res.render('contactus', { username: req.session.user, alert3 });
   }
-  res.render('contactus', { user: req.session.user });
+  res.render('contact', { user: req.session.user });
 });
 
 //Login Page
