@@ -35,7 +35,7 @@ const sendConfirmationEmail = (name, email, confirmationCode) => {
         subject: "Please confirm your account",
         html: `<h1>Verify Your Account</h1>
         <h2>Hello ${name}</h2>
-        <p> You registered an account on MDA, before being able to use your account you need to verify that this is your email address by clicking here:<a href=http://localhost:5500/confirm/${confirmationCode}>Activate Account</a></p>
+        <p> You registered an account on MDA, before being able to use your account you need to verify that this is your email address by clicking here:<a href=https://mrmothdevs.herokuapp.com/confirm/${confirmationCode}>Activate Account</a></p>
         Kind Regards, MDA Team
         </div>`,
     };
