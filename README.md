@@ -45,7 +45,7 @@ Bootstrap eshte perdorur per funksionin e nje carousel dhe ndertimin e tij.
 
 
 ## Backend
-- Twitter - [@remixors](https://twitter.com/remixors)
+- Twitter - [@ergin](https://twitter.com/ergindapaj)
 - Gmail - ergindapaj081@gmail.com
 
 Per pjesen Backend anetari i grupit [MrMothDevs](https://github.com/MrMothDevs), Ergin Dapaj ka perdorur Node js, express, ejs, mongodb, mongoose etj.
